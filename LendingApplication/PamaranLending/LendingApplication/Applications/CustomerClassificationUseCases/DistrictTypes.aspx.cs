@@ -49,18 +49,26 @@ namespace LendingApplication.Applications.CustomerClassificationUseCases
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void btnSaveNewDistrictType_Click(object sender, DirectEventArgs e)
         {
             var districtType = txtDistrictType.Text;
+            int districtTypeId = int.Parse(hdnDistrictTypeId.Value.ToString());
+            DistrictType type;
+            if (districtTypeId == -1)
+            {
+                type = new DistrictType();
+                type.Name = districtType;
+                ObjectContext.DistrictTypes.AddObject(type);
+            }
+            else
+            {
+                type = ObjectContext.DistrictTypes.SingleOrDefault(x =>
+                    x.Id == districtTypeId);
+                type.Name = districtType;
+            }
 
-
-            DistrictType type = new DistrictType();
-            type.Name = districtType;
-
-            ObjectContext.DistrictTypes.AddObject(type);
             ObjectContext.SaveChanges();
         }
 
