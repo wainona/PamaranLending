@@ -58,6 +58,15 @@ namespace LendingApplication.Applications.CustomerClassificationUseCases {
         protected global::Ext.Net.ResourceManager PageResourceManager;
         
         /// <summary>
+        /// hdnDistrictTypeId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Hidden hdnDistrictTypeId;
+        
+        /// <summary>
         /// Viewport1 control.
         /// </summary>
         /// <remarks>
