@@ -1,0 +1,33 @@
+
+Log Entry : 
+03/06/2012 12:02:21
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.CollectionUseCases.AddLoanPayment.btnSave_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\CollectionUseCases\AddLoanPayment.aspx.cs:line 497
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_collectionusecases_addloanpayment_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_2wcf3jjs.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/06/2012 12:02:21
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.CollectionUseCases.AddLoanPayment.btnSave_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\CollectionUseCases\AddLoanPayment.aspx.cs:line 497
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________

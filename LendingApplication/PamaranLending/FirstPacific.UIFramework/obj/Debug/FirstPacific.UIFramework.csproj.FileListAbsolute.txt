@@ -1,0 +1,22 @@
+D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Debug\FirstPacific.UIFramework.dll
+D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Debug\FirstPacific.UIFramework.pdb
+D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Debug\Ext.Net.dll
+D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Debug\Ext.Net.Utilities.dll
+D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Debug\Newtonsoft.Json.dll
+D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Debug\Ext.Net.xml
+D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Debug\Ext.Net.Utilities.xml
+D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Debug\Newtonsoft.Json.xml
+D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\obj\Debug\ResolveAssemblyReference.cache
+D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\obj\Debug\FirstPacific.UIFramework.dll
+D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\obj\Debug\FirstPacific.UIFramework.pdb
+C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Debug\FirstPacific.UIFramework.dll
+C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Debug\FirstPacific.UIFramework.pdb
+C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Debug\Ext.Net.dll
+C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Debug\Ext.Net.Utilities.dll
+C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Debug\Newtonsoft.Json.dll
+C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Debug\Ext.Net.xml
+C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Debug\Ext.Net.Utilities.xml
+C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Debug\Newtonsoft.Json.xml
+C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\FirstPacific.UIFramework\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\FirstPacific.UIFramework\obj\Debug\FirstPacific.UIFramework.dll
+C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\FirstPacific.UIFramework\obj\Debug\FirstPacific.UIFramework.pdb

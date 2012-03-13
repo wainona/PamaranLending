@@ -1,0 +1,154 @@
+
+Log Entry : 
+03/11/2012 19:04:26
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.ReceiptUseCases.ApplyCustomerSalary.Page_Load(Object sender, EventArgs e) in C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\LendingApplication\Applications\ReceiptUseCases\ApplyCustomerSalary.aspx.cs:line 46
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_receiptusecases_applycustomersalary_aspx.ProcessRequest(HttpContext context) in c:\Users\DELL\AppData\Local\Temp\Temporary ASP.NET Files\root\3b175ad4\21007d57\App_Web_gtxj5sib.1.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/11/2012 19:04:26
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.ReceiptUseCases.ApplyCustomerSalary.Page_Load(Object sender, EventArgs e) in C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\LendingApplication\Applications\ReceiptUseCases\ApplyCustomerSalary.aspx.cs:line 46
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/11/2012 19:07:50
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.ReceiptUseCases.ApplyCustomerSalary.Page_Load(Object sender, EventArgs e) in C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\LendingApplication\Applications\ReceiptUseCases\ApplyCustomerSalary.aspx.cs:line 46
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_receiptusecases_applycustomersalary_aspx.ProcessRequest(HttpContext context) in c:\Users\DELL\AppData\Local\Temp\Temporary ASP.NET Files\root\3b175ad4\21007d57\App_Web_gtxj5sib.1.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/11/2012 19:07:50
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.ReceiptUseCases.ApplyCustomerSalary.Page_Load(Object sender, EventArgs e) in C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\LendingApplication\Applications\ReceiptUseCases\ApplyCustomerSalary.aspx.cs:line 46
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/11/2012 22:33:19
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.Data.EntityException: An error occurred while starting a transaction on the provider connection. See the inner exception for details. ---> System.Data.SqlClient.SqlException: New transaction is not allowed because there are other threads running in the session.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.TdsExecuteTransactionManagerRequest(Byte[] buffer, TransactionManagerRequestType request, String transactionName, TransactionManagerIsolationLevel isoLevel, Int32 timeout, SqlInternalTransaction transaction, TdsParserStateObject stateObj, Boolean isDelegateControlRequest)
+   at System.Data.SqlClient.SqlInternalConnectionTds.ExecuteTransactionYukon(TransactionRequest transactionRequest, String transactionName, IsolationLevel iso, SqlInternalTransaction internalTransaction, Boolean isDelegateControlRequest)
+   at System.Data.SqlClient.SqlInternalConnectionTds.ExecuteTransaction(TransactionRequest transactionRequest, String name, IsolationLevel iso, SqlInternalTransaction internalTransaction, Boolean isDelegateControlRequest)
+   at System.Data.SqlClient.SqlInternalConnection.BeginSqlTransaction(IsolationLevel iso, String transactionName)
+   at System.Data.SqlClient.SqlInternalConnection.BeginTransaction(IsolationLevel iso)
+   at System.Data.SqlClient.SqlConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Common.DbConnection.BeginTransaction(IsolationLevel isolationLevel)
+   at System.Data.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   --- End of inner exception stack trace ---
+   at System.Data.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   at System.Data.Objects.ObjectContext.SaveChanges()
+   at BusinessLogic.LoanAccount.UpdateLoanStatus(DateTime today, LoanAccount loanAccount, Decimal balance) in C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\BusinessLogic\Facade\LoanAccountFacade.cs:line 419
+   at LendingApplication.Applications.ReceiptUseCases.ApplyCustomerSalary.SaveLoanPayment(DateTime entryDate, Decimal ReceiptBalance, LoanAccount loanAccount, Payment ParentPayment) in C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\LendingApplication\Applications\ReceiptUseCases\ApplyCustomerSalary.aspx.cs:line 165
+   at LendingApplication.Applications.ReceiptUseCases.ApplyCustomerSalary.ApplyCheckAsPayment(Object sender, DirectEventArgs e) in C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\LendingApplication\Applications\ReceiptUseCases\ApplyCustomerSalary.aspx.cs:line 118
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_receiptusecases_applycustomersalary_aspx.ProcessRequest(HttpContext context) in c:\Users\DELL\AppData\Local\Temp\Temporary ASP.NET Files\root\3b175ad4\21007d57\App_Web_1l1rfp2z.5.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/11/2012 22:33:19
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Data.EntityException: An error occurred while starting a transaction on the provider connection. See the inner exception for details. ---> System.Data.SqlClient.SqlException: New transaction is not allowed because there are other threads running in the session.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.TdsExecuteTransactionManagerRequest(Byte[] buffer, TransactionManagerRequestType request, String transactionName, TransactionManagerIsolationLevel isoLevel, Int32 timeout, SqlInternalTransaction transaction, TdsParserStateObject stateObj, Boolean isDelegateControlRequest)
+   at System.Data.SqlClient.SqlInternalConnectionTds.ExecuteTransactionYukon(TransactionRequest transactionRequest, String transactionName, IsolationLevel iso, SqlInternalTransaction internalTransaction, Boolean isDelegateControlRequest)
+   at System.Data.SqlClient.SqlInternalConnectionTds.ExecuteTransaction(TransactionRequest transactionRequest, String name, IsolationLevel iso, SqlInternalTransaction internalTransaction, Boolean isDelegateControlRequest)
+   at System.Data.SqlClient.SqlInternalConnection.BeginSqlTransaction(IsolationLevel iso, String transactionName)
+   at System.Data.SqlClient.SqlInternalConnection.BeginTransaction(IsolationLevel iso)
+   at System.Data.SqlClient.SqlConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Common.DbConnection.BeginTransaction(IsolationLevel isolationLevel)
+   at System.Data.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   --- End of inner exception stack trace ---
+   at System.Data.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   at System.Data.Objects.ObjectContext.SaveChanges()
+   at BusinessLogic.LoanAccount.UpdateLoanStatus(DateTime today, LoanAccount loanAccount, Decimal balance) in C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\BusinessLogic\Facade\LoanAccountFacade.cs:line 419
+   at LendingApplication.Applications.ReceiptUseCases.ApplyCustomerSalary.SaveLoanPayment(DateTime entryDate, Decimal ReceiptBalance, LoanAccount loanAccount, Payment ParentPayment) in C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\LendingApplication\Applications\ReceiptUseCases\ApplyCustomerSalary.aspx.cs:line 165
+   at LendingApplication.Applications.ReceiptUseCases.ApplyCustomerSalary.ApplyCheckAsPayment(Object sender, DirectEventArgs e) in C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\LendingApplication\Applications\ReceiptUseCases\ApplyCustomerSalary.aspx.cs:line 118
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/11/2012 22:33:19
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Data.SqlClient.SqlException (0x80131904): New transaction is not allowed because there are other threads running in the session.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.TdsExecuteTransactionManagerRequest(Byte[] buffer, TransactionManagerRequestType request, String transactionName, TransactionManagerIsolationLevel isoLevel, Int32 timeout, SqlInternalTransaction transaction, TdsParserStateObject stateObj, Boolean isDelegateControlRequest)
+   at System.Data.SqlClient.SqlInternalConnectionTds.ExecuteTransactionYukon(TransactionRequest transactionRequest, String transactionName, IsolationLevel iso, SqlInternalTransaction internalTransaction, Boolean isDelegateControlRequest)
+   at System.Data.SqlClient.SqlInternalConnectionTds.ExecuteTransaction(TransactionRequest transactionRequest, String name, IsolationLevel iso, SqlInternalTransaction internalTransaction, Boolean isDelegateControlRequest)
+   at System.Data.SqlClient.SqlInternalConnection.BeginSqlTransaction(IsolationLevel iso, String transactionName)
+   at System.Data.SqlClient.SqlInternalConnection.BeginTransaction(IsolationLevel iso)
+   at System.Data.SqlClient.SqlConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Common.DbConnection.BeginTransaction(IsolationLevel isolationLevel)
+   at System.Data.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+__________________________

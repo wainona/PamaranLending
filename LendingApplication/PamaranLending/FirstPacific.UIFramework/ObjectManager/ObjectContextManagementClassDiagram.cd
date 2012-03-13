@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FirstPacific.UIFramework.AspNetObjectContextManager&lt;T&gt;">
+    <Position X="0.5" Y="2.75" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAEABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectManager\AspNetObjectContextManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FirstPacific.UIFramework.ObjectContextManager&lt;T&gt;">
+    <Position X="3.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectManager\ObjectContextManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FirstPacific.UIFramework.ObjectContextScope&lt;T&gt;">
+    <Position X="6.5" Y="0.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAACAAAAYAAAAAAACQAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>ObjectManager\ObjectContextScope.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FirstPacific.UIFramework.ScopedObjectContextManager&lt;T&gt;">
+    <Position X="6.5" Y="2.75" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectManager\ScopedObjectContextManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FirstPacific.UIFramework.StaticObjectContextManager&lt;T&gt;">
+    <Position X="3.5" Y="2.75" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAEABAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectManager\StaticObjectContextManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FirstPacific.UIFramework.HttpModules.AspNetObjectContextDisposalModule">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAACAAAAAAAAAAAAAAAAAAAAAAAAACAABAAAA=</HashCode>
+      <FileName>HttpModules\AspNetObjectContextDisposalModule.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

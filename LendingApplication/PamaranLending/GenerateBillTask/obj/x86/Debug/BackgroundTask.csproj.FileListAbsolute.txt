@@ -1,0 +1,20 @@
+D:\TFS\LendingApplication\PamaranLending\GenerateBillTask\bin\Debug\BackgroundTask.exe.config
+D:\TFS\LendingApplication\PamaranLending\GenerateBillTask\bin\Debug\BackgroundTask.exe
+D:\TFS\LendingApplication\PamaranLending\GenerateBillTask\bin\Debug\BackgroundTask.pdb
+D:\TFS\LendingApplication\PamaranLending\GenerateBillTask\bin\Debug\BusinessLogic.dll
+D:\TFS\LendingApplication\PamaranLending\GenerateBillTask\bin\Debug\FirstPacific.UIFramework.dll
+D:\TFS\LendingApplication\PamaranLending\GenerateBillTask\bin\Debug\BusinessLogic.pdb
+D:\TFS\LendingApplication\PamaranLending\GenerateBillTask\bin\Debug\FirstPacific.UIFramework.pdb
+D:\TFS\LendingApplication\PamaranLending\GenerateBillTask\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\TFS\LendingApplication\PamaranLending\GenerateBillTask\obj\x86\Debug\BackgroundTask.exe
+D:\TFS\LendingApplication\PamaranLending\GenerateBillTask\obj\x86\Debug\BackgroundTask.pdb
+C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\GenerateBillTask\bin\Debug\BackgroundTask.exe.config
+C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\GenerateBillTask\bin\Debug\BackgroundTask.exe
+C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\GenerateBillTask\bin\Debug\BackgroundTask.pdb
+C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\GenerateBillTask\bin\Debug\BusinessLogic.dll
+C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\GenerateBillTask\bin\Debug\FirstPacific.UIFramework.dll
+C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\GenerateBillTask\bin\Debug\BusinessLogic.pdb
+C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\GenerateBillTask\bin\Debug\FirstPacific.UIFramework.pdb
+C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\GenerateBillTask\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\GenerateBillTask\obj\x86\Debug\BackgroundTask.exe
+C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\GenerateBillTask\obj\x86\Debug\BackgroundTask.pdb

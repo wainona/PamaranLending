@@ -1,0 +1,78 @@
+
+Log Entry : 
+02/23/2012 16:07:30
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.IO.IOException: The directory is not empty.
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive)
+   at System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive)
+   at System.IO.Directory.Delete(String path)
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.onUploadBorrower(FileUploadField fileUpload, Image image, Hidden hidden, String name) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 217
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.onUploadWitness1(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 158
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_printspa_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_anrb3ib2.1.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+02/23/2012 16:07:30
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.IO.IOException: The directory is not empty.
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive)
+   at System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive)
+   at System.IO.Directory.Delete(String path)
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.onUploadBorrower(FileUploadField fileUpload, Image image, Hidden hidden, String name) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 217
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.onUploadWitness1(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 158
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+02/23/2012 17:33:09
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillSignaturesForApproval() in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 422
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 63
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_printspa_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_a4feqqop.1.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+02/23/2012 17:33:09
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillSignaturesForApproval() in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 422
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 63
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________

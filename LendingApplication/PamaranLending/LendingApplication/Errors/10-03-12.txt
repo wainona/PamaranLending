@@ -1,0 +1,180 @@
+
+Log Entry : 
+03/10/2012 09:59:56
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.ArgumentOutOfRangeException: The value must be greater than 0 and less than or equal to 1.0.
+Parameter name: value
+Actual value was 200.
+   at Ext.Net.Component.set_ColumnWidth(Double value)
+   at ASP.applications_receiptusecases_addcustomersalary_aspx.__BuildControl__control7() in c:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\LendingApplication\Applications\ReceiptUseCases\AddCustomerSalary.aspx:line 48
+   at ASP.applications_receiptusecases_addcustomersalary_aspx.__BuildControl__control6(ItemsCollection`1 __ctrl) in c:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\LendingApplication\Applications\ReceiptUseCases\AddCustomerSalary.aspx:line 45
+   at ASP.applications_receiptusecases_addcustomersalary_aspx.__BuildControlPageFormPanel() in c:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\LendingApplication\Applications\ReceiptUseCases\AddCustomerSalary.aspx:line 45
+   at ASP.applications_receiptusecases_addcustomersalary_aspx.__BuildControl__control5(ItemsCollection`1 __ctrl) in c:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\LendingApplication\Applications\ReceiptUseCases\AddCustomerSalary.aspx:line 43
+   at ASP.applications_receiptusecases_addcustomersalary_aspx.__BuildControlPageViewPort() in c:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\LendingApplication\Applications\ReceiptUseCases\AddCustomerSalary.aspx:line 43
+   at ASP.applications_receiptusecases_addcustomersalary_aspx.__BuildControlPageForm() in c:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\LendingApplication\Applications\ReceiptUseCases\AddCustomerSalary.aspx:line 41
+   at ASP.applications_receiptusecases_addcustomersalary_aspx.__BuildControlTree(applications_receiptusecases_addcustomersalary_aspx __ctrl) in c:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\LendingApplication\Applications\ReceiptUseCases\AddCustomerSalary.aspx:line 1
+   at ASP.applications_receiptusecases_addcustomersalary_aspx.FrameworkInitialize() in c:\Users\DELL\AppData\Local\Temp\Temporary ASP.NET Files\root\3b175ad4\21007d57\App_Web_djkpvaq2.2.cs:line 0
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_receiptusecases_addcustomersalary_aspx.ProcessRequest(HttpContext context) in c:\Users\DELL\AppData\Local\Temp\Temporary ASP.NET Files\root\3b175ad4\21007d57\App_Web_djkpvaq2.2.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/10/2012 15:51:06
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.ArgumentException: The AutoExpand Column with ID='Addresses' was not found.
+   at Ext.Net.GridPanel.CheckAutoExpand()
+   at Ext.Net.GridPanel.OnAfterClientInit(Observable sender)
+   at Ext.Net.Observable.OnAfterClientInitHandler()
+   at Ext.Net.Observable.OnClientInit(Boolean reinit)
+   at Ext.Net.XControl.SetResources()
+   at Ext.Net.XControl.PreRenderAction()
+   at Ext.Net.Observable.PreRenderAction()
+   at Ext.Net.XControl.Render(HtmlTextWriter writer)
+   at Ext.Net.ContainerBase.Render(HtmlTextWriter writer)
+   at Ext.Net.PanelBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at Ext.Net.XControl.HtmlRender(HtmlTextWriter writer)
+   at Ext.Net.XControl.Render(HtmlTextWriter writer)
+   at Ext.Net.ContainerBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlForm.Render(HtmlTextWriter output)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Page.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_receiptusecases_applycustomersalary_aspx.ProcessRequest(HttpContext context) in c:\Users\DELL\AppData\Local\Temp\Temporary ASP.NET Files\root\3b175ad4\21007d57\App_Web_kcy5ykcl.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/10/2012 15:51:06
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.ArgumentException: The AutoExpand Column with ID='Addresses' was not found.
+   at Ext.Net.GridPanel.CheckAutoExpand()
+   at Ext.Net.GridPanel.OnAfterClientInit(Observable sender)
+   at Ext.Net.Observable.OnAfterClientInitHandler()
+   at Ext.Net.Observable.OnClientInit(Boolean reinit)
+   at Ext.Net.XControl.SetResources()
+   at Ext.Net.XControl.PreRenderAction()
+   at Ext.Net.Observable.PreRenderAction()
+   at Ext.Net.XControl.Render(HtmlTextWriter writer)
+   at Ext.Net.ContainerBase.Render(HtmlTextWriter writer)
+   at Ext.Net.PanelBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at Ext.Net.XControl.HtmlRender(HtmlTextWriter writer)
+   at Ext.Net.XControl.Render(HtmlTextWriter writer)
+   at Ext.Net.ContainerBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlForm.Render(HtmlTextWriter output)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Page.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/10/2012 23:04:28
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.ReceiptUseCases.EditReceipt.Page_Load(Object sender, EventArgs e) in C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\LendingApplication\Applications\ReceiptUseCases\EditReceipt.aspx.cs:line 34
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_receiptusecases_editreceipt_aspx.ProcessRequest(HttpContext context) in c:\Users\DELL\AppData\Local\Temp\Temporary ASP.NET Files\root\3b175ad4\21007d57\App_Web_bmxogjuk.3.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/10/2012 23:04:28
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.ReceiptUseCases.EditReceipt.Page_Load(Object sender, EventArgs e) in C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\LendingApplication\Applications\ReceiptUseCases\EditReceipt.aspx.cs:line 34
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/10/2012 23:42:54
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.ReceiptUseCases.ApplyCustomerSalary.Page_Load(Object sender, EventArgs e) in C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\LendingApplication\Applications\ReceiptUseCases\ApplyCustomerSalary.aspx.cs:line 46
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_receiptusecases_applycustomersalary_aspx.ProcessRequest(HttpContext context) in c:\Users\DELL\AppData\Local\Temp\Temporary ASP.NET Files\root\3b175ad4\21007d57\App_Web_cut25pxw.2.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/10/2012 23:42:54
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.ReceiptUseCases.ApplyCustomerSalary.Page_Load(Object sender, EventArgs e) in C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\LendingApplication\Applications\ReceiptUseCases\ApplyCustomerSalary.aspx.cs:line 46
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________

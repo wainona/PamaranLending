@@ -1,0 +1,929 @@
+
+Log Entry : 
+03/05/2012 09:58:45
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.ArgumentNullException: Value cannot be null.
+Parameter name: key
+   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)
+   at System.Collections.Generic.Dictionary`2.ContainsKey(TKey key)
+   at FirstPacific.UIFramework.SessionResourceManager.RetrieveResource(String guid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\SessionResourceManager.cs:line 35
+   at FirstPacific.UIFramework.ActivityPageBase.Retrieve[F](String resourceGuid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\ActivityPageBase.cs:line 80
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillSignaturesForApproval() in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 480
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 64
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_printspa_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_wr0cobj4.3.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/05/2012 09:58:45
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.ArgumentNullException: Value cannot be null.
+Parameter name: key
+   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)
+   at System.Collections.Generic.Dictionary`2.ContainsKey(TKey key)
+   at FirstPacific.UIFramework.SessionResourceManager.RetrieveResource(String guid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\SessionResourceManager.cs:line 35
+   at FirstPacific.UIFramework.ActivityPageBase.Retrieve[F](String resourceGuid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\ActivityPageBase.cs:line 80
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillSignaturesForApproval() in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 480
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 64
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/05/2012 09:59:01
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.ArgumentNullException: Value cannot be null.
+Parameter name: key
+   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)
+   at System.Collections.Generic.Dictionary`2.ContainsKey(TKey key)
+   at FirstPacific.UIFramework.SessionResourceManager.RetrieveResource(String guid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\SessionResourceManager.cs:line 35
+   at FirstPacific.UIFramework.ActivityPageBase.Retrieve[F](String resourceGuid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\ActivityPageBase.cs:line 80
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillSignaturesForApproval() in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 480
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 64
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_printspa_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_wr0cobj4.3.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/05/2012 09:59:01
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.ArgumentNullException: Value cannot be null.
+Parameter name: key
+   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)
+   at System.Collections.Generic.Dictionary`2.ContainsKey(TKey key)
+   at FirstPacific.UIFramework.SessionResourceManager.RetrieveResource(String guid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\SessionResourceManager.cs:line 35
+   at FirstPacific.UIFramework.ActivityPageBase.Retrieve[F](String resourceGuid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\ActivityPageBase.cs:line 80
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillSignaturesForApproval() in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 480
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 64
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/05/2012 10:01:12
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.ArgumentNullException: Value cannot be null.
+Parameter name: key
+   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)
+   at System.Collections.Generic.Dictionary`2.ContainsKey(TKey key)
+   at FirstPacific.UIFramework.SessionResourceManager.RetrieveResource(String guid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\SessionResourceManager.cs:line 35
+   at FirstPacific.UIFramework.ActivityPageBase.Retrieve[F](String resourceGuid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\ActivityPageBase.cs:line 80
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 63
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_printspa_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_pctve43u.7.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/05/2012 10:01:12
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.ArgumentNullException: Value cannot be null.
+Parameter name: key
+   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)
+   at System.Collections.Generic.Dictionary`2.ContainsKey(TKey key)
+   at FirstPacific.UIFramework.SessionResourceManager.RetrieveResource(String guid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\SessionResourceManager.cs:line 35
+   at FirstPacific.UIFramework.ActivityPageBase.Retrieve[F](String resourceGuid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\ActivityPageBase.cs:line 80
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 63
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/05/2012 10:01:41
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.ArgumentNullException: Value cannot be null.
+Parameter name: key
+   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)
+   at System.Collections.Generic.Dictionary`2.ContainsKey(TKey key)
+   at FirstPacific.UIFramework.SessionResourceManager.RetrieveResource(String guid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\SessionResourceManager.cs:line 35
+   at FirstPacific.UIFramework.ActivityPageBase.Retrieve[F](String resourceGuid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\ActivityPageBase.cs:line 80
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 63
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_printspa_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_pctve43u.7.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/05/2012 10:01:41
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.ArgumentNullException: Value cannot be null.
+Parameter name: key
+   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)
+   at System.Collections.Generic.Dictionary`2.ContainsKey(TKey key)
+   at FirstPacific.UIFramework.SessionResourceManager.RetrieveResource(String guid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\SessionResourceManager.cs:line 35
+   at FirstPacific.UIFramework.ActivityPageBase.Retrieve[F](String resourceGuid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\ActivityPageBase.cs:line 80
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 63
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/05/2012 10:03:08
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.ArgumentNullException: Value cannot be null.
+Parameter name: key
+   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)
+   at System.Collections.Generic.Dictionary`2.ContainsKey(TKey key)
+   at FirstPacific.UIFramework.SessionResourceManager.RetrieveResource(String guid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\SessionResourceManager.cs:line 35
+   at FirstPacific.UIFramework.ActivityPageBase.Retrieve[F](String resourceGuid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\ActivityPageBase.cs:line 80
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillSignaturesForApproval() in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 484
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 68
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_printspa_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_z3iii0xq.1.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/05/2012 10:03:08
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.ArgumentNullException: Value cannot be null.
+Parameter name: key
+   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)
+   at System.Collections.Generic.Dictionary`2.ContainsKey(TKey key)
+   at FirstPacific.UIFramework.SessionResourceManager.RetrieveResource(String guid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\SessionResourceManager.cs:line 35
+   at FirstPacific.UIFramework.ActivityPageBase.Retrieve[F](String resourceGuid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\ActivityPageBase.cs:line 80
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillSignaturesForApproval() in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 484
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 68
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/05/2012 10:03:26
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.ArgumentNullException: Value cannot be null.
+Parameter name: key
+   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)
+   at System.Collections.Generic.Dictionary`2.ContainsKey(TKey key)
+   at FirstPacific.UIFramework.SessionResourceManager.RetrieveResource(String guid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\SessionResourceManager.cs:line 35
+   at FirstPacific.UIFramework.ActivityPageBase.Retrieve[F](String resourceGuid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\ActivityPageBase.cs:line 80
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillSignaturesForApproval() in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 484
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 68
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_printspa_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_z3iii0xq.1.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/05/2012 10:03:26
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.ArgumentNullException: Value cannot be null.
+Parameter name: key
+   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)
+   at System.Collections.Generic.Dictionary`2.ContainsKey(TKey key)
+   at FirstPacific.UIFramework.SessionResourceManager.RetrieveResource(String guid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\SessionResourceManager.cs:line 35
+   at FirstPacific.UIFramework.ActivityPageBase.Retrieve[F](String resourceGuid) in D:\TFS\LendingApplication\PamaranLending\FirstPacific.UIFramework\ActivityPageBase.cs:line 80
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillSignaturesForApproval() in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 484
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 68
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/05/2012 10:26:01
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.LoanApplicationUseCases.ListLoanApplication.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ListLoanApplication.aspx.cs:line 58
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_listloanapplication_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_oupfevhe.8.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/05/2012 10:26:01
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.LoanApplicationUseCases.ListLoanApplication.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ListLoanApplication.aspx.cs:line 58
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/05/2012 10:26:02
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.LoanApplicationUseCases.ListLoanApplication.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ListLoanApplication.aspx.cs:line 58
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_listloanapplication_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_oupfevhe.8.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/05/2012 10:26:02
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.LoanApplicationUseCases.ListLoanApplication.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ListLoanApplication.aspx.cs:line 58
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/05/2012 10:27:52
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.LoanApplicationUseCases.ListLoanApplication.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ListLoanApplication.aspx.cs:line 58
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_listloanapplication_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_oupfevhe.8.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/05/2012 10:27:52
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.LoanApplicationUseCases.ListLoanApplication.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ListLoanApplication.aspx.cs:line 58
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/05/2012 10:33:39
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.LoanApplicationUseCases.ListLoanApplication.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ListLoanApplication.aspx.cs:line 58
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_listloanapplication_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_2kuyibnq.1.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/05/2012 10:33:39
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.LoanApplicationUseCases.ListLoanApplication.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ListLoanApplication.aspx.cs:line 58
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/05/2012 11:50:51
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.LoanApplicationUseCases.ListLoanApplication.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ListLoanApplication.aspx.cs:line 58
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_listloanapplication_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_lshpnzfx.8.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/05/2012 11:50:51
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.LoanApplicationUseCases.ListLoanApplication.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ListLoanApplication.aspx.cs:line 58
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/05/2012 14:15:30
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ToInt32(Object value)
+   at LendingApplication.Applications.ModifyLoanApplication.btnSaveNewCheque_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ModifyLoanApplication.aspx.cs:line 912
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_modifyloanapplication_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_vqopaxg2.1.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/05/2012 14:15:30
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ToInt32(Object value)
+   at LendingApplication.Applications.ModifyLoanApplication.btnSaveNewCheque_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ModifyLoanApplication.aspx.cs:line 912
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/05/2012 14:16:16
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ToInt32(Object value)
+   at LendingApplication.Applications.ModifyLoanApplication.btnSaveNewCheque_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ModifyLoanApplication.aspx.cs:line 912
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_modifyloanapplication_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_vqopaxg2.1.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/05/2012 14:16:16
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ToInt32(Object value)
+   at LendingApplication.Applications.ModifyLoanApplication.btnSaveNewCheque_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ModifyLoanApplication.aspx.cs:line 912
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/05/2012 14:16:42
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ToInt32(Object value)
+   at LendingApplication.Applications.ModifyLoanApplication.btnSaveNewCheque_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ModifyLoanApplication.aspx.cs:line 912
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_modifyloanapplication_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_vqopaxg2.1.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/05/2012 14:16:42
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ToInt32(Object value)
+   at LendingApplication.Applications.ModifyLoanApplication.btnSaveNewCheque_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ModifyLoanApplication.aspx.cs:line 912
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/05/2012 14:24:29
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.ModifyLoanApplication.btnSaveNewCheque_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ModifyLoanApplication.aspx.cs:line 911
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_modifyloanapplication_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_5ljdfpws.6.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/05/2012 14:24:29
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.ModifyLoanApplication.btnSaveNewCheque_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ModifyLoanApplication.aspx.cs:line 911
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/05/2012 14:52:38
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.ModifyLoanApplication.btnSaveNewCheque_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ModifyLoanApplication.aspx.cs:line 918
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_modifyloanapplication_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_01dgnp33.2.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/05/2012 14:52:38
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.ModifyLoanApplication.btnSaveNewCheque_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ModifyLoanApplication.aspx.cs:line 918
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/05/2012 15:00:24
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.ModifyLoanApplication.btnSaveNewCheque_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ModifyLoanApplication.aspx.cs:line 918
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_modifyloanapplication_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_rb1gyyrw.1.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/05/2012 15:00:24
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.ModifyLoanApplication.btnSaveNewCheque_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ModifyLoanApplication.aspx.cs:line 918
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/05/2012 15:11:35
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.ModifyLoanApplication.btnSaveNewCheque_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ModifyLoanApplication.aspx.cs:line 918
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_modifyloanapplication_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_z1prsqyt.1.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/05/2012 15:11:35
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.ModifyLoanApplication.btnSaveNewCheque_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ModifyLoanApplication.aspx.cs:line 918
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/05/2012 15:39:25
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.LoanApplicationUseCases.ListLoanApplication.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ListLoanApplication.aspx.cs:line 58
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_listloanapplication_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_ff413x4u.5.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/05/2012 15:39:25
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.LoanApplicationUseCases.ListLoanApplication.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ListLoanApplication.aspx.cs:line 58
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/05/2012 18:28:56
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.Data.EntityCommandExecutionException: An error occurred while executing the command definition. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid column name 'ExchangeRateId'.
+Invalid column name 'AmountReceived'.
+Invalid column name 'ReceivedCurrencyId'.
+Invalid column name 'AmountReleased'.
+Invalid column name 'ReleasedCurrencyId'.
+Invalid column name 'IsSpot'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- End of inner exception stack trace ---
+   at System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   at System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at LendingApplication.ForeignExchangeApplication.ForExTransactionUseCases.ForExReport.CreateQuery(DateTime startDate, DateTime endDate) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\ForeignExchangeApplication\ForExTransactionUseCases\ForExReport.aspx.cs:line 93
+   at LendingApplication.ForeignExchangeApplication.ForExTransactionUseCases.ForExReport.btnGenerate_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\ForeignExchangeApplication\ForExTransactionUseCases\ForExReport.aspx.cs:line 47
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.foreignexchangeapplication_forextransactionusecases_forexreport_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_uu25kdyx.3.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/05/2012 18:28:56
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Data.EntityCommandExecutionException: An error occurred while executing the command definition. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid column name 'ExchangeRateId'.
+Invalid column name 'AmountReceived'.
+Invalid column name 'ReceivedCurrencyId'.
+Invalid column name 'AmountReleased'.
+Invalid column name 'ReleasedCurrencyId'.
+Invalid column name 'IsSpot'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- End of inner exception stack trace ---
+   at System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   at System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at LendingApplication.ForeignExchangeApplication.ForExTransactionUseCases.ForExReport.CreateQuery(DateTime startDate, DateTime endDate) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\ForeignExchangeApplication\ForExTransactionUseCases\ForExReport.aspx.cs:line 93
+   at LendingApplication.ForeignExchangeApplication.ForExTransactionUseCases.ForExReport.btnGenerate_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\ForeignExchangeApplication\ForExTransactionUseCases\ForExReport.aspx.cs:line 47
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/05/2012 18:28:56
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ExchangeRateId'.
+Invalid column name 'AmountReceived'.
+Invalid column name 'ReceivedCurrencyId'.
+Invalid column name 'AmountReleased'.
+Invalid column name 'ReleasedCurrencyId'.
+Invalid column name 'IsSpot'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+__________________________
+
+Log Entry : 
+03/05/2012 18:29:23
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.Data.EntityCommandExecutionException: An error occurred while executing the command definition. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid column name 'ExchangeRateId'.
+Invalid column name 'AmountReceived'.
+Invalid column name 'ReceivedCurrencyId'.
+Invalid column name 'AmountReleased'.
+Invalid column name 'ReleasedCurrencyId'.
+Invalid column name 'IsSpot'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- End of inner exception stack trace ---
+   at System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   at System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at LendingApplication.ForeignExchangeApplication.ForExTransactionUseCases.ForExReport.CreateQuery(DateTime startDate, DateTime endDate) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\ForeignExchangeApplication\ForExTransactionUseCases\ForExReport.aspx.cs:line 93
+   at LendingApplication.ForeignExchangeApplication.ForExTransactionUseCases.ForExReport.btnGenerate_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\ForeignExchangeApplication\ForExTransactionUseCases\ForExReport.aspx.cs:line 47
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.foreignexchangeapplication_forextransactionusecases_forexreport_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_uu25kdyx.3.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/05/2012 18:29:23
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Data.EntityCommandExecutionException: An error occurred while executing the command definition. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid column name 'ExchangeRateId'.
+Invalid column name 'AmountReceived'.
+Invalid column name 'ReceivedCurrencyId'.
+Invalid column name 'AmountReleased'.
+Invalid column name 'ReleasedCurrencyId'.
+Invalid column name 'IsSpot'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- End of inner exception stack trace ---
+   at System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   at System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at LendingApplication.ForeignExchangeApplication.ForExTransactionUseCases.ForExReport.CreateQuery(DateTime startDate, DateTime endDate) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\ForeignExchangeApplication\ForExTransactionUseCases\ForExReport.aspx.cs:line 93
+   at LendingApplication.ForeignExchangeApplication.ForExTransactionUseCases.ForExReport.btnGenerate_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\ForeignExchangeApplication\ForExTransactionUseCases\ForExReport.aspx.cs:line 47
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/05/2012 18:29:23
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ExchangeRateId'.
+Invalid column name 'AmountReceived'.
+Invalid column name 'ReceivedCurrencyId'.
+Invalid column name 'AmountReleased'.
+Invalid column name 'ReleasedCurrencyId'.
+Invalid column name 'IsSpot'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.EntityClient.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+__________________________

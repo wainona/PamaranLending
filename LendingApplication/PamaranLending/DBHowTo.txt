@@ -1,0 +1,4 @@
+1. Create new database with name: Financial
+2. Execute query with the file name: FinancialDBSchema.sql //found in solution items
+3. Exectue query for the initial data with file name: initialdata_1sttime.sql //found in solution items
+4. Exectue query for the sample data with file name: sampledata_1sttime.sql //found in solution items

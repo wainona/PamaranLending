@@ -1,0 +1,713 @@
+
+Log Entry : 
+03/03/2012 11:22:03
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.CustomerUseCases.ListCustomers.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\CustomerUseCases\ListCustomers.aspx.cs:line 53
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_customerusecases_listcustomers_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_3b2mguej.1.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/03/2012 11:22:03
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.CustomerUseCases.ListCustomers.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\CustomerUseCases\ListCustomers.aspx.cs:line 53
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/03/2012 11:29:59
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 367
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_printspa_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_hcjc1zpb.7.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/03/2012 11:29:59
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 367
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/03/2012 11:33:24
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 352
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_printspa_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_hcjc1zpb.7.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/03/2012 11:33:24
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 352
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/03/2012 11:33:34
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 352
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_printspa_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_hcjc1zpb.7.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/03/2012 11:33:34
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 352
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/03/2012 11:43:29
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 352
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_printspa_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_1c4wtbgh.4.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/03/2012 11:43:29
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 352
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/03/2012 11:43:42
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 352
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_printspa_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_1c4wtbgh.4.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/03/2012 11:43:42
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 352
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/03/2012 11:43:57
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 352
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_printspa_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_1c4wtbgh.4.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/03/2012 11:43:57
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 352
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/03/2012 11:45:11
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 391
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_printspa_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_w1htya53.2.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/03/2012 11:45:11
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 391
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/03/2012 12:02:48
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.ArgumentOutOfRangeException: StartIndex cannot be less than zero.
+Parameter name: startIndex
+   at System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   at BusinessLogic.StringConcatUtility.Build(String separtor, String[] parts) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\StringConcat.cs:line 22
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 377
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_printspa_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_wz2bgnlm.2.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/03/2012 12:02:48
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.ArgumentOutOfRangeException: StartIndex cannot be less than zero.
+Parameter name: startIndex
+   at System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   at BusinessLogic.StringConcatUtility.Build(String separtor, String[] parts) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\StringConcat.cs:line 22
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 377
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/03/2012 12:03:43
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.ArgumentOutOfRangeException: StartIndex cannot be less than zero.
+Parameter name: startIndex
+   at System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   at BusinessLogic.StringConcatUtility.Build(String separtor, String[] parts) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\StringConcat.cs:line 22
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 377
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_printspa_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_wz2bgnlm.2.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/03/2012 12:03:43
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.ArgumentOutOfRangeException: StartIndex cannot be less than zero.
+Parameter name: startIndex
+   at System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   at BusinessLogic.StringConcatUtility.Build(String separtor, String[] parts) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\StringConcat.cs:line 22
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 377
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/03/2012 12:39:39
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.ArgumentOutOfRangeException: StartIndex cannot be less than zero.
+Parameter name: startIndex
+   at System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   at BusinessLogic.StringConcatUtility.Build(String separtor, String[] parts) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\StringConcat.cs:line 22
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 377
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_printspa_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_ujzjex1w.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/03/2012 12:39:39
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.ArgumentOutOfRangeException: StartIndex cannot be less than zero.
+Parameter name: startIndex
+   at System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   at BusinessLogic.StringConcatUtility.Build(String separtor, String[] parts) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\StringConcat.cs:line 22
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 377
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/03/2012 12:39:47
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.ArgumentOutOfRangeException: StartIndex cannot be less than zero.
+Parameter name: startIndex
+   at System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   at BusinessLogic.StringConcatUtility.Build(String separtor, String[] parts) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\StringConcat.cs:line 22
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 377
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_printspa_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_ujzjex1w.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/03/2012 12:39:47
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.ArgumentOutOfRangeException: StartIndex cannot be less than zero.
+Parameter name: startIndex
+   at System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   at BusinessLogic.StringConcatUtility.Build(String separtor, String[] parts) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\StringConcat.cs:line 22
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 377
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/03/2012 12:40:32
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.ArgumentOutOfRangeException: StartIndex cannot be less than zero.
+Parameter name: startIndex
+   at System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   at BusinessLogic.StringConcatUtility.Build(String separtor, String[] parts) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\StringConcat.cs:line 22
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 377
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_printspa_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_ujzjex1w.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/03/2012 12:40:32
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.ArgumentOutOfRangeException: StartIndex cannot be less than zero.
+Parameter name: startIndex
+   at System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   at BusinessLogic.StringConcatUtility.Build(String separtor, String[] parts) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\StringConcat.cs:line 22
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 377
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/03/2012 12:43:35
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.ArgumentOutOfRangeException: StartIndex cannot be less than zero.
+Parameter name: startIndex
+   at System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   at BusinessLogic.StringConcatUtility.Build(String separtor, String[] parts) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\StringConcat.cs:line 22
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 378
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_printspa_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_ciwke4oc.3.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/03/2012 12:43:35
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.ArgumentOutOfRangeException: StartIndex cannot be less than zero.
+Parameter name: startIndex
+   at System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   at BusinessLogic.StringConcatUtility.Build(String separtor, String[] parts) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\StringConcat.cs:line 22
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 378
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/03/2012 12:44:16
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.ArgumentOutOfRangeException: StartIndex cannot be less than zero.
+Parameter name: startIndex
+   at System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   at BusinessLogic.StringConcatUtility.Build(String separtor, String[] parts) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\StringConcat.cs:line 22
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 378
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_printspa_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_ciwke4oc.3.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/03/2012 12:44:16
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.ArgumentOutOfRangeException: StartIndex cannot be less than zero.
+Parameter name: startIndex
+   at System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   at BusinessLogic.StringConcatUtility.Build(String separtor, String[] parts) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\StringConcat.cs:line 22
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCoBorrowerDetails(List`1 partyRoleCoborrower, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 378
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.FillCustomerDetails(Int32 partyRoleId, LoanApplication loan) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 340
+   at LendingApplication.Applications.LoanApplicationUseCases.PrintSPA.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\PrintSPA.aspx.cs:line 74
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/03/2012 12:46:37
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.FullfillmentForms.PersonnalPartyModel.PrepareForSave(LoanApplication loanApplication, RoleType roleType, DateTime today) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\FullfillmentForms\LoanApplicationFormModel.cs:line 241
+   at BusinessLogic.FullfillmentForms.LoanApplicationForm.SaveCoBorrower(LoanApplication loanApplication, DateTime today) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\FullfillmentForms\LoanApplicationForm.cs:line 836
+   at BusinessLogic.FullfillmentForms.LoanApplicationForm.UpdateLoanInformation(LoanApplication loanApplication, DateTime today) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\FullfillmentForms\LoanApplicationForm.cs:line 570
+   at BusinessLogic.FullfillmentForms.LoanApplicationForm.PrepareForSave() in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\FullfillmentForms\LoanApplicationForm.cs:line 458
+   at LendingApplication.Applications.ModifyLoanApplication.btnSave_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ModifyLoanApplication.aspx.cs:line 689
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_modifyloanapplication_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_ll0j5ojc.1.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/03/2012 12:46:37
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.FullfillmentForms.PersonnalPartyModel.PrepareForSave(LoanApplication loanApplication, RoleType roleType, DateTime today) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\FullfillmentForms\LoanApplicationFormModel.cs:line 241
+   at BusinessLogic.FullfillmentForms.LoanApplicationForm.SaveCoBorrower(LoanApplication loanApplication, DateTime today) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\FullfillmentForms\LoanApplicationForm.cs:line 836
+   at BusinessLogic.FullfillmentForms.LoanApplicationForm.UpdateLoanInformation(LoanApplication loanApplication, DateTime today) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\FullfillmentForms\LoanApplicationForm.cs:line 570
+   at BusinessLogic.FullfillmentForms.LoanApplicationForm.PrepareForSave() in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\FullfillmentForms\LoanApplicationForm.cs:line 458
+   at LendingApplication.Applications.ModifyLoanApplication.btnSave_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ModifyLoanApplication.aspx.cs:line 689
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/03/2012 13:10:04
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.FullfillmentForms.PersonnalPartyModel.PrepareForSave(LoanApplication loanApplication, RoleType roleType, DateTime today) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\FullfillmentForms\LoanApplicationFormModel.cs:line 241
+   at BusinessLogic.FullfillmentForms.LoanApplicationForm.SaveCoBorrower(LoanApplication loanApplication, DateTime today) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\FullfillmentForms\LoanApplicationForm.cs:line 836
+   at BusinessLogic.FullfillmentForms.LoanApplicationForm.UpdateLoanInformation(LoanApplication loanApplication, DateTime today) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\FullfillmentForms\LoanApplicationForm.cs:line 570
+   at BusinessLogic.FullfillmentForms.LoanApplicationForm.PrepareForSave() in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\FullfillmentForms\LoanApplicationForm.cs:line 458
+   at LendingApplication.Applications.ModifyLoanApplication.btnSave_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ModifyLoanApplication.aspx.cs:line 689
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_modifyloanapplication_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_pko1roiy.6.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/03/2012 13:10:04
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.FullfillmentForms.PersonnalPartyModel.PrepareForSave(LoanApplication loanApplication, RoleType roleType, DateTime today) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\FullfillmentForms\LoanApplicationFormModel.cs:line 241
+   at BusinessLogic.FullfillmentForms.LoanApplicationForm.SaveCoBorrower(LoanApplication loanApplication, DateTime today) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\FullfillmentForms\LoanApplicationForm.cs:line 836
+   at BusinessLogic.FullfillmentForms.LoanApplicationForm.UpdateLoanInformation(LoanApplication loanApplication, DateTime today) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\FullfillmentForms\LoanApplicationForm.cs:line 570
+   at BusinessLogic.FullfillmentForms.LoanApplicationForm.PrepareForSave() in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\FullfillmentForms\LoanApplicationForm.cs:line 458
+   at LendingApplication.Applications.ModifyLoanApplication.btnSave_Click(Object sender, DirectEventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ModifyLoanApplication.aspx.cs:line 689
+   at Ext.Net.ComponentDirectEvent.OnEvent(DirectEventArgs e)
+   at Ext.Net.Observable.FireAsyncEvent(String eventName, ParameterCollection extraParams)
+   at Ext.Net.ResourceManager.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/03/2012 14:03:02
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.LoanApplicationUseCases.ListLoanApplication.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ListLoanApplication.aspx.cs:line 58
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_listloanapplication_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_edv5aqze.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/03/2012 14:03:02
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.LoanApplicationUseCases.ListLoanApplication.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ListLoanApplication.aspx.cs:line 58
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________
+
+Log Entry : 
+03/03/2012 14:03:05
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.LoanApplicationUseCases.ListLoanApplication.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ListLoanApplication.aspx.cs:line 58
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.applications_loanapplicationusecases_listloanapplication_aspx.ProcessRequest(HttpContext context) in c:\Users\winona\AppData\Local\Temp\Temporary ASP.NET Files\root\2e9e9bf6\7c59b7be\App_Web_edv5aqze.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+__________________________
+
+Log Entry : 
+03/03/2012 14:03:05
+Error in: http://localhost:4989/GlobalExceptionHandler.aspx. Error Message:System.NullReferenceException: Object reference not set to an instance of an object.
+   at BusinessLogic.UserAccount.GetAssociatedEmployee(Int32 id) in D:\TFS\LendingApplication\PamaranLending\BusinessLogic\Facade\UserAccount.cs:line 42
+   at LendingApplication.Applications.LoanApplicationUseCases.ListLoanApplication.Page_Load(Object sender, EventArgs e) in D:\TFS\LendingApplication\PamaranLending\LendingApplication\Applications\LoanApplicationUseCases\ListLoanApplication.aspx.cs:line 58
+   at System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+__________________________

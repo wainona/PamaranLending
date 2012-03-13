@@ -1,0 +1,94 @@
+hash password : 0DPiKuNIrrVmD8IUCuw1hQxNqZc=
+
+What and when	: CreateLoanApplication -> Collaterals Gridpanel
+Scenario		: Grid panel content > 5
+
+GENERAL :
+: PICKLISTS must not contain current user
+Processed By Question
+-Is it really important to create new party role as processed by?
+
+
+ Loan Accounts
+-Filter [fixed]
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+Per Use Case:
+
+Customer Use Case
+-when opening newly added customer (using picklist)with added employeer, employeer data not displaying [fixed]
+-end user account when customer changed employeer(!= Lending Instituion). [done]
+-Customer View List (must contain customer status isactive = true) [done]
+
+Employeer
+-Add Employeer, contains edit button [fixed]
+-Add Contact as Customer, add employement information (newly added employeer as organization) - Null error
+
+Contact Use Case
+(as person)
+-add person , add tel number
+Error: Creates Record 2 additional record in Telecommunications Number, containing "";
+
+Loan Application
+-Change Filter by and search by( Cleaner way)
+
+Customer Classification
+- Fields Must be readonly , not disabled
+-Search via District not working (case sensitive)
+
+User Accounts
+- Must be read only [fixed]
+- Add user account tab name: must be Create User [fixed]
+
+Loan Restructure
+- Error in saving generated ammortization schedule
+		-> Split the loan, generate [fixed]
+
+Loan Disbursement Vcr 
+-Search by Name (similar to loan products:)
+-Filter by Date
+	-Filter date fromDate :yesterday toDate: Today (Not Working)
+
+Add Loan Payment
+-Customer with Loan not displaying
+
+Receipt
+-Open receipt, no close button [fixed]
+- please change to read only ang items [fixed]
+-dili pwede ma-open receipt kung Cancelled? [uu]
+
+Cheque
+- When siya pwede maopen?? dili pwede kung Deposited? [uu]
+
+Cheque Editor
+- Naa sa picklist ang cheque with status deposited pero cant edit [fixed]
+
+Employee [fixed]
+-Open existing record, edit status, click save. Error at  telecommunications number
+
+User Accounts [fixed] [Please look for the new UserViewList in the Changes.sql]
+-Pick list for allowed users must not contain people who already have an active user account.
+
+//MODIFY LOAN APPLICATION - [fixed]
+error:
+	using fees that are manually added - error in productfeatureapplicabilityId
+	AND
+	creates multiple records in db with same Fee Name
+
+//LOAN PRODUCTS - [fixed]
+error:
+	fees = opening selected loan product with fees that are manually created
+
+CoBorrower And Guarantor have redundant party.
+
+AddLoanPayment.aspx -> payment amount should be directly set after the amount tendered number field is filled in.
+
+Receipts
+- Allan please make another toolbar just for the search by and filter by..
+
+//AMOUNT FORMAT
+For textfields - add the ff listener:
+<Listeners>
+	<Change Handler="var value = this.getValue().replace(/,/g,'');value = value.replace(/[]/g, '');this.setValue(Ext.util.Format.number(value, '0,0.00'));" />
+</Listeners>

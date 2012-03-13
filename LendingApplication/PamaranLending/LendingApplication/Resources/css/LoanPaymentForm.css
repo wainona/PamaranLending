@@ -1,0 +1,97 @@
+﻿body
+{
+    font-family: tahoma,verdana,sans-serif;
+    margin: 0;
+    padding: 0px;
+    font-size: 12px;
+    background-color: #fff !important;
+    border:5px thin black;
+}
+
+bold
+{
+    font-weight:bold;
+}
+
+.indent1
+{
+    padding-left:20px;
+}
+.style3
+{
+    height: 59px;
+}
+.gridStyle
+{
+    margin-left: 0px;
+    margin-top: 0px;
+}
+.gridStyle2
+{
+    margin-left: 250px;
+}
+.grid
+{
+    margin-left: 250px;
+    width: 500px;
+}
+.grid1
+{
+    margin-left: 214px;
+    width: 450px;
+}
+.headerClass
+{
+    font-weight: bold;
+    text-align: center;
+}
+.style13
+{
+    width: 20px;
+    height: 11px;
+}
+.fontbold
+{
+    font-weight: bold;
+}
+.cssClass .x-grid3-hd-row
+{
+    font-weight: bold;
+    font-family: Tahoma;
+}
+.cssClass .x-grid3-row
+{
+    border-left-color: Black;
+    border-bottom-color: Black;
+    border-width: 1px;
+    border-style: solid;
+}
+.cssClass .x-grid3-hd
+{
+    border-left-color: Black;
+    border-bottom-color: Black;
+    border-top-color: Black;
+    border-right-color: Black;
+    border-width: 1px;
+    border-style: solid;
+    white-space:  normal !important;
+}
+.cssClass .x-grid3-header
+{
+    background-image: none;
+    background-color: transparent;
+}
+        
+.cssClass .x-grid3-hd-inner, .x-grid3-cell-inner
+{
+    white-space:  normal !important;
+}
+.txtfield
+        {
+           border-style:solid;
+           background-image:none;
+           text-align: center;
+           border-color: transparent;
+        }
+
+

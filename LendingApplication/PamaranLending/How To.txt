@@ -1,0 +1,409 @@
+-------------------------------------------------------------------------------------------------------------------------------
+Steps on Handling a Master Detail Type of Use case
+1. Create UI and subscribe to events of button and other triggers.
+2. Create Fullfillment form
+  2.0 Start at 1st tab
+  2.1 Put all input elements of the 1st tab as property to the form.(excluding gridpanel, this will become a collection of models)
+  2.2 Readonly UI element will be a property with setter set to private.
+  2.3 If there is gridpanel, create a model and make a collection. Please see How to create a Fullfillment form and How to Create a model.
+  2.4 Move to next tab and do 2.1 until end of tab
+3. Start doing the Add use case by creating the prepare for save method.
+4. In the Prepare for save method, please follow the PDL on how to do the inserts.
+Prepare for save has two mode, Add or edit, to identify the mode you check if the id of the form is == -1 (in the contructor of the form set id to -1)
+ex. 
+    public override void PrepareForSave()
+	{   
+		if (this.FinancialProductId == -1)
+		{
+			//add
+		}
+		else
+		{
+			//edit
+		}
+	}
+5. Do the retrieve method by also following the steps of the PDL.
+6. Do the assignment of UI input values to form properties when save operation happens.
+
+Template for page with MasterDetail  -- Minimal example.
+
+public partial class EditXXX : ActivityPageBase
+{
+	private void Fill(id)
+	{
+		XXXForm form = this.CreateOrRetrieve<XXXForm>();
+		form.Retrieve(id);
+
+		//assign to UI element the values from the form.
+	}
+
+	protected void Page_Load(object sender, EventArgs e)
+    {
+        if (X.IsAjaxRequest == false && this.IsPostBack == false)
+        {
+			int id = int.Parse(Request.QueryString["id"]);
+            XXXForm form = this.CreateOrRetrieve<XXXForm>();---------> Make sure this is present especially for Add use cases.
+			//UnitOfMeasure.All example usage of All Facade method.
+            var unitOfMeasures = UnitOfMeasure.All(UnitOfMeasureType.TimeUnitType);
+
+            TimeUnitStore.DataSource = unitOfMeasures;
+            TimeUnitStore.DataBind();
+			Fill(id);
+        }
+    }
+
+	protected void btnSave_Click(object sender, DirectEventArgs e)
+    {
+		//Unit of work enable transactional insert and updates.
+		//It also allows us to get the FinancialEntities everywhere in you code
+		// using this line of code --> private static FinancialEntities Context
+		using (var unitOfWork = new UnitOfWorkScope(true))
+        {
+			XXXForm form = this.CreateOrRetrieve<XXXForm>();
+			.. assign UI values to form
+			form.PrepareForSave();
+		}
+	}
+
+	private static FinancialEntities Context
+    {
+        get
+        {
+            if (ObjectContextScope<FinancialEntities>.CurrentObjectContext != null)
+                return ObjectContextScope<FinancialEntities>.CurrentObjectContext;
+            else
+                return AspNetObjectContextManager<FinancialEntities>.ObjectContext;
+        }
+    }
+}
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+When to Create a model
+1. Create a model if the input elements(all) in the UI is not present in an entity object.
+
+How to Create a model
+1. Every input elements in the UI is a property of the model to be created including readonly.
+2. Editable Input element will result to a property that has a setter and a getter.
+3. Read only elements will result to a property with a getter only.(which means that this value is read from db).
+4. Every model has an identity, this could be the ID of the primary table. This id is also used for retrieving readonly properties.
+5. Every model will have 2 contructor.
+
+First Contructor : One will be used for adding record db, so no id in this state and all foreign keys.
+ex. Interest rate - Screen has 2 input element, 1 is combo and the other is numberfield.
+combo box param to contructer will be id because its a foreign key for the table to be created.
+Number field will be a decimal.(in the contructor of the form set id to -1)
+
+Second Contructor
+ex. Interest rate - during editing mode
+The construct will have a type parameter of the primary entity object, in this example FeatureProductApplicability
+The statement inside this constructor will retrieve all necessary value to assign the properties of the model for display.
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+When to Create a Fullfillment form
+1. Create a fullfillment form if your UI is a master detail kind of UI. Lots of tabs with grid panel.
+2. Create a fullfillment form if your UI contains a lot of input elements that when save will be for broken tables.
+
+How to create a Fullfillment form
+1. Every input elements in each tab in the UI is a property of the form to be created including readonly.
+(do not include those that is for a gridpanel or any list controls).
+2. Editable Input element will result to a property that has a setter and a getter.
+3. Read only elements will result to a property with a getter only.(which means that this value is read from db).
+4. For form that has collections of models, make a private instance of list<modelType>, 
+and you must implement these three methods and a private field
+private List<XXXModel> xxxModels;
+public IEnumerable<XXXModel> AvailableInterestRates
+{
+    get
+    {
+        return this.xxxModels.Where(model => model.ToBeDeleted == false);
+    }
+}
+public void AddXXX(XXXModel model)
+public void RemoveXXX(string randomKey)
+public void RemoveXXX(XXXModel model)
+5. Every form has an identity, this could be the ID of the primary table. This id is also used for retrieving readonly properties.
+   Ex. is that for the FinancialProductForm, the forms main table is the FinancialProduct, 
+   so have an ID for the form like FinancialProductId which will be supplied for the retrieve method of the form.
+   (in the contructor of the form set id to -1)
+6. When implementing the prepare for save method, each tab in the UI is a method in the form.
+Each gridpanel is also one method for save.
+7. When implementing the retrieval method, each tab in the UI is a method in the form.
+Each gridpanel is also one method for save.
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+Sample for create and edit use case that is not MasterDetail
+Please see the SimpleAddEditTemplate.aspx in best practice folder in lending application project.
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+Sample for list use cases 
+Please see  ListFinancialProducts.aspx  in best practice folder in lending application project.
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+Facade for histrical entity objects like ProductStatus
+Probable Methods
+
+Facade for inserts is needed when insertion requires logic and is repeating or is in the use case documents.
+Facade for retrieve is to make our life easier and other can use your retrieve method.
+Facade for other things like Business logic like that of the ProductStatu.CanChangeStatusTo()
+
+1. GetActive
+2. Create
+3. CreateOrUpdate
+    Ex. public static CustomerSourceOfIncome CreateOrUpdate(SourceOfIncome sourceOfIncome, Customer customer, DateTime today)
+        {
+			// get current and if not null set the end date to now.
+            CustomerSourceOfIncome current = GetActive(customer, sourceOfIncome);
+            if (current != null)
+                current.EndDate = today;
+
+			// This doesn't have check if there is difference in value, 
+			// for those that will only add new if there is a difference in value. 
+			// Usually this should have a checking because you dont need to discard the old record if they have same value.
+			// please see of Facade\ProductFeatureApplicability.cs
+			// public static ProductFeatureApplicability CreateOrUpdate(ProductFeature feature, FinancialProduct financialProduct, decimal? value , DateTime today)
+            CustomerSourceOfIncome customerSourceOfIncome = new CustomerSourceOfIncome();
+            customerSourceOfIncome.Customer = customer;
+            customerSourceOfIncome.EffectiveDate = today;
+            customerSourceOfIncome.SourceOfIncome = sourceOfIncome;
+
+            Context.CustomerSourceOfIncomes.AddObject(customerSourceOfIncome);
+            return customerSourceOfIncome;
+        }
+
+4. EndActive
+5. EndActiveAndCreateNew
+6. All() are methods usefull for filling comboboxes and list control. For table that have a lot of records, please have a filter.(ask RJV).
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+How the tabs communicate ( you can find the example in /BestPractice/TabCommunication folder of LendingApplication project.)
+
+Given
+Tab 1 has a browse button     --> child tab is a pick list
+
+Tab 1 listent to child tab's event by putting
+ex customer view list -page as pick list
+
+in Tab 1's aspx page. 
+*****************************************************************************************************
+<script type="text/javascript">
+Ext.onReady(function () {
+    window.proxy = new ntfx.MIFMessagingProxy();
+	// window.proxy.init means you will listen to events with tag 'pickedcustomer','pickedotherthings'
+    window.proxy.init(['pickedcustomer','pickedotherthings']);
+	window.proxy.on('messagereceived', onMessageReceived);
+});
+
+// msg has a data property which will contain the payload of the message.
+// example if you send a json of a person name like {firstName:'Ryan John', middleName:'Cueva', lastName:'Velasco'}
+// then you could get it by this statement : msg.data.firstName->> you will have a value of Ryan John
+
+// msg also has a tag property
+// tag property will have the values you specified in this line of code window.proxy.init('pickedcustomer','pickedotherthings');
+var onMessageReceived = function (msg) {
+    if(msg.tag == 'pickedcustomer')
+	{
+		// do your stuff here
+		txtFirstName.setValue(msg.data.firstName);
+		txtMiddleName.setValue(msg.data.middleName);
+		txtLastName.setValue(msg.data.lastName);
+	}
+	else if(msg.tag == 'pickedotherthings'0
+	{
+		// do your stuff here
+	}
+};
+
+</script>
+*****************************************************************************************************
+For child tab, how to send info to the parent tab
+The trigger to send info to parent tab is when you press a button that says you want to pick that item.
+
+<script type="text/javascript">
+Ext.onReady(function () {
+    window.proxy = new ntfx.MIFMessagingProxy();
+	// pick list also list to add events because most of them have a new button for adding new items.
+    window.proxy.init('addcustomer');
+	window.proxy.on('messagereceived', onMessageReceived);
+});
+
+// msg has a data property which will contain the payload of the message.
+// example if you send a json of a person name like {firstName:'Ryan John', middleName:'Cueva', lastName:'Velasco'}
+// then you could get it by this statement : msg.data.firstName->> you will have a value of Ryan John
+
+// msg also has a tag property
+// tag property will have the values you specified in this line of code window.proxy.init('pickedcustomer','pickedotherthings');
+var onMessageReceived = function (msg) {
+    if(msg.tag == 'addcustomer')
+	{
+		// do your stuff here
+		PageGridPanel.reload();
+	}
+};
+
+//this will be called by the trigger event that says the user wanted this item.
+var onUserSelectedAnItem = function()
+{
+	//for testing...
+	//var name = {firstName:'Ryan John', middleName:'Cueva', lastName:'Velasco'};
+	//window.proxy.sendToParent(name, 'pickedcustomer');
+	//given that the selection model is single.
+
+	var row = PageGridPanelSelectionModel.getSelected();
+	window.proxy.sendToParent(row.json, 'pickedcustomer');
+}
+
+</script>
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+How to get data from server in json format and used in the client by using javascript.
+Scenario
+User browse a pick list.
+User pick an item in the pick list.
+Pick list sends a message to the parent tab.
+Parent tab read the message and act accordingly.
+There are messages that is not enough to be displayed in the client, the server calls a direct method.
+Direct method accept the request and pack the data needed for the client side consumption.
+Parent tab display the information.
+
+Answer. No need for now because the client side script can update the UI using the direct method way.
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+var printContent = function (iframe, divToPrint) {
+            var oIframe = document.getElementById(iframe);
+            var oContent = document.getElementById(divToPrint).innerHTML;
+            var oDoc = (oIframe.contentWindow || oIframe.contentDocument);
+            if (oDoc.document) oDoc = oDoc.document;
+
+            oDoc.open();
+            var header = '';
+            if (document.getElementsByTagName != null) {
+                var headTags = document.getElementsByTagName("head");
+                if (headTags.length > 0)
+                    header = headTags[0].innerHTML;
+            }
+
+            var headstr = "<html><head>" + header + "</head><body onload='this.focus(); this.print();'>";
+
+            var footstr = "</body></html>";
+            oDoc.write(headstr + document.body.innerHTML + footstr);
+            alert(oDoc.body.innerHTML);
+            oDoc.close();
+        }
+
+
+function printContent(printpage) {
+	RootPanel.hide();
+	window.print();
+	RootPanel.show();
+}
+
+var printContent = function (iframe, divToPrint) {
+            try {
+                var oIframe = document.getElementById(iframe);
+                var oContent = document.getElementById(divToPrint).innerHTML;
+                var oDoc = (oIframe.contentWindow || oIframe.contentDocument);
+                if (oDoc.document) oDoc = oDoc.document;
+
+                oDoc.write("<head>");
+
+                if (document.getElementsByTagName != null) {
+                    var headTags = document.getElementsByTagName("head");
+                    if (headTags.length > 0) oDoc.write(headTags[0].innerHTML);
+                }
+                oDoc.write("</head><body onload='this.focus(); this.print();'>");
+                oDoc.write(oContent + "</body>");
+                oDoc.close();
+            }
+            catch (e) {
+                self.print();
+            }
+        }
+
+<ext:Container ID="Container1" runat="server">
+                        <Content>
+                            <iframe id='ifrmPrint' src='#' style="width: 0px; height: 0px;"></iframe>
+                        </Content>
+                    </ext:Container>
+
+function printdiv(printpage) {
+            var headstr = '<html><head></head><body>';
+            var footstr = '</body></html>';
+            var newstr = document.getElementById(printpage).innerHTML;
+            var oldstr = document.body.innerHTML;
+            document.body.innerHTML = headstr + newstr + footstr;
+            window.print();
+            document.body.innerHTML = oldstr;
+            return false;
+        }
+
+
+var printContent = function (iframe, divToPrint) {
+            var oIframe = document.getElementById(iframe);
+            var oContent = document.getElementById(divToPrint).innerHTML;
+            var oDoc = (oIframe.contentWindow || oIframe.contentDocument);
+            if (oDoc.document) oDoc = oDoc.document;
+
+            oDoc.open();
+            oDoc.write(headstr + oContent + footstr);
+
+            var headstr = "<html><he"+"ad>";
+            if (document.getElementsByTagName != null) {
+                var headTags = document.getElementsByTagName("head");
+                if (headTags.length > 0) headstr += headTags[0].innerHTML;
+            }
+            headstr += "</he" + "ad><body onload='this.focus(); this.print();'>";
+            
+            var footstr = "</body></html>";
+            document.body.innerHTML = headstr + oContent + footstr;
+            oDoc.close();
+        }
+
+
+_______________________________________________________
+@media screen
+  #toPrint{
+   display:none;
+  }
+  #context{
+   display:block;
+  }
+
+@media print
+  #toPrint{
+   display:block;
+  }
+  #context{
+   display:none;
+  }

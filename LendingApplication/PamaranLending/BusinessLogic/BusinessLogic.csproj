@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C7A51B8E-0D25-4872-8FA4-5C491F8FF8D0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessLogic</RootNamespace>
+    <AssemblyName>BusinessLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ext.Net">
+      <HintPath>..\Dependency\Ext.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext.Net.Utilities">
+      <HintPath>..\Dependency\Ext.Net.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Dependency\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Facade\Agreement.cs" />
+    <Compile Include="Facade\AgreementType.cs" />
+    <Compile Include="Facade\AllowedCoBorrowerGuarantor.cs" />
+    <Compile Include="Facade\ApplicationItem.cs" />
+    <Compile Include="Facade\Bank.cs" />
+    <Compile Include="Facade\BusinessObject.cs" />
+    <Compile Include="Facade\ChangeInterestTypeFacade.cs" />
+    <Compile Include="Facade\ChequeFacade.cs" />
+    <Compile Include="Facade\ClassificationType.cs" />
+    <Compile Include="Facade\ControlNumberFacade.cs" />
+    <Compile Include="Facade\ConvertNumbers.cs" />
+    <Compile Include="Facade\ChequeStatusFacade.cs" />
+    <Compile Include="Facade\COVFacade.cs" />
+    <Compile Include="Facade\FormDetailFacade.cs" />
+    <Compile Include="Facade\NumberFacade.cs" />
+    <Compile Include="FinancialModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinancialModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="FullfillmentForms\ForeignExchangeForm.cs" />
+    <Compile Include="ModelEnum\COVTransactionTypeEnum.cs" />
+    <Compile Include="ModelEnum\EmployeePositionTypeEnum.cs" />
+    <Compile Include="ModelEnum\ExchangeRateTypeEnum.cs" />
+    <Compile Include="Facade\ForeignExchangeTransaction.cs" />
+    <Compile Include="Facade\ExchangeRateFacade.cs" />
+    <Compile Include="Facade\Currency.cs" />
+    <Compile Include="Facade\FeePaymentParticular.cs" />
+    <Compile Include="Facade\OrganizationFacade.cs" />
+    <Compile Include="Facade\OtherDisbursementParticular.cs" />
+    <Compile Include="Facade\PaymentFacade.cs" />
+    <Compile Include="Facade\Country.cs" />
+    <Compile Include="Facade\CustomerFacade.cs" />
+    <Compile Include="Facade\CustomerSourceOfIncomeFacade.cs" />
+    <Compile Include="Facade\CustomerStatu.cs" />
+    <Compile Include="Facade\CustomerStatusType.cs" />
+    <Compile Include="Facade\DateAdjustmentFacade.cs" />
+    <Compile Include="Facade\DemandLetterFacade.cs" />
+    <Compile Include="Facade\DisbursementFacade.cs" />
+    <Compile Include="Facade\DisbursementVcrStatu.cs" />
+    <Compile Include="Facade\DisbursementVcrStatusType.cs" />
+    <Compile Include="Facade\EducAttainmentType.cs" />
+    <Compile Include="Facade\ElectronicAddressFacade.cs" />
+    <Compile Include="Facade\Employee.cs" />
+    <Compile Include="Facade\FeePaymentFacade.cs" />
+    <Compile Include="Facade\FinAcctTran.cs" />
+    <Compile Include="Facade\FinancialProductFacade.cs" />
+    <Compile Include="Facade\GenerateBill.cs" />
+    <Compile Include="Facade\HolidayFacade.cs" />
+    <Compile Include="Facade\HomeOwnership.cs" />
+    <Compile Include="Facade\IdentificationType.cs" />
+    <Compile Include="Facade\LandType.cs" />
+    <Compile Include="Facade\LoanAccountFacade.cs" />
+    <Compile Include="Facade\LoanApplicationFacade.cs" />
+    <Compile Include="Facade\LoanApplicationStatu.cs" />
+    <Compile Include="Facade\LoanApplicationStatusType.cs" />
+    <Compile Include="Facade\LoanCalculator.cs" />
+    <Compile Include="Facade\LoanDisbursementVcr.cs" />
+    <Compile Include="Facade\MaritalStatu.cs" />
+    <Compile Include="Facade\MaritalStatusType.cs" />
+    <Compile Include="Facade\NationalityType.cs" />
+    <Compile Include="Facade\OtherDisbursementItemsFacade.cs" />
+    <Compile Include="Facade\Party.cs" />
+    <Compile Include="Facade\PartyRelationship.cs" />
+    <Compile Include="Facade\PartyRoleFacade.cs" />
+    <Compile Include="Facade\PerHttpRequestContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Facade\Person.cs" />
+    <Compile Include="Facade\PersonIdentification.cs" />
+    <Compile Include="Facade\PostalAddressFacade.cs" />
+    <Compile Include="Facade\PrintFacade.cs" />
+    <Compile Include="Facade\ProductFeatureApplicability.cs" />
+    <Compile Include="Facade\ProductFeatureFacade.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Facade\ProductRequiredDocument.cs" />
+    <Compile Include="Facade\ProductStatu.cs" />
+    <Compile Include="Facade\ProductStatusType.cs" />
+    <Compile Include="Facade\Receipt.cs" />
+    <Compile Include="Facade\ReceiptPaymentFacade.cs" />
+    <Compile Include="Facade\ReceiptStatu.cs" />
+    <Compile Include="Facade\Receivable.cs" />
+    <Compile Include="Facade\RequiredDocumentType.cs" />
+    <Compile Include="Facade\RoleType.cs" />
+    <Compile Include="Facade\SourceOfIncomeFacade.cs" />
+    <Compile Include="Facade\StringConcat.cs" />
+    <Compile Include="Facade\SystemSetting.cs" />
+    <Compile Include="Facade\SystemSettingType.cs" />
+    <Compile Include="Facade\Taxpayer.cs" />
+    <Compile Include="Facade\TelecommunicationNumberFacade.cs" />
+    <Compile Include="Facade\TimeUnitConversion.cs" />
+    <Compile Include="Facade\UnitOfMeasureFacade.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Facade\UserAccount.cs" />
+    <Compile Include="Facade\UserAccountStatus.cs" />
+    <Compile Include="FullfillmentForms\AddChange.cs" />
+    <Compile Include="FullfillmentForms\AddEncashmentForm.cs" />
+    <Compile Include="FullfillmentForms\AddFeePaymentForm.cs" />
+    <Compile Include="FullfillmentForms\AddLoanDisbursement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FullfillmentForms\AddLoanPaymentForm.cs" />
+    <Compile Include="FullfillmentForms\AddOtherDisbursementForm.cs" />
+    <Compile Include="FullfillmentForms\AddReceiptForm.cs" />
+    <Compile Include="FullfillmentForms\AddRediscountingForm.cs" />
+    <Compile Include="FullfillmentForms\CustomerForm.cs" />
+    <Compile Include="FullfillmentForms\EmployerForm.cs" />
+    <Compile Include="FullfillmentForms\FinancialProductForm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FullfillmentForms\ForeignExchangeDetailForm.cs" />
+    <Compile Include="FullfillmentForms\LoanApplicationForm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FullfillmentForms\LoanApplicationFormExtension.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FullfillmentForms\LoanApplicationFormModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FullfillmentForms\LoanApplicationOperations.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FullfillmentForms\LoanApplicationOutstandingLoan.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FullfillmentForms\LoanApprovalForm.cs" />
+    <Compile Include="FullfillmentForms\LoanRestructureForm.cs" />
+    <Compile Include="FullfillmentForms\LoanRestructureFormExtension.cs" />
+    <Compile Include="FullfillmentForms\LoanRestructureFormModel.cs" />
+    <Compile Include="FullfillmentForms\SubmittedDocumentForm.cs" />
+    <Compile Include="FullfillmentForms\TestForm.cs" />
+    <Compile Include="ModelEnum\AddressTypeEnum.cs" />
+    <Compile Include="ModelEnum\AdjustmentTypeEnum.cs" />
+    <Compile Include="ModelEnum\AgreementTypeEnum.cs" />
+    <Compile Include="ModelEnum\ApplicationTypeEnum.cs" />
+    <Compile Include="ModelEnum\AssetTypeEnum.cs" />
+    <Compile Include="ModelEnum\BankAccountTypeEnum.cs" />
+    <Compile Include="ModelEnum\BankStatusTypeEnum.cs" />
+    <Compile Include="ModelEnum\ChequeStatusTypeEnum.cs" />
+    <Compile Include="ModelEnum\CountryEnum.cs" />
+    <Compile Include="ModelEnum\CustomerCategoryTypeEnum.cs" />
+    <Compile Include="ModelEnum\CustomerStatusTypeEnum.cs" />
+    <Compile Include="ModelEnum\DemandLetterStatusTypeEnum.cs" />
+    <Compile Include="ModelEnum\DisbursementTypeEnum.cs" />
+    <Compile Include="ModelEnum\DisbursementVcrStatusTypeEnum.cs" />
+    <Compile Include="ModelEnum\EducAttainmentTypeEnum.cs" />
+    <Compile Include="ModelEnum\ElectronicAddressTypeEnum.cs" />
+    <Compile Include="ModelEnum\FinAcctTransStatusTypeEnum.cs" />
+    <Compile Include="ModelEnum\FinancialAccountTypeEnum .cs" />
+    <Compile Include="ModelEnum\FinlAcctTransTypeEnum.cs" />
+    <Compile Include="ModelEnum\FormTypeEnum.cs" />
+    <Compile Include="ModelEnum\GenderTypeEnum.cs" />
+    <Compile Include="ModelEnum\HomeOwnershipTypeEnum.cs" />
+    <Compile Include="ModelEnum\IdentificationTypeEnum.cs" />
+    <Compile Include="ModelEnum\InitialValueChecker.cs" />
+    <Compile Include="ModelEnum\InterestTypeEnum.cs" />
+    <Compile Include="ModelEnum\LoanAcoountStatusTypeEnum.cs" />
+    <Compile Include="ModelEnum\LoanApplicationStatusTypeEnum.cs" />
+    <Compile Include="ModelEnum\LoanModificationStatusType.cs" />
+    <Compile Include="ModelEnum\LoanModificationType.cs" />
+    <Compile Include="ModelEnum\MaritalStatusTypeEnum.cs" />
+    <Compile Include="ModelEnum\NationalityTyeEnum.cs" />
+    <Compile Include="ModelEnum\PartyRelTypeEnum.cs" />
+    <Compile Include="ModelEnum\PartyTypeEnum.cs" />
+    <Compile Include="ModelEnum\PaymentMethodTypeEnum.cs" />
+    <Compile Include="ModelEnum\PaymentTypeEnum.cs" />
+    <Compile Include="ModelEnum\PersonNameTypeEnum.cs" />
+    <Compile Include="ModelEnum\PostalAddressTypeEnum.cs" />
+    <Compile Include="ModelEnum\ProductCategoryEnum.cs" />
+    <Compile Include="ModelEnum\ProductFeatureCategoryEnum.cs" />
+    <Compile Include="ModelEnum\ProductFeatureEnum.cs" />
+    <Compile Include="ModelEnum\ProductStatusTypeEnum.cs" />
+    <Compile Include="ModelEnum\ReceiptStatusTypeAssociationEnums.cs" />
+    <Compile Include="ModelEnum\ReceiptStatusTypeEnums.cs" />
+    <Compile Include="ModelEnum\SpecificPaymentTypeEnum.cs" />
+    <Compile Include="ModelEnum\ReceivableStatusTypeEnum.cs" />
+    <Compile Include="ModelEnum\ReceivableTypeEnum.cs" />
+    <Compile Include="ModelEnum\RoleTypeEnum.cs" />
+    <Compile Include="ModelEnum\SourceOfIncomeEnum.cs" />
+    <Compile Include="ModelEnum\SystemSettingTypeEnum.cs" />
+    <Compile Include="ModelEnum\TelecommunicationsNumberTypeEnum.cs" />
+    <Compile Include="ModelEnum\UnitOfMeasureEnum.cs" />
+    <Compile Include="ModelEnum\UnitOfMeasureTypeEnums.cs" />
+    <Compile Include="ModelEnum\UserAccountStatusTypeEnum.cs" />
+    <Compile Include="ModelEnum\UserAccountTypeEnum.cs" />
+    <Compile Include="ModelExtension\EntityObjectExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitOfWork.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FirstPacific.UIFramework\FirstPacific.UIFramework.csproj">
+      <Project>{335553D0-8C04-485F-9071-FAD41E2E0421}</Project>
+      <Name>FirstPacific.UIFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="FinancialModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FinancialModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

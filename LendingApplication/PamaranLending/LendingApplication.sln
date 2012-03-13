@@ -1,0 +1,104 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LendingApplication", "LendingApplication\LendingApplication.csproj", "{BB387C5B-BD15-42A3-BEB2-35D53AE24779}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{C7A51B8E-0D25-4872-8FA4-5C491F8FF8D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstPacific.UIFramework", "FirstPacific.UIFramework\FirstPacific.UIFramework.csproj", "{335553D0-8C04-485F-9071-FAD41E2E0421}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{250FA9D7-0DB5-44D4-83D7-039BCCAEAD86}"
+	ProjectSection(SolutionItems) = preProject
+		Check.txt = Check.txt
+		DBHowTo.txt = DBHowTo.txt
+		Dependency\Ext.Net.dll = Dependency\Ext.Net.dll
+		Dependency\Ext.Net.Utilities.dll = Dependency\Ext.Net.Utilities.dll
+		Dependency\Ext.Net.Utilities.xml = Dependency\Ext.Net.Utilities.xml
+		Dependency\Ext.Net.xml = Dependency\Ext.Net.xml
+		EXTJsDocumentationLink.txt = EXTJsDocumentationLink.txt
+		FinancialDBSchema.sql = FinancialDBSchema.sql
+		How To.txt = How To.txt
+		NewFinancialDBSchema.sql = NewFinancialDBSchema.sql
+		NewFinancialDBSchemaData.sql = NewFinancialDBSchemaData.sql
+		Dependency\Newtonsoft.Json.dll = Dependency\Newtonsoft.Json.dll
+		Dependency\Newtonsoft.Json.xml = Dependency\Newtonsoft.Json.xml
+		Research.txt = Research.txt
+		ToFix.txt = ToFix.txt
+		UserAccess.xls = UserAccess.xls
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundTask", "GenerateBillTask\BackgroundTask.csproj", "{4976F99D-913E-4504-B417-CBDBE1148833}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://icarus:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BusinessLogic\\BusinessLogic.csproj
+		SccProjectName1 = BusinessLogic
+		SccLocalPath1 = BusinessLogic
+		SccProjectUniqueName2 = FirstPacific.UIFramework\\FirstPacific.UIFramework.csproj
+		SccProjectName2 = FirstPacific.UIFramework
+		SccLocalPath2 = FirstPacific.UIFramework
+		SccProjectUniqueName3 = GenerateBillTask\\BackgroundTask.csproj
+		SccProjectName3 = GenerateBillTask
+		SccLocalPath3 = GenerateBillTask
+		SccProjectUniqueName4 = LendingApplication\\LendingApplication.csproj
+		SccProjectName4 = LendingApplication
+		SccLocalPath4 = LendingApplication
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB387C5B-BD15-42A3-BEB2-35D53AE24779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB387C5B-BD15-42A3-BEB2-35D53AE24779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB387C5B-BD15-42A3-BEB2-35D53AE24779}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BB387C5B-BD15-42A3-BEB2-35D53AE24779}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BB387C5B-BD15-42A3-BEB2-35D53AE24779}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BB387C5B-BD15-42A3-BEB2-35D53AE24779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB387C5B-BD15-42A3-BEB2-35D53AE24779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB387C5B-BD15-42A3-BEB2-35D53AE24779}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BB387C5B-BD15-42A3-BEB2-35D53AE24779}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BB387C5B-BD15-42A3-BEB2-35D53AE24779}.Release|x86.ActiveCfg = Release|Any CPU
+		{C7A51B8E-0D25-4872-8FA4-5C491F8FF8D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7A51B8E-0D25-4872-8FA4-5C491F8FF8D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7A51B8E-0D25-4872-8FA4-5C491F8FF8D0}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C7A51B8E-0D25-4872-8FA4-5C491F8FF8D0}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C7A51B8E-0D25-4872-8FA4-5C491F8FF8D0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C7A51B8E-0D25-4872-8FA4-5C491F8FF8D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7A51B8E-0D25-4872-8FA4-5C491F8FF8D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7A51B8E-0D25-4872-8FA4-5C491F8FF8D0}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C7A51B8E-0D25-4872-8FA4-5C491F8FF8D0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C7A51B8E-0D25-4872-8FA4-5C491F8FF8D0}.Release|x86.ActiveCfg = Release|Any CPU
+		{335553D0-8C04-485F-9071-FAD41E2E0421}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{335553D0-8C04-485F-9071-FAD41E2E0421}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{335553D0-8C04-485F-9071-FAD41E2E0421}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{335553D0-8C04-485F-9071-FAD41E2E0421}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{335553D0-8C04-485F-9071-FAD41E2E0421}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{335553D0-8C04-485F-9071-FAD41E2E0421}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{335553D0-8C04-485F-9071-FAD41E2E0421}.Release|Any CPU.Build.0 = Release|Any CPU
+		{335553D0-8C04-485F-9071-FAD41E2E0421}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{335553D0-8C04-485F-9071-FAD41E2E0421}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{335553D0-8C04-485F-9071-FAD41E2E0421}.Release|x86.ActiveCfg = Release|Any CPU
+		{4976F99D-913E-4504-B417-CBDBE1148833}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{4976F99D-913E-4504-B417-CBDBE1148833}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{4976F99D-913E-4504-B417-CBDBE1148833}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{4976F99D-913E-4504-B417-CBDBE1148833}.Debug|x86.ActiveCfg = Debug|x86
+		{4976F99D-913E-4504-B417-CBDBE1148833}.Debug|x86.Build.0 = Debug|x86
+		{4976F99D-913E-4504-B417-CBDBE1148833}.Release|Any CPU.ActiveCfg = Release|x86
+		{4976F99D-913E-4504-B417-CBDBE1148833}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{4976F99D-913E-4504-B417-CBDBE1148833}.Release|Mixed Platforms.Build.0 = Release|x86
+		{4976F99D-913E-4504-B417-CBDBE1148833}.Release|x86.ActiveCfg = Release|x86
+		{4976F99D-913E-4504-B417-CBDBE1148833}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
