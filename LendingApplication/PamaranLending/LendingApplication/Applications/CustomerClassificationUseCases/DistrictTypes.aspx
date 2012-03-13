@@ -116,6 +116,7 @@
             var selectedRow = PageGridPanelSelectionModel.getSelected();
             var id = selectedRow.json.Id;
             var name = selectedRow.json.Name;
+            hdnDistrictTypeId.setValue(id);
             txtDistrictType.setValue(name);
         }
     </script>
@@ -135,6 +136,7 @@
 <body>
     <form id="PageForm" runat="server">
     <ext:ResourceManager ID="PageResourceManager" runat="server" DirectMethodNamespace="X" IDMode="Explicit"/>
+    <ext:Hidden runat="server" ID="hdnDistrictTypeId" Text="-1"></ext:Hidden>
     <ext:Viewport ID="Viewport1" runat="server" Layout="FitLayout"><Items>
     <ext:FormPanel ID="PageFormPanel" 
         runat="server" 
