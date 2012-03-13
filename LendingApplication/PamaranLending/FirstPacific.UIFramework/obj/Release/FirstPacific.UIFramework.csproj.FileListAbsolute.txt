@@ -20,14 +20,3 @@ C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLe
 C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\FirstPacific.UIFramework\obj\Release\ResolveAssemblyReference.cache
 C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\FirstPacific.UIFramework\obj\Release\FirstPacific.UIFramework.dll
 C:\Users\DELL\Documents\Visual Studio 2010\Projects\LendingApplication\PamaranLending\FirstPacific.UIFramework\obj\Release\FirstPacific.UIFramework.pdb
-C:\icarus\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Release\FirstPacific.UIFramework.dll
-C:\icarus\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Release\FirstPacific.UIFramework.pdb
-C:\icarus\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Release\Ext.Net.dll
-C:\icarus\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Release\Ext.Net.Utilities.dll
-C:\icarus\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Release\Newtonsoft.Json.dll
-C:\icarus\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Release\Ext.Net.xml
-C:\icarus\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Release\Ext.Net.Utilities.xml
-C:\icarus\LendingApplication\PamaranLending\FirstPacific.UIFramework\bin\Release\Newtonsoft.Json.xml
-C:\icarus\LendingApplication\PamaranLending\FirstPacific.UIFramework\obj\Release\ResolveAssemblyReference.cache
-C:\icarus\LendingApplication\PamaranLending\FirstPacific.UIFramework\obj\Release\FirstPacific.UIFramework.dll
-C:\icarus\LendingApplication\PamaranLending\FirstPacific.UIFramework\obj\Release\FirstPacific.UIFramework.pdb

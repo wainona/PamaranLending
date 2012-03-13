@@ -889,6 +889,7 @@
                 }
             });
         }
+
     </script>
 </head>
 <body>
@@ -1209,7 +1210,7 @@
                                     </ext:RadioGroup>--%>
                                     <ext:NumberField ID="nfLoanTerm" runat="server" FieldLabel="Loan Term" Number="0"
                                         Width="400" ReadOnly="false" AllowBlank="false" DecimalPrecision="0">
-                                        </ext:NumberField>
+                                    </ext:NumberField>
                                     <ext:TextArea ID="txtLoanPurpose" runat="server" FieldLabel="Loan Purpose" Width="400" Hidden="true"/>
                                     <ext:ComboBox runat="server" ID="cmbCollateralRequirement" FieldLabel="Collateral Requirement"
                                         Width="400" Editable="false" TypeAhead="true" Mode="Local" ForceSelection="true"

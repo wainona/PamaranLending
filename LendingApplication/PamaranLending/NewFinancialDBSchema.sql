@@ -11,23 +11,19 @@ DROP DATABASE [Financial]
 GO
 CREATE DATABASE [Financial]
 GO
-USE [master]
-GO
-/****** Object:  Database [Financial]    Script Date: 03/12/2012 21:04:10 ******/
-
 USE [Financial]
 GO
-/****** Object:  Table [dbo].[VehicleType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[ReceivableType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [dbo].[VehicleType](
+CREATE TABLE [dbo].[ReceivableType](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [varchar](50) NOT NULL,
- CONSTRAINT [PK_VehicleType] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_RECEIVABLETYPE] PRIMARY KEY NONCLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
@@ -35,46 +31,22 @@ CREATE TABLE [dbo].[VehicleType](
 GO
 SET ANSI_PADDING OFF
 GO
-SET IDENTITY_INSERT [dbo].[VehicleType] ON
-INSERT [dbo].[VehicleType] ([Id], [Name]) VALUES (1, N'Car')
-INSERT [dbo].[VehicleType] ([Id], [Name]) VALUES (2, N'Motorcycle')
-INSERT [dbo].[VehicleType] ([Id], [Name]) VALUES (3, N'Tricycle')
-INSERT [dbo].[VehicleType] ([Id], [Name]) VALUES (4, N'Jeepney')
-INSERT [dbo].[VehicleType] ([Id], [Name]) VALUES (5, N'Ship')
-INSERT [dbo].[VehicleType] ([Id], [Name]) VALUES (6, N'Boat')
-INSERT [dbo].[VehicleType] ([Id], [Name]) VALUES (7, N'Aircraft')
-SET IDENTITY_INSERT [dbo].[VehicleType] OFF
-/****** Object:  Table [dbo].[UserAccountType]    Script Date: 03/12/2012 21:04:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[UserAccountType](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Name] [nvarchar](50) NOT NULL,
- CONSTRAINT [PK_UserAccountType] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-SET IDENTITY_INSERT [dbo].[UserAccountType] ON
-INSERT [dbo].[UserAccountType] ([Id], [Name]) VALUES (1, N'Admin')
-INSERT [dbo].[UserAccountType] ([Id], [Name]) VALUES (2, N'Super Admin')
-INSERT [dbo].[UserAccountType] ([Id], [Name]) VALUES (3, N'Accountant')
-INSERT [dbo].[UserAccountType] ([Id], [Name]) VALUES (4, N'Teller')
-SET IDENTITY_INSERT [dbo].[UserAccountType] OFF
-/****** Object:  Table [dbo].[TransactionTaskType]    Script Date: 03/12/2012 21:04:15 ******/
+SET IDENTITY_INSERT [dbo].[ReceivableType] ON
+INSERT [dbo].[ReceivableType] ([Id], [Name]) VALUES (1, N'Principal')
+INSERT [dbo].[ReceivableType] ([Id], [Name]) VALUES (2, N'Interest')
+INSERT [dbo].[ReceivableType] ([Id], [Name]) VALUES (3, N'Past Due')
+SET IDENTITY_INSERT [dbo].[ReceivableType] OFF
+/****** Object:  Table [dbo].[ReceivableStatusType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [dbo].[TransactionTaskType](
+CREATE TABLE [dbo].[ReceivableStatusType](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [varchar](50) NOT NULL,
- CONSTRAINT [PK_TRANSACTIONTASKTYPE] PRIMARY KEY NONCLUSTERED 
+ CONSTRAINT [PK_RECEIVABLESTATUSTYPE] PRIMARY KEY NONCLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
@@ -82,54 +54,13 @@ CREATE TABLE [dbo].[TransactionTaskType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[UserAccountStatusType]    Script Date: 03/12/2012 21:04:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[UserAccountStatusType](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Name] [varchar](50) NOT NULL,
- CONSTRAINT [PK_USERACCOUNTSTATUSTYPE] PRIMARY KEY NONCLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-SET ANSI_PADDING OFF
-GO
-SET IDENTITY_INSERT [dbo].[UserAccountStatusType] ON
-INSERT [dbo].[UserAccountStatusType] ([Id], [Name]) VALUES (1, N'Active')
-INSERT [dbo].[UserAccountStatusType] ([Id], [Name]) VALUES (2, N'Inactive')
-SET IDENTITY_INSERT [dbo].[UserAccountStatusType] OFF
-/****** Object:  Table [dbo].[UnitOfMeasureType]    Script Date: 03/12/2012 21:04:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[UnitOfMeasureType](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[ParentUomTypeId] [int] NULL,
-	[Name] [varchar](50) NOT NULL,
- CONSTRAINT [PK_UNITOFMEASURETYPE] PRIMARY KEY NONCLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-SET ANSI_PADDING OFF
-GO
-SET IDENTITY_INSERT [dbo].[UnitOfMeasureType] ON
-INSERT [dbo].[UnitOfMeasureType] ([Id], [ParentUomTypeId], [Name]) VALUES (1, NULL, N'Time Unit')
-INSERT [dbo].[UnitOfMeasureType] ([Id], [ParentUomTypeId], [Name]) VALUES (2, NULL, N'Length Unit')
-INSERT [dbo].[UnitOfMeasureType] ([Id], [ParentUomTypeId], [Name]) VALUES (3, NULL, N'Derived Unit')
-INSERT [dbo].[UnitOfMeasureType] ([Id], [ParentUomTypeId], [Name]) VALUES (4, NULL, N'Time Frequency')
-SET IDENTITY_INSERT [dbo].[UnitOfMeasureType] OFF
-/****** Object:  Table [dbo].[SubmittedDocumentStatusType]    Script Date: 03/12/2012 21:04:15 ******/
+SET IDENTITY_INSERT [dbo].[ReceivableStatusType] ON
+INSERT [dbo].[ReceivableStatusType] ([Id], [Name]) VALUES (1, N'Open')
+INSERT [dbo].[ReceivableStatusType] ([Id], [Name]) VALUES (2, N'Partially Paid')
+INSERT [dbo].[ReceivableStatusType] ([Id], [Name]) VALUES (3, N'Fully Paid')
+INSERT [dbo].[ReceivableStatusType] ([Id], [Name]) VALUES (4, N'Cancelled')
+SET IDENTITY_INSERT [dbo].[ReceivableStatusType] OFF
+/****** Object:  Table [dbo].[SubmittedDocumentStatusType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -152,7 +83,159 @@ INSERT [dbo].[SubmittedDocumentStatusType] ([Id], [Name]) VALUES (1, N'Pending: 
 INSERT [dbo].[SubmittedDocumentStatusType] ([Id], [Name]) VALUES (2, N'Approved')
 INSERT [dbo].[SubmittedDocumentStatusType] ([Id], [Name]) VALUES (3, N'Rejected')
 SET IDENTITY_INSERT [dbo].[SubmittedDocumentStatusType] OFF
-/****** Object:  Table [dbo].[SystemSettingType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[ReceiptStatusType]    Script Date: 02/22/2012 17:44:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[ReceiptStatusType](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_RECEIPTSTATUSTYPE] PRIMARY KEY NONCLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+SET IDENTITY_INSERT [dbo].[ReceiptStatusType] ON
+INSERT [dbo].[ReceiptStatusType] ([Id], [Name]) VALUES (1, N'Open')
+INSERT [dbo].[ReceiptStatusType] ([Id], [Name]) VALUES (2, N'Applied')
+INSERT [dbo].[ReceiptStatusType] ([Id], [Name]) VALUES (3, N'Closed')
+INSERT [dbo].[ReceiptStatusType] ([Id], [Name]) VALUES (4, N'Cancelled')
+SET IDENTITY_INSERT [dbo].[ReceiptStatusType] OFF
+/****** Object:  Table [dbo].[Receipt]    Script Date: 02/22/2012 17:44:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Receipt](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ReceivedFromName] [varchar](50) NULL,
+	[ReceiptBalance] [numeric](15, 2) NULL,
+ CONSTRAINT [PK_Receipt_1] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[ProductStatusType]    Script Date: 02/22/2012 17:44:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[ProductStatusType](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_PRODUCTSTATUSTYPE] PRIMARY KEY NONCLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+SET IDENTITY_INSERT [dbo].[ProductStatusType] ON
+INSERT [dbo].[ProductStatusType] ([Id], [Name]) VALUES (1, N'New')
+INSERT [dbo].[ProductStatusType] ([Id], [Name]) VALUES (2, N'Active')
+INSERT [dbo].[ProductStatusType] ([Id], [Name]) VALUES (3, N'Inactive')
+INSERT [dbo].[ProductStatusType] ([Id], [Name]) VALUES (4, N'Retired')
+SET IDENTITY_INSERT [dbo].[ProductStatusType] OFF
+/****** Object:  Table [dbo].[TelecommunicationsNumberType]    Script Date: 02/22/2012 17:44:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[TelecommunicationsNumberType](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](100) NOT NULL,
+ CONSTRAINT [PK_TELECOMMUNICATIONSNUMBERTYP] PRIMARY KEY NONCLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+SET IDENTITY_INSERT [dbo].[TelecommunicationsNumberType] ON
+INSERT [dbo].[TelecommunicationsNumberType] ([Id], [Name]) VALUES (1, N'Personal Mobile Number')
+INSERT [dbo].[TelecommunicationsNumberType] ([Id], [Name]) VALUES (2, N'Business Mobile Number')
+INSERT [dbo].[TelecommunicationsNumberType] ([Id], [Name]) VALUES (3, N'Business Fax Number')
+INSERT [dbo].[TelecommunicationsNumberType] ([Id], [Name]) VALUES (4, N'Home Phone Number')
+INSERT [dbo].[TelecommunicationsNumberType] ([Id], [Name]) VALUES (5, N'Business Phone Number')
+SET IDENTITY_INSERT [dbo].[TelecommunicationsNumberType] OFF
+/****** Object:  Table [dbo].[UserAccountStatusType]    Script Date: 02/22/2012 17:44:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[UserAccountStatusType](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_USERACCOUNTSTATUSTYPE] PRIMARY KEY NONCLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+SET IDENTITY_INSERT [dbo].[UserAccountStatusType] ON
+INSERT [dbo].[UserAccountStatusType] ([Id], [Name]) VALUES (1, N'Active')
+INSERT [dbo].[UserAccountStatusType] ([Id], [Name]) VALUES (2, N'Inactive')
+SET IDENTITY_INSERT [dbo].[UserAccountStatusType] OFF
+/****** Object:  Table [dbo].[UserAccountType]    Script Date: 02/22/2012 17:44:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UserAccountType](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_UserAccountType] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[UserAccountType] ON
+INSERT [dbo].[UserAccountType] ([Id], [Name]) VALUES (1, N'Admin')
+INSERT [dbo].[UserAccountType] ([Id], [Name]) VALUES (2, N'Super Admin')
+INSERT [dbo].[UserAccountType] ([Id], [Name]) VALUES (3, N'Accountant')
+INSERT [dbo].[UserAccountType] ([Id], [Name]) VALUES (4, N'Teller')
+SET IDENTITY_INSERT [dbo].[UserAccountType] OFF
+/****** Object:  Table [dbo].[TransactionTaskType]    Script Date: 02/22/2012 17:44:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[TransactionTaskType](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_TRANSACTIONTASKTYPE] PRIMARY KEY NONCLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[SystemSettingType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -185,42 +268,18 @@ INSERT [dbo].[SystemSettingType] ([Id], [Name]) VALUES (11, N'Date Payment Optio
 INSERT [dbo].[SystemSettingType] ([Id], [Name]) VALUES (12, N'Clerk''s Maximum Honorable Amount')
 INSERT [dbo].[SystemSettingType] ([Id], [Name]) VALUES (13, N'Advance Change No Interest Start Day')
 SET IDENTITY_INSERT [dbo].[SystemSettingType] OFF
-/****** Object:  Table [dbo].[TelecommunicationsNumberType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[UnitOfMeasureType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [dbo].[TelecommunicationsNumberType](
+CREATE TABLE [dbo].[UnitOfMeasureType](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Name] [varchar](100) NOT NULL,
- CONSTRAINT [PK_TELECOMMUNICATIONSNUMBERTYP] PRIMARY KEY NONCLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-SET ANSI_PADDING OFF
-GO
-SET IDENTITY_INSERT [dbo].[TelecommunicationsNumberType] ON
-INSERT [dbo].[TelecommunicationsNumberType] ([Id], [Name]) VALUES (1, N'Personal Mobile Number')
-INSERT [dbo].[TelecommunicationsNumberType] ([Id], [Name]) VALUES (2, N'Business Mobile Number')
-INSERT [dbo].[TelecommunicationsNumberType] ([Id], [Name]) VALUES (3, N'Business Fax Number')
-INSERT [dbo].[TelecommunicationsNumberType] ([Id], [Name]) VALUES (4, N'Home Phone Number')
-INSERT [dbo].[TelecommunicationsNumberType] ([Id], [Name]) VALUES (5, N'Business Phone Number')
-SET IDENTITY_INSERT [dbo].[TelecommunicationsNumberType] OFF
-/****** Object:  Table [dbo].[ReceivableType]    Script Date: 03/12/2012 21:04:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[ReceivableType](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ParentUomTypeId] [int] NULL,
 	[Name] [varchar](50) NOT NULL,
- CONSTRAINT [PK_RECEIVABLETYPE] PRIMARY KEY NONCLUSTERED 
+ CONSTRAINT [PK_UNITOFMEASURETYPE] PRIMARY KEY NONCLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
@@ -228,36 +287,13 @@ CREATE TABLE [dbo].[ReceivableType](
 GO
 SET ANSI_PADDING OFF
 GO
-SET IDENTITY_INSERT [dbo].[ReceivableType] ON
-INSERT [dbo].[ReceivableType] ([Id], [Name]) VALUES (1, N'Principal')
-INSERT [dbo].[ReceivableType] ([Id], [Name]) VALUES (2, N'Interest')
-INSERT [dbo].[ReceivableType] ([Id], [Name]) VALUES (3, N'Past Due')
-SET IDENTITY_INSERT [dbo].[ReceivableType] OFF
-/****** Object:  Table [dbo].[ReceivableStatusType]    Script Date: 03/12/2012 21:04:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[ReceivableStatusType](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Name] [varchar](50) NOT NULL,
- CONSTRAINT [PK_RECEIVABLESTATUSTYPE] PRIMARY KEY NONCLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-SET ANSI_PADDING OFF
-GO
-SET IDENTITY_INSERT [dbo].[ReceivableStatusType] ON
-INSERT [dbo].[ReceivableStatusType] ([Id], [Name]) VALUES (1, N'Open')
-INSERT [dbo].[ReceivableStatusType] ([Id], [Name]) VALUES (2, N'Partially Paid')
-INSERT [dbo].[ReceivableStatusType] ([Id], [Name]) VALUES (3, N'Fully Paid')
-INSERT [dbo].[ReceivableStatusType] ([Id], [Name]) VALUES (4, N'Cancelled')
-SET IDENTITY_INSERT [dbo].[ReceivableStatusType] OFF
-/****** Object:  Table [dbo].[SpecificPaymentType]    Script Date: 03/12/2012 21:04:15 ******/
+SET IDENTITY_INSERT [dbo].[UnitOfMeasureType] ON
+INSERT [dbo].[UnitOfMeasureType] ([Id], [ParentUomTypeId], [Name]) VALUES (1, NULL, N'Time Unit')
+INSERT [dbo].[UnitOfMeasureType] ([Id], [ParentUomTypeId], [Name]) VALUES (2, NULL, N'Length Unit')
+INSERT [dbo].[UnitOfMeasureType] ([Id], [ParentUomTypeId], [Name]) VALUES (3, NULL, N'Derived Unit')
+INSERT [dbo].[UnitOfMeasureType] ([Id], [ParentUomTypeId], [Name]) VALUES (4, NULL, N'Time Frequency')
+SET IDENTITY_INSERT [dbo].[UnitOfMeasureType] OFF
+/****** Object:  Table [dbo].[SpecificPaymentType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -289,7 +325,7 @@ INSERT [dbo].[SpecificPaymentType] ([Id], [Name]) VALUES (10, N'Other Disburseme
 INSERT [dbo].[SpecificPaymentType] ([Id], [Name]) VALUES (11, N'Change')
 INSERT [dbo].[SpecificPaymentType] ([Id], [Name]) VALUES (12, N'Advance Change')
 SET IDENTITY_INSERT [dbo].[SpecificPaymentType] OFF
-/****** Object:  Table [dbo].[SourceOfIncome]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[SourceOfIncome]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -313,7 +349,7 @@ INSERT [dbo].[SourceOfIncome] ([Id], [Name]) VALUES (2, N'Pension')
 INSERT [dbo].[SourceOfIncome] ([Id], [Name]) VALUES (3, N'Allowance')
 INSERT [dbo].[SourceOfIncome] ([Id], [Name]) VALUES (4, N'Allotment')
 SET IDENTITY_INSERT [dbo].[SourceOfIncome] OFF
-/****** Object:  Table [dbo].[RoleType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[RoleType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -365,7 +401,7 @@ INSERT [dbo].[RoleType] ([Id], [ParentRoleTypeId], [Name]) VALUES (29, 3, N'Witn
 INSERT [dbo].[RoleType] ([Id], [ParentRoleTypeId], [Name]) VALUES (30, 3, N'Legal Council')
 INSERT [dbo].[RoleType] ([Id], [ParentRoleTypeId], [Name]) VALUES (31, 5, N'Guarantor')
 SET IDENTITY_INSERT [dbo].[RoleType] OFF
-/****** Object:  Table [dbo].[RequiredDocumentType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[RequiredDocumentType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -395,74 +431,7 @@ INSERT [dbo].[RequiredDocumentType] ([Id], [Name]) VALUES (8, N'T. I. N. No.')
 INSERT [dbo].[RequiredDocumentType] ([Id], [Name]) VALUES (9, N'Affidavit Of Non-Tenancy (For Agricultural Land Only)')
 INSERT [dbo].[RequiredDocumentType] ([Id], [Name]) VALUES (10, N'Two (2) Valid ID With Picture')
 SET IDENTITY_INSERT [dbo].[RequiredDocumentType] OFF
-/****** Object:  Table [dbo].[ReceiptStatusType]    Script Date: 03/12/2012 21:04:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[ReceiptStatusType](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Name] [varchar](50) NOT NULL,
- CONSTRAINT [PK_RECEIPTSTATUSTYPE] PRIMARY KEY NONCLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-SET ANSI_PADDING OFF
-GO
-SET IDENTITY_INSERT [dbo].[ReceiptStatusType] ON
-INSERT [dbo].[ReceiptStatusType] ([Id], [Name]) VALUES (1, N'Open')
-INSERT [dbo].[ReceiptStatusType] ([Id], [Name]) VALUES (2, N'Applied')
-INSERT [dbo].[ReceiptStatusType] ([Id], [Name]) VALUES (3, N'Closed')
-INSERT [dbo].[ReceiptStatusType] ([Id], [Name]) VALUES (4, N'Cancelled')
-SET IDENTITY_INSERT [dbo].[ReceiptStatusType] OFF
-/****** Object:  Table [dbo].[Receipt]    Script Date: 03/12/2012 21:04:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[Receipt](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[ReceivedFromName] [varchar](50) NULL,
-	[ReceiptBalance] [numeric](15, 2) NULL,
- CONSTRAINT [PK_Receipt_1] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[ProductStatusType]    Script Date: 03/12/2012 21:04:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[ProductStatusType](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Name] [varchar](50) NOT NULL,
- CONSTRAINT [PK_PRODUCTSTATUSTYPE] PRIMARY KEY NONCLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-SET ANSI_PADDING OFF
-GO
-SET IDENTITY_INSERT [dbo].[ProductStatusType] ON
-INSERT [dbo].[ProductStatusType] ([Id], [Name]) VALUES (1, N'New')
-INSERT [dbo].[ProductStatusType] ([Id], [Name]) VALUES (2, N'Active')
-INSERT [dbo].[ProductStatusType] ([Id], [Name]) VALUES (3, N'Inactive')
-INSERT [dbo].[ProductStatusType] ([Id], [Name]) VALUES (4, N'Retired')
-SET IDENTITY_INSERT [dbo].[ProductStatusType] OFF
-/****** Object:  Table [dbo].[PersonNameType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[PersonNameType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -489,7 +458,7 @@ INSERT [dbo].[PersonNameType] ([Id], [Name]) VALUES (5, N'Nick Name')
 INSERT [dbo].[PersonNameType] ([Id], [Name]) VALUES (6, N'Name Suffix')
 INSERT [dbo].[PersonNameType] ([Id], [Name]) VALUES (7, N'Mother''s Maiden Name')
 SET IDENTITY_INSERT [dbo].[PersonNameType] OFF
-/****** Object:  Table [dbo].[ProductFeatureCategory]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[ProductFeatureCategory]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -516,9 +485,8 @@ INSERT [dbo].[ProductFeatureCategory] ([Id], [Name]) VALUES (5, N'Method of Char
 INSERT [dbo].[ProductFeatureCategory] ([Id], [Name]) VALUES (6, N'Interest Rate')
 INSERT [dbo].[ProductFeatureCategory] ([Id], [Name]) VALUES (7, N'Past Due Interest Rate')
 INSERT [dbo].[ProductFeatureCategory] ([Id], [Name]) VALUES (8, N'Fee')
-INSERT [dbo].[ProductFeatureCategory] ([Id], [Name]) VALUES (9, N'Term Option')
 SET IDENTITY_INSERT [dbo].[ProductFeatureCategory] OFF
-/****** Object:  Table [dbo].[PettyCashLoanAppStatusType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[PettyCashLoanAppStatusType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -545,7 +513,34 @@ INSERT [dbo].[PettyCashLoanAppStatusType] ([Id], [Name]) VALUES (5, N'Closed')
 INSERT [dbo].[PettyCashLoanAppStatusType] ([Id], [Name]) VALUES (6, N'Cancelled')
 INSERT [dbo].[PettyCashLoanAppStatusType] ([Id], [Name]) VALUES (7, N'Pending: Endorsement')
 SET IDENTITY_INSERT [dbo].[PettyCashLoanAppStatusType] OFF
-/****** Object:  Table [dbo].[FinancialAccountType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[VehicleType]    Script Date: 02/22/2012 17:44:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[VehicleType](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_VehicleType] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+SET IDENTITY_INSERT [dbo].[VehicleType] ON
+INSERT [dbo].[VehicleType] ([Id], [Name]) VALUES (1, N'Car')
+INSERT [dbo].[VehicleType] ([Id], [Name]) VALUES (2, N'Motorcycle')
+INSERT [dbo].[VehicleType] ([Id], [Name]) VALUES (3, N'Tricycle')
+INSERT [dbo].[VehicleType] ([Id], [Name]) VALUES (4, N'Jeepney')
+INSERT [dbo].[VehicleType] ([Id], [Name]) VALUES (5, N'Ship')
+INSERT [dbo].[VehicleType] ([Id], [Name]) VALUES (6, N'Boat')
+INSERT [dbo].[VehicleType] ([Id], [Name]) VALUES (7, N'Aircraft')
+SET IDENTITY_INSERT [dbo].[VehicleType] OFF
+/****** Object:  Table [dbo].[FinancialAccountType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -567,7 +562,7 @@ SET IDENTITY_INSERT [dbo].[FinancialAccountType] ON
 INSERT [dbo].[FinancialAccountType] ([Id], [Name]) VALUES (1, N'Loan Account')
 INSERT [dbo].[FinancialAccountType] ([Id], [Name]) VALUES (2, N'Deposit Account')
 SET IDENTITY_INSERT [dbo].[FinancialAccountType] OFF
-/****** Object:  Table [dbo].[FinancialProduct]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[FinancialProduct]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -591,7 +586,7 @@ GO
 SET IDENTITY_INSERT [dbo].[FinancialProduct] ON
 INSERT [dbo].[FinancialProduct] ([Id], [Name], [IntroductionDate], [SalesDiscontinuationDate], [Comment]) VALUES (1, N'Salary Loan', CAST(0x000080B000000000 AS DateTime), NULL, N'')
 SET IDENTITY_INSERT [dbo].[FinancialProduct] OFF
-/****** Object:  Table [dbo].[FinancialAcctNotificationTyp]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[FinancialAcctNotificationTyp]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -613,7 +608,7 @@ SET IDENTITY_INSERT [dbo].[FinancialAcctNotificationTyp] ON
 INSERT [dbo].[FinancialAcctNotificationTyp] ([Id], [Name]) VALUES (1, N'Invoice')
 INSERT [dbo].[FinancialAcctNotificationTyp] ([Id], [Name]) VALUES (2, N'Statement')
 SET IDENTITY_INSERT [dbo].[FinancialAcctNotificationTyp] OFF
-/****** Object:  Table [dbo].[FinlAcctTransType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[FinlAcctTransType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -639,7 +634,7 @@ INSERT [dbo].[FinlAcctTransType] ([Id], [ParentFinancialAcctTransTypeId], [Name]
 INSERT [dbo].[FinlAcctTransType] ([Id], [ParentFinancialAcctTransTypeId], [Name]) VALUES (4, NULL, N'Withdrawal')
 INSERT [dbo].[FinlAcctTransType] ([Id], [ParentFinancialAcctTransTypeId], [Name]) VALUES (5, NULL, N'Financial Account Adjustment')
 SET IDENTITY_INSERT [dbo].[FinlAcctTransType] OFF
-/****** Object:  Table [dbo].[EmployeePositionType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[EmployeePositionType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -663,7 +658,7 @@ INSERT [dbo].[EmployeePositionType] ([Id], [Name]) VALUES (2, N'Teller')
 INSERT [dbo].[EmployeePositionType] ([Id], [Name]) VALUES (3, N'Accountant')
 INSERT [dbo].[EmployeePositionType] ([Id], [Name]) VALUES (4, N'System Administrator')
 SET IDENTITY_INSERT [dbo].[EmployeePositionType] OFF
-/****** Object:  Table [dbo].[ElectronicAddressType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[ElectronicAddressType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -685,7 +680,7 @@ SET IDENTITY_INSERT [dbo].[ElectronicAddressType] ON
 INSERT [dbo].[ElectronicAddressType] ([Id], [Name]) VALUES (1, N'Personal Email Address')
 INSERT [dbo].[ElectronicAddressType] ([Id], [Name]) VALUES (2, N'Business Email Address')
 SET IDENTITY_INSERT [dbo].[ElectronicAddressType] OFF
-/****** Object:  Table [dbo].[EducAttainmentType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[EducAttainmentType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -710,7 +705,7 @@ INSERT [dbo].[EducAttainmentType] ([Id], [Name]) VALUES (3, N'College Undergradu
 INSERT [dbo].[EducAttainmentType] ([Id], [Name]) VALUES (4, N'College Graduate')
 INSERT [dbo].[EducAttainmentType] ([Id], [Name]) VALUES (5, N'Post-Graduate')
 SET IDENTITY_INSERT [dbo].[EducAttainmentType] OFF
-/****** Object:  Table [dbo].[DistrictType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[DistrictType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -737,7 +732,7 @@ INSERT [dbo].[DistrictType] ([Id], [Name]) VALUES (5, N'COA')
 INSERT [dbo].[DistrictType] ([Id], [Name]) VALUES (6, N'FIDA')
 INSERT [dbo].[DistrictType] ([Id], [Name]) VALUES (7, N'MSU')
 SET IDENTITY_INSERT [dbo].[DistrictType] OFF
-/****** Object:  Table [dbo].[FinAcctTransStatusType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[FinAcctTransStatusType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -759,7 +754,7 @@ SET IDENTITY_INSERT [dbo].[FinAcctTransStatusType] ON
 INSERT [dbo].[FinAcctTransStatusType] ([Id], [Name]) VALUES (1, N'Posted')
 INSERT [dbo].[FinAcctTransStatusType] ([Id], [Name]) VALUES (2, N'On Hold')
 SET IDENTITY_INSERT [dbo].[FinAcctTransStatusType] OFF
-/****** Object:  Table [dbo].[FinAcctTransRelType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[FinAcctTransRelType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -777,7 +772,7 @@ CREATE TABLE [dbo].[FinAcctTransRelType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ExchangeRateType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[ExchangeRateType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -797,7 +792,7 @@ INSERT [dbo].[ExchangeRateType] ([Id], [Name]) VALUES (2, N'Selling')
 INSERT [dbo].[ExchangeRateType] ([Id], [Name]) VALUES (3, N'Average')
 INSERT [dbo].[ExchangeRateType] ([Id], [Name]) VALUES (4, N'Spot')
 SET IDENTITY_INSERT [dbo].[ExchangeRateType] OFF
-/****** Object:  Table [dbo].[DisbursementType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[DisbursementType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -823,7 +818,7 @@ INSERT [dbo].[DisbursementType] ([Id], [Name]) VALUES (4, N'Change')
 INSERT [dbo].[DisbursementType] ([Id], [Name]) VALUES (5, N'Rediscounting')
 INSERT [dbo].[DisbursementType] ([Id], [Name]) VALUES (6, N'Advance Change')
 SET IDENTITY_INSERT [dbo].[DisbursementType] OFF
-/****** Object:  Table [dbo].[DisbursementVcrStatusType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[DisbursementVcrStatusType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -849,7 +844,7 @@ INSERT [dbo].[DisbursementVcrStatusType] ([Id], [Name]) VALUES (4, N'Cancelled')
 INSERT [dbo].[DisbursementVcrStatusType] ([Id], [Name]) VALUES (5, N'Partially Disbursed')
 INSERT [dbo].[DisbursementVcrStatusType] ([Id], [Name]) VALUES (6, N'Fully Disbursed')
 SET IDENTITY_INSERT [dbo].[DisbursementVcrStatusType] OFF
-/****** Object:  Table [dbo].[DemandLetterStatusType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[DemandLetterStatusType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -873,7 +868,7 @@ INSERT [dbo].[DemandLetterStatusType] ([Id], [Name]) VALUES (2, N'First Demand L
 INSERT [dbo].[DemandLetterStatusType] ([Id], [Name]) VALUES (3, N'Require Final Demand Letter')
 INSERT [dbo].[DemandLetterStatusType] ([Id], [Name]) VALUES (4, N'Final Demand Letter Sent')
 SET IDENTITY_INSERT [dbo].[DemandLetterStatusType] OFF
-/****** Object:  Table [dbo].[COVTransactionType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[COVTransactionType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -895,7 +890,7 @@ SET IDENTITY_INSERT [dbo].[COVTransactionType] ON
 INSERT [dbo].[COVTransactionType] ([Id], [Name]) VALUES (1, N'Deposit To Vault')
 INSERT [dbo].[COVTransactionType] ([Id], [Name]) VALUES (2, N'Withdraw From Vault')
 SET IDENTITY_INSERT [dbo].[COVTransactionType] OFF
-/****** Object:  Table [dbo].[CustomerStatusType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[CustomerStatusType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -920,7 +915,7 @@ INSERT [dbo].[CustomerStatusType] ([Id], [Name]) VALUES (3, N'Delinquent')
 INSERT [dbo].[CustomerStatusType] ([Id], [Name]) VALUES (4, N'Subprime')
 INSERT [dbo].[CustomerStatusType] ([Id], [Name]) VALUES (5, N'Inactive')
 SET IDENTITY_INSERT [dbo].[CustomerStatusType] OFF
-/****** Object:  Table [dbo].[CustomerCategoryType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[CustomerCategoryType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -942,7 +937,7 @@ SET IDENTITY_INSERT [dbo].[CustomerCategoryType] ON
 INSERT [dbo].[CustomerCategoryType] ([Id], [Name]) VALUES (1, N'Teacher')
 INSERT [dbo].[CustomerCategoryType] ([Id], [Name]) VALUES (2, N'Others')
 SET IDENTITY_INSERT [dbo].[CustomerCategoryType] OFF
-/****** Object:  Table [dbo].[Currency]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[Currency]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -977,7 +972,7 @@ INSERT [dbo].[Currency] ([Id], [Symbol], [Description]) VALUES (13, N'QAR', N'Qa
 INSERT [dbo].[Currency] ([Id], [Symbol], [Description]) VALUES (14, N'AUD', N'Australian Dollar')
 INSERT [dbo].[Currency] ([Id], [Symbol], [Description]) VALUES (15, N'CAD', N'Canadian Dollar')
 SET IDENTITY_INSERT [dbo].[Currency] OFF
-/****** Object:  Table [dbo].[Country]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[Country]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -999,7 +994,7 @@ GO
 SET IDENTITY_INSERT [dbo].[Country] ON
 INSERT [dbo].[Country] ([Id], [CountryTelephoneCode], [Name]) VALUES (1, N'+63', N'Philippines')
 SET IDENTITY_INSERT [dbo].[Country] OFF
-/****** Object:  Table [dbo].[ChequeStatusType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[ChequeStatusType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1025,7 +1020,7 @@ INSERT [dbo].[ChequeStatusType] ([Id], [Name]) VALUES (4, N'Bounced')
 INSERT [dbo].[ChequeStatusType] ([Id], [Name]) VALUES (5, N'Cancelled')
 INSERT [dbo].[ChequeStatusType] ([Id], [Name]) VALUES (6, N'On Hold')
 SET IDENTITY_INSERT [dbo].[ChequeStatusType] OFF
-/****** Object:  Table [dbo].[BillAmount]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[BillAmount]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1047,7 +1042,7 @@ INSERT [dbo].[BillAmount] ([Id], [Amount]) VALUES (4, CAST(100.00 AS Decimal(18,
 INSERT [dbo].[BillAmount] ([Id], [Amount]) VALUES (5, CAST(50.00 AS Decimal(18, 2)))
 INSERT [dbo].[BillAmount] ([Id], [Amount]) VALUES (6, CAST(10.00 AS Decimal(18, 2)))
 SET IDENTITY_INSERT [dbo].[BillAmount] OFF
-/****** Object:  Table [dbo].[BankAccountType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[BankAccountType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1070,7 +1065,7 @@ INSERT [dbo].[BankAccountType] ([Id], [Name]) VALUES (1, N'Savings')
 INSERT [dbo].[BankAccountType] ([Id], [Name]) VALUES (2, N'Current')
 INSERT [dbo].[BankAccountType] ([Id], [Name]) VALUES (3, N'Time Deposit')
 SET IDENTITY_INSERT [dbo].[BankAccountType] OFF
-/****** Object:  Table [dbo].[BankStatusType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[BankStatusType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1092,7 +1087,7 @@ SET IDENTITY_INSERT [dbo].[BankStatusType] ON
 INSERT [dbo].[BankStatusType] ([Id], [Name]) VALUES (1, N'Active')
 INSERT [dbo].[BankStatusType] ([Id], [Name]) VALUES (2, N'Inactive')
 SET IDENTITY_INSERT [dbo].[BankStatusType] OFF
-/****** Object:  Table [dbo].[AdjustmentType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[AdjustmentType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1117,7 +1112,7 @@ INSERT [dbo].[AdjustmentType] ([Id], [Name], [IsCreditIndicator]) VALUES (2, N'W
 INSERT [dbo].[AdjustmentType] ([Id], [Name], [IsCreditIndicator]) VALUES (3, N'Rebate', 1)
 INSERT [dbo].[AdjustmentType] ([Id], [Name], [IsCreditIndicator]) VALUES (4, N'Additional Interest', 1)
 SET IDENTITY_INSERT [dbo].[AdjustmentType] OFF
-/****** Object:  Table [dbo].[AddressType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[AddressType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1140,7 +1135,7 @@ INSERT [dbo].[AddressType] ([Id], [Name]) VALUES (1, N'Postal Address')
 INSERT [dbo].[AddressType] ([Id], [Name]) VALUES (2, N'Telecommunication Number')
 INSERT [dbo].[AddressType] ([Id], [Name]) VALUES (3, N'Electronic Address')
 SET IDENTITY_INSERT [dbo].[AddressType] OFF
-/****** Object:  Table [dbo].[AgreementType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[AgreementType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1162,7 +1157,7 @@ SET IDENTITY_INSERT [dbo].[AgreementType] ON
 INSERT [dbo].[AgreementType] ([Id], [Name]) VALUES (1, N'Loan Agreement')
 INSERT [dbo].[AgreementType] ([Id], [Name]) VALUES (2, N'Compromise Agreement')
 SET IDENTITY_INSERT [dbo].[AgreementType] OFF
-/****** Object:  Table [dbo].[AssetType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[AssetType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1189,7 +1184,7 @@ INSERT [dbo].[AssetType] ([Id], [Name], [IsAppraisableIndicator]) VALUES (4, N'M
 INSERT [dbo].[AssetType] ([Id], [Name], [IsAppraisableIndicator]) VALUES (5, N'Bank Account', 1)
 INSERT [dbo].[AssetType] ([Id], [Name], [IsAppraisableIndicator]) VALUES (6, N'Others', 0)
 SET IDENTITY_INSERT [dbo].[AssetType] OFF
-/****** Object:  Table [dbo].[ApplicationType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[ApplicationType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1210,7 +1205,7 @@ GO
 SET IDENTITY_INSERT [dbo].[ApplicationType] ON
 INSERT [dbo].[ApplicationType] ([Id], [Name]) VALUES (1, N'Loan Application')
 SET IDENTITY_INSERT [dbo].[ApplicationType] OFF
-/****** Object:  Table [dbo].[LoanModificationType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[LoanModificationType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1235,7 +1230,7 @@ INSERT [dbo].[LoanModificationType] ([Id], [Name]) VALUES (3, N'Change ICM')
 INSERT [dbo].[LoanModificationType] ([Id], [Name]) VALUES (4, N'Additional Loan')
 INSERT [dbo].[LoanModificationType] ([Id], [Name]) VALUES (5, N'Change Interest')
 SET IDENTITY_INSERT [dbo].[LoanModificationType] OFF
-/****** Object:  Table [dbo].[LoanModificationStatusType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[LoanModificationStatusType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1258,7 +1253,7 @@ INSERT [dbo].[LoanModificationStatusType] ([Id], [Name]) VALUES (1, N'Pending: A
 INSERT [dbo].[LoanModificationStatusType] ([Id], [Name]) VALUES (2, N'Approved')
 INSERT [dbo].[LoanModificationStatusType] ([Id], [Name]) VALUES (3, N'Rejected')
 SET IDENTITY_INSERT [dbo].[LoanModificationStatusType] OFF
-/****** Object:  Table [dbo].[LoanDisbursementType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[LoanDisbursementType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1275,11 +1270,9 @@ GO
 SET IDENTITY_INSERT [dbo].[LoanDisbursementType] ON
 INSERT [dbo].[LoanDisbursementType] ([Id], [Name]) VALUES (1, N'First Availment')
 INSERT [dbo].[LoanDisbursementType] ([Id], [Name]) VALUES (2, N'Additional')
-INSERT [dbo].[LoanDisbursementType] ([Id], [Name]) VALUES (3, N'AC Cheque')
-INSERT [dbo].[LoanDisbursementType] ([Id], [Name]) VALUES (4, N'AC ATM')
-INSERT [dbo].[LoanDisbursementType] ([Id], [Name]) VALUES (5, N'Change')
+INSERT [dbo].[LoanDisbursementType] ([Id], [Name]) VALUES (3, N'Advance Change')
 SET IDENTITY_INSERT [dbo].[LoanDisbursementType] OFF
-/****** Object:  Table [dbo].[LoanApplicationStatusType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[LoanApplicationStatusType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1307,7 +1300,7 @@ INSERT [dbo].[LoanApplicationStatusType] ([Id], [Name]) VALUES (6, N'Pending: En
 INSERT [dbo].[LoanApplicationStatusType] ([Id], [Name]) VALUES (7, N'Approved')
 INSERT [dbo].[LoanApplicationStatusType] ([Id], [Name]) VALUES (8, N'Restructured')
 SET IDENTITY_INSERT [dbo].[LoanApplicationStatusType] OFF
-/****** Object:  Table [dbo].[LoanAccountStatusType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[LoanAccountStatusType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1334,7 +1327,7 @@ INSERT [dbo].[LoanAccountStatusType] ([Id], [Name]) VALUES (5, N'Under Litigatio
 INSERT [dbo].[LoanAccountStatusType] ([Id], [Name]) VALUES (6, N'Restructured')
 INSERT [dbo].[LoanAccountStatusType] ([Id], [Name]) VALUES (7, N'Pending: Endorsement')
 SET IDENTITY_INSERT [dbo].[LoanAccountStatusType] OFF
-/****** Object:  Table [dbo].[LandType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[LandType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1359,7 +1352,7 @@ INSERT [dbo].[LandType] ([Id], [Name], [Description]) VALUES (2, N'Agricultural'
 INSERT [dbo].[LandType] ([Id], [Name], [Description]) VALUES (3, N'Mineral', N'Mineral')
 INSERT [dbo].[LandType] ([Id], [Name], [Description]) VALUES (4, N'Timberland', N'Timberland')
 SET IDENTITY_INSERT [dbo].[LandType] OFF
-/****** Object:  Table [dbo].[Holiday]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[Holiday]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1380,7 +1373,7 @@ CREATE TABLE [dbo].[Holiday](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[InterestType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[InterestType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1403,7 +1396,7 @@ INSERT [dbo].[InterestType] ([Id], [Name]) VALUES (1, N'Fixed')
 INSERT [dbo].[InterestType] ([Id], [Name]) VALUES (2, N'Zero')
 INSERT [dbo].[InterestType] ([Id], [Name]) VALUES (3, N'Percentage')
 SET IDENTITY_INSERT [dbo].[InterestType] OFF
-/****** Object:  Table [dbo].[IdentificationType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[IdentificationType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1428,7 +1421,7 @@ INSERT [dbo].[IdentificationType] ([Id], [Name], [Description]) VALUES (2, N'Com
 INSERT [dbo].[IdentificationType] ([Id], [Name], [Description]) VALUES (3, N'SSS ID', NULL)
 INSERT [dbo].[IdentificationType] ([Id], [Name], [Description]) VALUES (4, N'Postal ID', NULL)
 SET IDENTITY_INSERT [dbo].[IdentificationType] OFF
-/****** Object:  Table [dbo].[HomeOwnershipType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[HomeOwnershipType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1452,7 +1445,7 @@ INSERT [dbo].[HomeOwnershipType] ([Id], [Name]) VALUES (2, N'Rented')
 INSERT [dbo].[HomeOwnershipType] ([Id], [Name]) VALUES (3, N'Living with Relatives')
 INSERT [dbo].[HomeOwnershipType] ([Id], [Name]) VALUES (4, N'Company Provided')
 SET IDENTITY_INSERT [dbo].[HomeOwnershipType] OFF
-/****** Object:  Table [dbo].[GenderType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[GenderType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1474,7 +1467,7 @@ SET IDENTITY_INSERT [dbo].[GenderType] ON
 INSERT [dbo].[GenderType] ([Id], [Name]) VALUES (1, N'Female')
 INSERT [dbo].[GenderType] ([Id], [Name]) VALUES (2, N'Male')
 SET IDENTITY_INSERT [dbo].[GenderType] OFF
-/****** Object:  Table [dbo].[FormType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[FormType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1502,7 +1495,7 @@ INSERT [dbo].[FormType] ([Id], [Name]) VALUES (6, N'Rediscounting Form')
 INSERT [dbo].[FormType] ([Id], [Name]) VALUES (7, N'Change Form')
 INSERT [dbo].[FormType] ([Id], [Name]) VALUES (8, N'Other Disbursement Form')
 SET IDENTITY_INSERT [dbo].[FormType] OFF
-/****** Object:  Table [dbo].[NonProductFee]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[NonProductFee]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1532,7 +1525,7 @@ INSERT [dbo].[NonProductFee] ([Id], [Name]) VALUES (8, N'BAS')
 INSERT [dbo].[NonProductFee] ([Id], [Name]) VALUES (9, N'OS')
 INSERT [dbo].[NonProductFee] ([Id], [Name]) VALUES (10, N'Court')
 SET IDENTITY_INSERT [dbo].[NonProductFee] OFF
-/****** Object:  Table [dbo].[NationalityType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[NationalityType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1554,7 +1547,7 @@ SET IDENTITY_INSERT [dbo].[NationalityType] ON
 INSERT [dbo].[NationalityType] ([Id], [Name]) VALUES (1, N'Filipino')
 INSERT [dbo].[NationalityType] ([Id], [Name]) VALUES (2, N'Others')
 SET IDENTITY_INSERT [dbo].[NationalityType] OFF
-/****** Object:  Table [dbo].[MaritalStatusType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[MaritalStatusType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1580,7 +1573,7 @@ INSERT [dbo].[MaritalStatusType] ([Id], [Name]) VALUES (4, N'Divorced')
 INSERT [dbo].[MaritalStatusType] ([Id], [Name]) VALUES (5, N'Annulled')
 INSERT [dbo].[MaritalStatusType] ([Id], [Name]) VALUES (6, N'Widowed')
 SET IDENTITY_INSERT [dbo].[MaritalStatusType] OFF
-/****** Object:  Table [dbo].[OrganizationType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[OrganizationType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1603,7 +1596,7 @@ SET IDENTITY_INSERT [dbo].[OrganizationType] ON
 INSERT [dbo].[OrganizationType] ([Id], [Name], [Description]) VALUES (1, N'Internal', NULL)
 INSERT [dbo].[OrganizationType] ([Id], [Name], [Description]) VALUES (2, N'External', NULL)
 SET IDENTITY_INSERT [dbo].[OrganizationType] OFF
-/****** Object:  Table [dbo].[PartyRelType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[PartyRelType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1627,7 +1620,7 @@ INSERT [dbo].[PartyRelType] ([Id], [Name]) VALUES (2, N'Customer Relationship')
 INSERT [dbo].[PartyRelType] ([Id], [Name]) VALUES (3, N'Contact Relationship')
 INSERT [dbo].[PartyRelType] ([Id], [Name]) VALUES (4, N'Spousal Relationship')
 SET IDENTITY_INSERT [dbo].[PartyRelType] OFF
-/****** Object:  Table [dbo].[ProductCategory]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[ProductCategory]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1649,7 +1642,7 @@ GO
 SET IDENTITY_INSERT [dbo].[ProductCategory] ON
 INSERT [dbo].[ProductCategory] ([Id], [Name], [Description]) VALUES (1, N'Loan Product', NULL)
 SET IDENTITY_INSERT [dbo].[ProductCategory] OFF
-/****** Object:  Table [dbo].[PostalAddressType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[PostalAddressType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1674,7 +1667,7 @@ INSERT [dbo].[PostalAddressType] ([Id], [Name]) VALUES (3, N'Billing Address')
 INSERT [dbo].[PostalAddressType] ([Id], [Name]) VALUES (4, N'Birthplace')
 INSERT [dbo].[PostalAddressType] ([Id], [Name]) VALUES (5, N'Property Location')
 SET IDENTITY_INSERT [dbo].[PostalAddressType] OFF
-/****** Object:  Table [dbo].[PaymentType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[PaymentType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1698,7 +1691,7 @@ INSERT [dbo].[PaymentType] ([Id], [Name]) VALUES (2, N'Disbursement')
 INSERT [dbo].[PaymentType] ([Id], [Name]) VALUES (3, N'Loan Payment')
 INSERT [dbo].[PaymentType] ([Id], [Name]) VALUES (4, N'Fee Payment')
 SET IDENTITY_INSERT [dbo].[PaymentType] OFF
-/****** Object:  Table [dbo].[PaymentMethodType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[PaymentMethodType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1722,7 +1715,7 @@ INSERT [dbo].[PaymentMethodType] ([Id], [Name]) VALUES (2, N'Pay Check')
 INSERT [dbo].[PaymentMethodType] ([Id], [Name]) VALUES (3, N'Personal Check')
 INSERT [dbo].[PaymentMethodType] ([Id], [Name]) VALUES (4, N'ATM')
 SET IDENTITY_INSERT [dbo].[PaymentMethodType] OFF
-/****** Object:  Table [dbo].[OtherDisbursementParticular]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[OtherDisbursementParticular]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1759,7 +1752,7 @@ INSERT [dbo].[OtherDisbursementParticular] ([Id], [Name]) VALUES (15, N'Computer
 INSERT [dbo].[OtherDisbursementParticular] ([Id], [Name]) VALUES (16, N'Scholarship Grants')
 INSERT [dbo].[OtherDisbursementParticular] ([Id], [Name]) VALUES (17, N'Edificio del Rey Rental')
 SET IDENTITY_INSERT [dbo].[OtherDisbursementParticular] OFF
-/****** Object:  Table [dbo].[PartyType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[PartyType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1781,7 +1774,7 @@ SET IDENTITY_INSERT [dbo].[PartyType] ON
 INSERT [dbo].[PartyType] ([Id], [Name]) VALUES (1, N'Person')
 INSERT [dbo].[PartyType] ([Id], [Name]) VALUES (2, N'Organization')
 SET IDENTITY_INSERT [dbo].[PartyType] OFF
-/****** Object:  Table [dbo].[PartyRoleType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[PartyRoleType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1819,7 +1812,7 @@ INSERT [dbo].[PartyRoleType] ([RoleTypeId]) VALUES (28)
 INSERT [dbo].[PartyRoleType] ([RoleTypeId]) VALUES (29)
 INSERT [dbo].[PartyRoleType] ([RoleTypeId]) VALUES (30)
 INSERT [dbo].[PartyRoleType] ([RoleTypeId]) VALUES (31)
-/****** Object:  Table [dbo].[Party]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[Party]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1848,7 +1841,7 @@ INSERT [dbo].[Party] ([Id], [PartyTypeId]) VALUES (12, 2)
 INSERT [dbo].[Party] ([Id], [PartyTypeId]) VALUES (13, 2)
 INSERT [dbo].[Party] ([Id], [PartyTypeId]) VALUES (14, 2)
 SET IDENTITY_INSERT [dbo].[Party] OFF
-/****** Object:  Table [dbo].[ForExDetail]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[ForExDetail]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1865,7 +1858,7 @@ CREATE TABLE [dbo].[ForExDetail](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Application]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[Application]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1880,7 +1873,7 @@ CREATE TABLE [dbo].[Application](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ClassificationType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[ClassificationType]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1964,7 +1957,7 @@ INSERT [dbo].[ClassificationType] ([Id], [StationNumber], [District], [DistrictT
 INSERT [dbo].[ClassificationType] ([Id], [StationNumber], [District], [DistrictTypeId]) VALUES (62, N'', N'Lakewood NHS', 3)
 INSERT [dbo].[ClassificationType] ([Id], [StationNumber], [District], [DistrictTypeId]) VALUES (63, N'', N'Banale NHS', 3)
 SET IDENTITY_INSERT [dbo].[ClassificationType] OFF
-/****** Object:  Table [dbo].[ExchangeRate]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[ExchangeRate]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1989,7 +1982,7 @@ INSERT [dbo].[ExchangeRate] ([Id], [CurrencyFromId], [CurrencyToId], [ExchangeRa
 INSERT [dbo].[ExchangeRate] ([Id], [CurrencyFromId], [CurrencyToId], [ExchangeRateTypeId], [Rate], [Date], [IsActive]) VALUES (3, 2, 1, 2, CAST(43.0000 AS Decimal(18, 4)), CAST(0x00009F9600000000 AS DateTime), 1)
 INSERT [dbo].[ExchangeRate] ([Id], [CurrencyFromId], [CurrencyToId], [ExchangeRateTypeId], [Rate], [Date], [IsActive]) VALUES (4, 2, 1, 1, CAST(42.0000 AS Decimal(18, 4)), CAST(0x00009F9600000000 AS DateTime), 1)
 SET IDENTITY_INSERT [dbo].[ExchangeRate] OFF
-/****** Object:  Table [dbo].[DisbursementVcrStatTypeAssoc]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[DisbursementVcrStatTypeAssoc]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2016,7 +2009,32 @@ INSERT [dbo].[DisbursementVcrStatTypeAssoc] ([Id], [FromStatusTypeId], [ToStatus
 INSERT [dbo].[DisbursementVcrStatTypeAssoc] ([Id], [FromStatusTypeId], [ToStatusTypeId], [EffectiveDate], [EndDate]) VALUES (7, 5, 6, CAST(0x00009F2400C0BC8E AS DateTime), NULL)
 INSERT [dbo].[DisbursementVcrStatTypeAssoc] ([Id], [FromStatusTypeId], [ToStatusTypeId], [EffectiveDate], [EndDate]) VALUES (8, 5, 5, CAST(0x00009F2400C0BC8E AS DateTime), NULL)
 SET IDENTITY_INSERT [dbo].[DisbursementVcrStatTypeAssoc] OFF
-/****** Object:  Table [dbo].[PettyCashLoanAppStatusTypeAssoc]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[ReceiptStatusTypeAssoc]    Script Date: 02/22/2012 17:44:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ReceiptStatusTypeAssoc](
+	[ReceiptStatusTypeAssociation] [int] IDENTITY(1,1) NOT NULL,
+	[FromStatusTypeId] [int] NOT NULL,
+	[ToStatusTypeId] [int] NOT NULL,
+	[EffectiveDate] [datetime] NOT NULL,
+	[EndDate] [datetime] NULL,
+ CONSTRAINT [PK_RECEIPTSTATUSTYPEASSOC] PRIMARY KEY NONCLUSTERED 
+(
+	[ReceiptStatusTypeAssociation] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[ReceiptStatusTypeAssoc] ON
+INSERT [dbo].[ReceiptStatusTypeAssoc] ([ReceiptStatusTypeAssociation], [FromStatusTypeId], [ToStatusTypeId], [EffectiveDate], [EndDate]) VALUES (1, 1, 2, CAST(0x00009F2400C0BCA6 AS DateTime), NULL)
+INSERT [dbo].[ReceiptStatusTypeAssoc] ([ReceiptStatusTypeAssociation], [FromStatusTypeId], [ToStatusTypeId], [EffectiveDate], [EndDate]) VALUES (2, 1, 3, CAST(0x00009F2400C0BCA6 AS DateTime), NULL)
+INSERT [dbo].[ReceiptStatusTypeAssoc] ([ReceiptStatusTypeAssociation], [FromStatusTypeId], [ToStatusTypeId], [EffectiveDate], [EndDate]) VALUES (3, 1, 4, CAST(0x00009F2400C0BCA6 AS DateTime), NULL)
+INSERT [dbo].[ReceiptStatusTypeAssoc] ([ReceiptStatusTypeAssociation], [FromStatusTypeId], [ToStatusTypeId], [EffectiveDate], [EndDate]) VALUES (4, 2, 3, CAST(0x00009F2400C0BCA6 AS DateTime), NULL)
+INSERT [dbo].[ReceiptStatusTypeAssoc] ([ReceiptStatusTypeAssociation], [FromStatusTypeId], [ToStatusTypeId], [EffectiveDate], [EndDate]) VALUES (5, 2, 4, CAST(0x00009F2400C0BCA6 AS DateTime), NULL)
+INSERT [dbo].[ReceiptStatusTypeAssoc] ([ReceiptStatusTypeAssociation], [FromStatusTypeId], [ToStatusTypeId], [EffectiveDate], [EndDate]) VALUES (6, 3, 4, CAST(0x00009F2400C0BCA6 AS DateTime), NULL)
+SET IDENTITY_INSERT [dbo].[ReceiptStatusTypeAssoc] OFF
+/****** Object:  Table [dbo].[PettyCashLoanAppStatusTypeAssoc]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2033,7 +2051,7 @@ CREATE TABLE [dbo].[PettyCashLoanAppStatusTypeAssoc](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[LoanAccountStatusTypeAssoc]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[LoanAccountStatusTypeAssoc]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2070,7 +2088,7 @@ INSERT [dbo].[LoanAccountStatusTypeAssoc] ([Id], [FromStatusTypeId], [ToStatusTy
 INSERT [dbo].[LoanAccountStatusTypeAssoc] ([Id], [FromStatusTypeId], [ToStatusTypeId], [EffectiveDate], [EndDate]) VALUES (17, 6, 3, CAST(0x00009F2400000000 AS DateTime), NULL)
 INSERT [dbo].[LoanAccountStatusTypeAssoc] ([Id], [FromStatusTypeId], [ToStatusTypeId], [EffectiveDate], [EndDate]) VALUES (18, 6, 2, CAST(0x00009F2400C0BC9E AS DateTime), NULL)
 SET IDENTITY_INSERT [dbo].[LoanAccountStatusTypeAssoc] OFF
-/****** Object:  Table [dbo].[ProductCategoryClassification]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[ProductCategoryClassification]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2090,7 +2108,56 @@ GO
 SET IDENTITY_INSERT [dbo].[ProductCategoryClassification] ON
 INSERT [dbo].[ProductCategoryClassification] ([Id], [ProductCategoryId], [FinancialProductId], [EffectiveDate], [EndDate]) VALUES (1, 1, 1, CAST(0x00009F8301264C25 AS DateTime), NULL)
 SET IDENTITY_INSERT [dbo].[ProductCategoryClassification] OFF
-/****** Object:  Table [dbo].[ProductStatus]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[UnitOfMeasure]    Script Date: 02/22/2012 17:44:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[UnitOfMeasure](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[UomTypeId] [int] NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_UNITOFMEASURE] PRIMARY KEY NONCLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+SET IDENTITY_INSERT [dbo].[UnitOfMeasure] ON
+INSERT [dbo].[UnitOfMeasure] ([Id], [UomTypeId], [Name]) VALUES (1, 1, N'Day/s')
+INSERT [dbo].[UnitOfMeasure] ([Id], [UomTypeId], [Name]) VALUES (2, 1, N'Week/s')
+INSERT [dbo].[UnitOfMeasure] ([Id], [UomTypeId], [Name]) VALUES (3, 1, N'Month/s')
+INSERT [dbo].[UnitOfMeasure] ([Id], [UomTypeId], [Name]) VALUES (4, 1, N'Year/s')
+INSERT [dbo].[UnitOfMeasure] ([Id], [UomTypeId], [Name]) VALUES (5, 2, N'Hectares')
+INSERT [dbo].[UnitOfMeasure] ([Id], [UomTypeId], [Name]) VALUES (6, 3, N'Square Meter')
+INSERT [dbo].[UnitOfMeasure] ([Id], [UomTypeId], [Name]) VALUES (7, 4, N'Daily')
+INSERT [dbo].[UnitOfMeasure] ([Id], [UomTypeId], [Name]) VALUES (8, 4, N'Weekly')
+INSERT [dbo].[UnitOfMeasure] ([Id], [UomTypeId], [Name]) VALUES (9, 4, N'Semi-Monthly')
+INSERT [dbo].[UnitOfMeasure] ([Id], [UomTypeId], [Name]) VALUES (10, 4, N'Monthly')
+INSERT [dbo].[UnitOfMeasure] ([Id], [UomTypeId], [Name]) VALUES (11, 4, N'Annually')
+SET IDENTITY_INSERT [dbo].[UnitOfMeasure] OFF
+/****** Object:  Table [dbo].[ProductCategoryRollup]    Script Date: 02/22/2012 17:44:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ProductCategoryRollup](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ParentProductCategoryId] [int] NULL,
+	[ChildProductCategoryId] [int] NOT NULL,
+	[EffectiveDate] [datetime] NOT NULL,
+	[EndDate] [datetime] NULL,
+ CONSTRAINT [PK_PRODUCTCATEGORYROLLUP] PRIMARY KEY NONCLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ProductStatus]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2115,7 +2182,7 @@ GO
 SET IDENTITY_INSERT [dbo].[ProductStatus] ON
 INSERT [dbo].[ProductStatus] ([Id], [StatusTypeId], [FinancialProductId], [TransitionDateTime], [Remarks], [IsActive]) VALUES (1, 2, 1, CAST(0x00009F8301264C25 AS DateTime), NULL, 1)
 SET IDENTITY_INSERT [dbo].[ProductStatus] OFF
-/****** Object:  Table [dbo].[ProductRequiredDocument]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[ProductRequiredDocument]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2144,7 +2211,7 @@ INSERT [dbo].[ProductRequiredDocument] ([Id], [FinancialProductId], [RequiredDoc
 INSERT [dbo].[ProductRequiredDocument] ([Id], [FinancialProductId], [RequiredDocumentTypeId], [EffectiveDate], [EndDate]) VALUES (9, 1, 9, CAST(0x00009F8301264C25 AS DateTime), NULL)
 INSERT [dbo].[ProductRequiredDocument] ([Id], [FinancialProductId], [RequiredDocumentTypeId], [EffectiveDate], [EndDate]) VALUES (10, 1, 10, CAST(0x00009F8301264C25 AS DateTime), NULL)
 SET IDENTITY_INSERT [dbo].[ProductRequiredDocument] OFF
-/****** Object:  Table [dbo].[ReceiptStatus]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[ReceiptStatus]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2166,7 +2233,7 @@ CREATE TABLE [dbo].[ReceiptStatus](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ProductFeature]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[ProductFeature]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2204,99 +2271,25 @@ INSERT [dbo].[ProductFeature] ([Id], [ProductFeatCatId], [Name], [Description]) 
 INSERT [dbo].[ProductFeature] ([Id], [ProductFeatCatId], [Name], [Description]) VALUES (15, 8, N'Documentary Stamp Tax', N'Documentary Stamp Tax')
 INSERT [dbo].[ProductFeature] ([Id], [ProductFeatCatId], [Name], [Description]) VALUES (16, 8, N'Service Charge', N'Service Charge')
 INSERT [dbo].[ProductFeature] ([Id], [ProductFeatCatId], [Name], [Description]) VALUES (17, 8, N'Loan Guarantee Fee', N'Loan Guarantee Fee')
-INSERT [dbo].[ProductFeature] ([Id], [ProductFeatCatId], [Name], [Description]) VALUES (18, 9, N'No Term', N'No Term')
-INSERT [dbo].[ProductFeature] ([Id], [ProductFeatCatId], [Name], [Description]) VALUES (19, 9, N'Start to End of the Month', N'Start to End of the Month')
-INSERT [dbo].[ProductFeature] ([Id], [ProductFeatCatId], [Name], [Description]) VALUES (21, 9, N'Any Day of the Month to Same Day of the Next Month', N'Any Day of the Month to Same Day of Next Month')
 SET IDENTITY_INSERT [dbo].[ProductFeature] OFF
-/****** Object:  Table [dbo].[SalaryReceipt]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[ProductCatFeatApplicability]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[SalaryReceipt](
-	[ReceiptId] [int] NOT NULL,
-	[IsApplied] [bit] NOT NULL,
- CONSTRAINT [PK_SalaryReceipt] PRIMARY KEY CLUSTERED 
-(
-	[ReceiptId] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[ProductCategoryRollup]    Script Date: 03/12/2012 21:04:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[ProductCategoryRollup](
+CREATE TABLE [dbo].[ProductCatFeatApplicability](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[ParentProductCategoryId] [int] NULL,
-	[ChildProductCategoryId] [int] NOT NULL,
+	[ProductFeatureId] [int] NOT NULL,
+	[ProductCategoryId] [int] NOT NULL,
 	[EffectiveDate] [datetime] NOT NULL,
 	[EndDate] [datetime] NULL,
- CONSTRAINT [PK_PRODUCTCATEGORYROLLUP] PRIMARY KEY NONCLUSTERED 
+ CONSTRAINT [PK_PRODUCTCATFEATAPPLICABILITY] PRIMARY KEY NONCLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[UnitOfMeasure]    Script Date: 03/12/2012 21:04:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[UnitOfMeasure](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[UomTypeId] [int] NOT NULL,
-	[Name] [varchar](50) NOT NULL,
- CONSTRAINT [PK_UNITOFMEASURE] PRIMARY KEY NONCLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-SET ANSI_PADDING OFF
-GO
-SET IDENTITY_INSERT [dbo].[UnitOfMeasure] ON
-INSERT [dbo].[UnitOfMeasure] ([Id], [UomTypeId], [Name]) VALUES (1, 1, N'Day/s')
-INSERT [dbo].[UnitOfMeasure] ([Id], [UomTypeId], [Name]) VALUES (2, 1, N'Week/s')
-INSERT [dbo].[UnitOfMeasure] ([Id], [UomTypeId], [Name]) VALUES (3, 1, N'Month/s')
-INSERT [dbo].[UnitOfMeasure] ([Id], [UomTypeId], [Name]) VALUES (4, 1, N'Year/s')
-INSERT [dbo].[UnitOfMeasure] ([Id], [UomTypeId], [Name]) VALUES (5, 2, N'Hectares')
-INSERT [dbo].[UnitOfMeasure] ([Id], [UomTypeId], [Name]) VALUES (6, 3, N'Square Meter')
-INSERT [dbo].[UnitOfMeasure] ([Id], [UomTypeId], [Name]) VALUES (7, 4, N'Daily')
-INSERT [dbo].[UnitOfMeasure] ([Id], [UomTypeId], [Name]) VALUES (8, 4, N'Weekly')
-INSERT [dbo].[UnitOfMeasure] ([Id], [UomTypeId], [Name]) VALUES (9, 4, N'Semi-Monthly')
-INSERT [dbo].[UnitOfMeasure] ([Id], [UomTypeId], [Name]) VALUES (10, 4, N'Monthly')
-INSERT [dbo].[UnitOfMeasure] ([Id], [UomTypeId], [Name]) VALUES (11, 4, N'Annually')
-SET IDENTITY_INSERT [dbo].[UnitOfMeasure] OFF
-/****** Object:  Table [dbo].[ReceiptStatusTypeAssoc]    Script Date: 03/12/2012 21:04:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[ReceiptStatusTypeAssoc](
-	[ReceiptStatusTypeAssociation] [int] IDENTITY(1,1) NOT NULL,
-	[FromStatusTypeId] [int] NOT NULL,
-	[ToStatusTypeId] [int] NOT NULL,
-	[EffectiveDate] [datetime] NOT NULL,
-	[EndDate] [datetime] NULL,
- CONSTRAINT [PK_RECEIPTSTATUSTYPEASSOC] PRIMARY KEY NONCLUSTERED 
-(
-	[ReceiptStatusTypeAssociation] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-SET IDENTITY_INSERT [dbo].[ReceiptStatusTypeAssoc] ON
-INSERT [dbo].[ReceiptStatusTypeAssoc] ([ReceiptStatusTypeAssociation], [FromStatusTypeId], [ToStatusTypeId], [EffectiveDate], [EndDate]) VALUES (1, 1, 2, CAST(0x00009F2400C0BCA6 AS DateTime), NULL)
-INSERT [dbo].[ReceiptStatusTypeAssoc] ([ReceiptStatusTypeAssociation], [FromStatusTypeId], [ToStatusTypeId], [EffectiveDate], [EndDate]) VALUES (2, 1, 3, CAST(0x00009F2400C0BCA6 AS DateTime), NULL)
-INSERT [dbo].[ReceiptStatusTypeAssoc] ([ReceiptStatusTypeAssociation], [FromStatusTypeId], [ToStatusTypeId], [EffectiveDate], [EndDate]) VALUES (3, 1, 4, CAST(0x00009F2400C0BCA6 AS DateTime), NULL)
-INSERT [dbo].[ReceiptStatusTypeAssoc] ([ReceiptStatusTypeAssociation], [FromStatusTypeId], [ToStatusTypeId], [EffectiveDate], [EndDate]) VALUES (4, 2, 3, CAST(0x00009F2400C0BCA6 AS DateTime), NULL)
-INSERT [dbo].[ReceiptStatusTypeAssoc] ([ReceiptStatusTypeAssociation], [FromStatusTypeId], [ToStatusTypeId], [EffectiveDate], [EndDate]) VALUES (5, 2, 4, CAST(0x00009F2400C0BCA6 AS DateTime), NULL)
-INSERT [dbo].[ReceiptStatusTypeAssoc] ([ReceiptStatusTypeAssociation], [FromStatusTypeId], [ToStatusTypeId], [EffectiveDate], [EndDate]) VALUES (6, 3, 4, CAST(0x00009F2400C0BCA6 AS DateTime), NULL)
-SET IDENTITY_INSERT [dbo].[ReceiptStatusTypeAssoc] OFF
-/****** Object:  Table [dbo].[TimeUnitConversion]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[TimeUnitConversion]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2363,7 +2356,7 @@ INSERT [dbo].[TimeUnitConversion] ([Id], [SourceUomId], [TargetUomId], [Multipli
 INSERT [dbo].[TimeUnitConversion] ([Id], [SourceUomId], [TargetUomId], [Multiplier], [Offset]) VALUES (47, 10, 4, CAST(1.0000 AS Decimal(10, 4)), CAST(12.0000 AS Decimal(10, 4)))
 INSERT [dbo].[TimeUnitConversion] ([Id], [SourceUomId], [TargetUomId], [Multiplier], [Offset]) VALUES (48, 11, 4, CAST(1.0000 AS Decimal(10, 4)), CAST(1.0000 AS Decimal(10, 4)))
 SET IDENTITY_INSERT [dbo].[TimeUnitConversion] OFF
-/****** Object:  Table [dbo].[SystemSetting]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[SystemSetting]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2399,24 +2392,7 @@ INSERT [dbo].[SystemSetting] ([Id], [SystemSettingTypeId], [UomId], [Value], [Ef
 INSERT [dbo].[SystemSetting] ([Id], [SystemSettingTypeId], [UomId], [Value], [EffectiveDate], [EndDate]) VALUES (11, 1, 1, N'5', CAST(0x00009F240140D927 AS DateTime), NULL)
 INSERT [dbo].[SystemSetting] ([Id], [SystemSettingTypeId], [UomId], [Value], [EffectiveDate], [EndDate]) VALUES (12, 13, NULL, N'20', CAST(0x00009FFF00B9266D AS DateTime), NULL)
 SET IDENTITY_INSERT [dbo].[SystemSetting] OFF
-/****** Object:  Table [dbo].[ProductCatFeatApplicability]    Script Date: 03/12/2012 21:04:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[ProductCatFeatApplicability](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[ProductFeatureId] [int] NOT NULL,
-	[ProductCategoryId] [int] NOT NULL,
-	[EffectiveDate] [datetime] NOT NULL,
-	[EndDate] [datetime] NULL,
- CONSTRAINT [PK_PRODUCTCATFEATAPPLICABILITY] PRIMARY KEY NONCLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[PettyCashLoanApplication]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[PettyCashLoanApplication]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2442,7 +2418,7 @@ CREATE TABLE [dbo].[PettyCashLoanApplication](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ProductFeatureApplicability]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[ProductFeatureApplicability]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2477,7 +2453,7 @@ INSERT [dbo].[ProductFeatureApplicability] ([Id], [FinancialProductId], [Product
 INSERT [dbo].[ProductFeatureApplicability] ([Id], [FinancialProductId], [ProductFeatureId], [EffectiveDate], [EndDate], [Value]) VALUES (14, 1, 11, CAST(0x00009F8301264C25 AS DateTime), NULL, CAST(4.00 AS Numeric(18, 2)))
 INSERT [dbo].[ProductFeatureApplicability] ([Id], [FinancialProductId], [ProductFeatureId], [EffectiveDate], [EndDate], [Value]) VALUES (15, 1, 11, CAST(0x00009F8301264C25 AS DateTime), NULL, CAST(3.00 AS Numeric(18, 2)))
 SET IDENTITY_INSERT [dbo].[ProductFeatureApplicability] OFF
-/****** Object:  Table [dbo].[Denomination]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  Table [dbo].[Denomination]    Script Date: 02/22/2012 17:44:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2497,7 +2473,7 @@ CREATE TABLE [dbo].[Denomination](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  View [dbo].[FinancialProductViewList]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  View [dbo].[FinancialProductViewList]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2514,7 +2490,7 @@ WHERE     (dbo.ProductStatus.TransitionDateTime IN
                             FROM          dbo.ProductStatus AS ProductStatus_1
                             GROUP BY FinancialProductId))
 GO
-/****** Object:  Table [dbo].[Agreement]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[Agreement]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2539,7 +2515,7 @@ CREATE TABLE [dbo].[Agreement](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[LoanApplication]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[LoanApplication]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2569,7 +2545,7 @@ CREATE TABLE [dbo].[LoanApplication](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Organization]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[Organization]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2601,7 +2577,7 @@ INSERT [dbo].[Organization] ([PartyId], [OrganizationTypeId], [OrganizationName]
 INSERT [dbo].[Organization] ([PartyId], [OrganizationTypeId], [OrganizationName], [DateEstablished]) VALUES (12, NULL, N'Rizal Commercial Banking Corporation', NULL)
 INSERT [dbo].[Organization] ([PartyId], [OrganizationTypeId], [OrganizationName], [DateEstablished]) VALUES (13, NULL, N'Union Bank of the Philippines', NULL)
 INSERT [dbo].[Organization] ([PartyId], [OrganizationTypeId], [OrganizationName], [DateEstablished]) VALUES (14, NULL, N'United Coconut Planters Bank', NULL)
-/****** Object:  Table [dbo].[PartyRole]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[PartyRole]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2633,7 +2609,7 @@ INSERT [dbo].[PartyRole] ([Id], [PartyId], [RoleTypeId], [EffectiveDate], [EndDa
 INSERT [dbo].[PartyRole] ([Id], [PartyId], [RoleTypeId], [EffectiveDate], [EndDate]) VALUES (13, 13, 13, CAST(0x00009F98010200D2 AS DateTime), NULL)
 INSERT [dbo].[PartyRole] ([Id], [PartyId], [RoleTypeId], [EffectiveDate], [EndDate]) VALUES (14, 14, 13, CAST(0x00009F9801023E7E AS DateTime), NULL)
 SET IDENTITY_INSERT [dbo].[PartyRole] OFF
-/****** Object:  Table [dbo].[Person]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[Person]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2652,7 +2628,7 @@ CREATE TABLE [dbo].[Person](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 INSERT [dbo].[Person] ([PartyId], [GenderTypeId], [NationalityTypeId], [EducAttainmentTypeId], [Birthdate], [ImageFilename]) VALUES (2, 1, 1, 1, CAST(0x0000816300000000 AS DateTime), NULL)
-/****** Object:  Table [dbo].[Payment]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[Payment]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2679,7 +2655,7 @@ CREATE TABLE [dbo].[Payment](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  View [dbo].[PastDueInterestRateViewList]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  View [dbo].[PastDueInterestRateViewList]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2693,7 +2669,7 @@ SELECT productfeature.name AS "Description",
 
 FROM productfeature JOIN productfeatureapplicability ON productfeature.id = productfeatureapplicability.productfeatureid;
 GO
-/****** Object:  Table [dbo].[LoanTerm]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[LoanTerm]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2710,7 +2686,7 @@ CREATE TABLE [dbo].[LoanTerm](
 GO
 INSERT [dbo].[LoanTerm] ([ProductFeatApplicabilityId], [UomId], [LoanTermLength]) VALUES (1, 3, 1)
 INSERT [dbo].[LoanTerm] ([ProductFeatApplicabilityId], [UomId], [LoanTermLength]) VALUES (2, 3, 120)
-/****** Object:  Table [dbo].[PartyRelationship]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[PartyRelationship]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2731,7 +2707,7 @@ GO
 SET IDENTITY_INSERT [dbo].[PartyRelationship] ON
 INSERT [dbo].[PartyRelationship] ([Id], [FirstPartyRoleId], [SecondPartyRoleId], [PartyRelTypeId], [EffectiveDate], [EndDate]) VALUES (2, 1, 3, 1, CAST(0x00009F2400000000 AS DateTime), NULL)
 SET IDENTITY_INSERT [dbo].[PartyRelationship] OFF
-/****** Object:  Table [dbo].[LoanModification]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[LoanModification]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2746,7 +2722,7 @@ CREATE TABLE [dbo].[LoanModification](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[LoanAgreement]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[LoanAgreement]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2759,7 +2735,7 @@ CREATE TABLE [dbo].[LoanAgreement](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[MaritalStatus]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[MaritalStatus]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2777,7 +2753,7 @@ CREATE TABLE [dbo].[MaritalStatus](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[LoanApplicationStatus]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[LoanApplicationStatus]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2799,7 +2775,7 @@ CREATE TABLE [dbo].[LoanApplicationStatus](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[LoanApplicationRole]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[LoanApplicationRole]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2814,7 +2790,7 @@ CREATE TABLE [dbo].[LoanApplicationRole](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[LoanApplicationFee]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[LoanApplicationFee]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2834,7 +2810,7 @@ CREATE TABLE [dbo].[LoanApplicationFee](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[LoanDisbursementVcr]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[LoanDisbursementVcr]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2851,7 +2827,7 @@ CREATE TABLE [dbo].[LoanDisbursementVcr](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[HomeOwnership]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[HomeOwnership]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2869,7 +2845,7 @@ CREATE TABLE [dbo].[HomeOwnership](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ForExCheque]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[ForExCheque]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2890,7 +2866,7 @@ CREATE TABLE [dbo].[ForExCheque](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ApplicationItem]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[ApplicationItem]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2908,7 +2884,7 @@ CREATE TABLE [dbo].[ApplicationItem](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Asset]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[Asset]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2930,7 +2906,7 @@ CREATE TABLE [dbo].[Asset](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Bank]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[Bank]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2960,7 +2936,7 @@ INSERT [dbo].[Bank] ([PartyRoleId], [Branch], [Acronym]) VALUES (11, N'', N'PSBa
 INSERT [dbo].[Bank] ([PartyRoleId], [Branch], [Acronym]) VALUES (12, N'', N'RCBC')
 INSERT [dbo].[Bank] ([PartyRoleId], [Branch], [Acronym]) VALUES (13, N'', N'UBP')
 INSERT [dbo].[Bank] ([PartyRoleId], [Branch], [Acronym]) VALUES (14, N'', N'UCPB')
-/****** Object:  Table [dbo].[AgreementRole]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[AgreementRole]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2975,7 +2951,7 @@ CREATE TABLE [dbo].[AgreementRole](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AgreementItem]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[AgreementItem]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3005,7 +2981,7 @@ CREATE TABLE [dbo].[AgreementItem](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[CashOnVault]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[CashOnVault]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3023,7 +2999,7 @@ CREATE TABLE [dbo].[CashOnVault](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CompromiseAgreement]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[CompromiseAgreement]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3036,7 +3012,7 @@ CREATE TABLE [dbo].[CompromiseAgreement](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Customer]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[Customer]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3055,7 +3031,7 @@ CREATE TABLE [dbo].[Customer](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[COVTransaction]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[COVTransaction]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3079,7 +3055,7 @@ CREATE TABLE [dbo].[COVTransaction](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ForeignExchange]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[ForeignExchange]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3103,7 +3079,7 @@ CREATE TABLE [dbo].[ForeignExchange](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Fee]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[Fee]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3122,7 +3098,7 @@ GO
 INSERT [dbo].[Fee] ([ProductFeatApplicabilityId], [ChargeAmount], [BaseAmount], [PercentageRate]) VALUES (3, CAST(10.00 AS Numeric(18, 2)), CAST(5000.00 AS Numeric(18, 2)), CAST(0.00 AS Numeric(4, 2)))
 INSERT [dbo].[Fee] ([ProductFeatApplicabilityId], [ChargeAmount], [BaseAmount], [PercentageRate]) VALUES (4, CAST(100.00 AS Numeric(18, 2)), CAST(10000.00 AS Numeric(18, 2)), CAST(0.00 AS Numeric(4, 2)))
 INSERT [dbo].[Fee] ([ProductFeatApplicabilityId], [ChargeAmount], [BaseAmount], [PercentageRate]) VALUES (5, CAST(0.00 AS Numeric(18, 2)), CAST(0.00 AS Numeric(18, 2)), CAST(1.00 AS Numeric(4, 2)))
-/****** Object:  Table [dbo].[FinancialAccount]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[FinancialAccount]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3143,7 +3119,7 @@ CREATE TABLE [dbo].[FinancialAccount](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Employee]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[Employee]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3167,7 +3143,7 @@ GO
 SET ANSI_PADDING OFF
 GO
 INSERT [dbo].[Employee] ([PartyRoleId], [EmployeeIdNumber], [Position], [SssNumber], [GsisNumber], [OwaNumber], [PhicNumber]) VALUES (1, N'8', N'Clerk', NULL, NULL, NULL, NULL)
-/****** Object:  Table [dbo].[PettyCashLoanItem]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[PettyCashLoanItem]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3189,7 +3165,7 @@ CREATE TABLE [dbo].[PettyCashLoanItem](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[PersonName]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[PersonName]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3216,7 +3192,7 @@ INSERT [dbo].[PersonName] ([Id], [PartyId], [PersonNameTypeId], [Name], [Effecti
 INSERT [dbo].[PersonName] ([Id], [PartyId], [PersonNameTypeId], [Name], [EffectiveDate], [EndDate]) VALUES (2, 2, 2, N'Rey', CAST(0x00009F2400000000 AS DateTime), NULL)
 INSERT [dbo].[PersonName] ([Id], [PartyId], [PersonNameTypeId], [Name], [EffectiveDate], [EndDate]) VALUES (3, 2, 4, N'Pamaran', CAST(0x00009F2400000000 AS DateTime), NULL)
 SET IDENTITY_INSERT [dbo].[PersonName] OFF
-/****** Object:  Table [dbo].[PersonIdentification]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[PersonIdentification]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3236,7 +3212,7 @@ CREATE TABLE [dbo].[PersonIdentification](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[PettyCashLoanApplicationStatus]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[PettyCashLoanApplicationStatus]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3258,44 +3234,7 @@ CREATE TABLE [dbo].[PettyCashLoanApplicationStatus](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[SubmittedDocument]    Script Date: 03/12/2012 21:04:17 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[SubmittedDocument](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[ProductRequiredDocumentId] [int] NOT NULL,
-	[ApplicationId] [int] NOT NULL,
-	[DateSubmitted] [datetime] NOT NULL,
-	[Description] [varchar](256) NULL,
- CONSTRAINT [PK_SUBMITTEDDOCUMENT] PRIMARY KEY NONCLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[SpecimenSignature]    Script Date: 03/12/2012 21:04:17 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[SpecimenSignature](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[PartyId] [int] NOT NULL,
-	[DateUploaded] [datetime] NOT NULL,
-	[ImageFilename] [text] NOT NULL,
- CONSTRAINT [PK_SPECIMENSIGNATURE] PRIMARY KEY NONCLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[Taxpayer]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[Taxpayer]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3313,7 +3252,7 @@ CREATE TABLE [dbo].[Taxpayer](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ProductCategoryFeatureFunctionalApplicability]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[ProductCategoryFeatureFunctionalApplicability]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3330,7 +3269,7 @@ CREATE TABLE [dbo].[ProductCategoryFeatureFunctionalApplicability](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[UserAccount]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[UserAccount]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3360,27 +3299,44 @@ GO
 SET IDENTITY_INSERT [dbo].[UserAccount] ON
 INSERT [dbo].[UserAccount] ([Id], [UserAccountTypeId], [PartyId], [EffectiveDate], [EndDate], [Username], [Password], [SecurityQuestion], [SecurityAnswer], [DateCreated], [HomePage]) VALUES (3, 2, 2, CAST(0x00009F2400000000 AS DateTime), NULL, N'admin', N'0DPiKuNIrrVmD8IUCuw1hQxNqZc=', N'Where did you meet your spouse?', N'admin', CAST(0x00009F2400000000 AS DateTime), NULL)
 SET IDENTITY_INSERT [dbo].[UserAccount] OFF
-/****** Object:  Table [dbo].[UserAccountStatus]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[SubmittedDocument]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[UserAccountStatus](
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[SubmittedDocument](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[UserAccountId] [int] NOT NULL,
-	[StatusTypeId] [int] NOT NULL,
-	[EffectiveDate] [datetime] NOT NULL,
-	[EndDate] [datetime] NULL,
- CONSTRAINT [PK_USERACCOUNTSTATUS] PRIMARY KEY NONCLUSTERED 
+	[ProductRequiredDocumentId] [int] NOT NULL,
+	[ApplicationId] [int] NOT NULL,
+	[DateSubmitted] [datetime] NOT NULL,
+	[Description] [varchar](256) NULL,
+ CONSTRAINT [PK_SUBMITTEDDOCUMENT] PRIMARY KEY NONCLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-SET IDENTITY_INSERT [dbo].[UserAccountStatus] ON
-INSERT [dbo].[UserAccountStatus] ([Id], [UserAccountId], [StatusTypeId], [EffectiveDate], [EndDate]) VALUES (5, 3, 1, CAST(0x00009F2400000000 AS DateTime), NULL)
-SET IDENTITY_INSERT [dbo].[UserAccountStatus] OFF
-/****** Object:  Table [dbo].[Vehicle]    Script Date: 03/12/2012 21:04:17 ******/
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[SpecimenSignature]    Script Date: 02/22/2012 17:44:58 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SpecimenSignature](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PartyId] [int] NOT NULL,
+	[DateUploaded] [datetime] NOT NULL,
+	[ImageFilename] [text] NOT NULL,
+ CONSTRAINT [PK_SPECIMENSIGNATURE] PRIMARY KEY NONCLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Vehicle]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3400,7 +3356,23 @@ CREATE TABLE [dbo].[Vehicle](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[SubmittedDocumentStatus]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[ReceiptPaymentAssoc]    Script Date: 02/22/2012 17:44:58 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ReceiptPaymentAssoc](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ReceiptId] [int] NOT NULL,
+	[PaymentId] [int] NOT NULL,
+	[Amount] [numeric](18, 2) NOT NULL,
+ CONSTRAINT [PK_ReceiptPaymentAssoc] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SubmittedDocumentStatus]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3422,23 +3394,27 @@ CREATE TABLE [dbo].[SubmittedDocumentStatus](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ReceiptPaymentAssoc]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[UserAccountStatus]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[ReceiptPaymentAssoc](
+CREATE TABLE [dbo].[UserAccountStatus](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[ReceiptId] [int] NOT NULL,
-	[PaymentId] [int] NOT NULL,
-	[Amount] [numeric](18, 2) NOT NULL,
- CONSTRAINT [PK_ReceiptPaymentAssoc] PRIMARY KEY CLUSTERED 
+	[UserAccountId] [int] NOT NULL,
+	[StatusTypeId] [int] NOT NULL,
+	[EffectiveDate] [datetime] NOT NULL,
+	[EndDate] [datetime] NULL,
+ CONSTRAINT [PK_USERACCOUNTSTATUS] PRIMARY KEY NONCLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PaymentCurrencyAssoc]    Script Date: 03/12/2012 21:04:17 ******/
+SET IDENTITY_INSERT [dbo].[UserAccountStatus] ON
+INSERT [dbo].[UserAccountStatus] ([Id], [UserAccountId], [StatusTypeId], [EffectiveDate], [EndDate]) VALUES (5, 3, 1, CAST(0x00009F2400000000 AS DateTime), NULL)
+SET IDENTITY_INSERT [dbo].[UserAccountStatus] OFF
+/****** Object:  Table [dbo].[PaymentCurrencyAssoc]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3453,7 +3429,7 @@ CREATE TABLE [dbo].[PaymentCurrencyAssoc](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[FinAcctTrans]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[FinAcctTrans]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3472,7 +3448,7 @@ CREATE TABLE [dbo].[FinAcctTrans](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[FeePayment]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[FeePayment]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3492,7 +3468,7 @@ CREATE TABLE [dbo].[FeePayment](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Employment]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[Employment]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3512,7 +3488,7 @@ GO
 SET ANSI_PADDING OFF
 GO
 INSERT [dbo].[Employment] ([PartyRelationshipId], [EmploymentStatus], [Salary]) VALUES (2, N'Employed', N'50000')
-/****** Object:  Table [dbo].[DocumentPage]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[DocumentPage]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3528,7 +3504,7 @@ CREATE TABLE [dbo].[DocumentPage](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[FinancialAccountRole]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[FinancialAccountRole]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3543,7 +3519,7 @@ CREATE TABLE [dbo].[FinancialAccountRole](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[FinancialAccountProduct]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[FinancialAccountProduct]    Script Date: 02/22/2012 17:44:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3560,7 +3536,7 @@ CREATE TABLE [dbo].[FinancialAccountProduct](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Disbursement]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[Disbursement]    Script Date: 02/22/2012 17:44:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3579,7 +3555,7 @@ CREATE TABLE [dbo].[Disbursement](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[DisbursementVcrStatus]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[DisbursementVcrStatus]    Script Date: 02/22/2012 17:44:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3601,7 +3577,7 @@ CREATE TABLE [dbo].[DisbursementVcrStatus](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[CustomerStatus]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[CustomerStatus]    Script Date: 02/22/2012 17:44:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3618,7 +3594,7 @@ CREATE TABLE [dbo].[CustomerStatus](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CustomerSourceOfIncome]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[CustomerSourceOfIncome]    Script Date: 02/22/2012 17:44:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3636,7 +3612,7 @@ CREATE TABLE [dbo].[CustomerSourceOfIncome](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CustomerClassification]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[CustomerClassification]    Script Date: 02/22/2012 17:44:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3653,7 +3629,7 @@ CREATE TABLE [dbo].[CustomerClassification](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CustomerCategory]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[CustomerCategory]    Script Date: 02/22/2012 17:44:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3670,7 +3646,7 @@ CREATE TABLE [dbo].[CustomerCategory](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Ctc]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[Ctc]    Script Date: 02/22/2012 17:44:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3691,7 +3667,7 @@ CREATE TABLE [dbo].[Ctc](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ControlNumbers]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  Table [dbo].[ControlNumbers]    Script Date: 02/22/2012 17:44:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3708,7 +3684,7 @@ CREATE TABLE [dbo].[ControlNumbers](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  UserDefinedFunction [dbo].[concatname]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  UserDefinedFunction [dbo].[concatname]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3739,7 +3715,7 @@ then 3 else 4 end
 	return @out_name
 end;
 GO
-/****** Object:  Table [dbo].[BankStatus]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[BankStatus]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3769,7 +3745,7 @@ INSERT [dbo].[BankStatus] ([Id], [PartyRoleId], [BankStatusTypeId], [EffectiveDa
 INSERT [dbo].[BankStatus] ([Id], [PartyRoleId], [BankStatusTypeId], [EffectiveDate], [EndDate]) VALUES (10, 13, 1, CAST(0xF3340B00 AS Date), NULL)
 INSERT [dbo].[BankStatus] ([Id], [PartyRoleId], [BankStatusTypeId], [EffectiveDate], [EndDate]) VALUES (11, 14, 1, CAST(0xF3340B00 AS Date), NULL)
 SET IDENTITY_INSERT [dbo].[BankStatus] OFF
-/****** Object:  Table [dbo].[BankAccount]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[BankAccount]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3791,7 +3767,7 @@ CREATE TABLE [dbo].[BankAccount](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Cheque]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[Cheque]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3807,7 +3783,7 @@ CREATE TABLE [dbo].[Cheque](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Address]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[Address]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3896,7 +3872,7 @@ INSERT [dbo].[Address] ([AddressId], [PartyId], [AddressTypeId], [EffectiveDate]
 INSERT [dbo].[Address] ([AddressId], [PartyId], [AddressTypeId], [EffectiveDate], [EndDate], [AssetId]) VALUES (68, 14, 2, CAST(0x00009F9C00E8DCF4 AS DateTime), NULL, NULL)
 INSERT [dbo].[Address] ([AddressId], [PartyId], [AddressTypeId], [EffectiveDate], [EndDate], [AssetId]) VALUES (69, 14, 2, CAST(0x00009F9C00E8DCF4 AS DateTime), NULL, NULL)
 SET IDENTITY_INSERT [dbo].[Address] OFF
-/****** Object:  Table [dbo].[Addendum]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[Addendum]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3911,7 +3887,7 @@ CREATE TABLE [dbo].[Addendum](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AssetRole]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[AssetRole]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3927,7 +3903,7 @@ CREATE TABLE [dbo].[AssetRole](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AssetAppraisal]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[AssetAppraisal]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3950,7 +3926,7 @@ CREATE TABLE [dbo].[AssetAppraisal](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[AmortizationSchedule]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[AmortizationSchedule]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3970,7 +3946,7 @@ CREATE TABLE [dbo].[AmortizationSchedule](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[LoanAccount]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[LoanAccount]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3989,7 +3965,7 @@ CREATE TABLE [dbo].[LoanAccount](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Land]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[Land]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4010,7 +3986,7 @@ CREATE TABLE [dbo].[Land](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[FormDetails]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[FormDetails]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4033,7 +4009,7 @@ CREATE TABLE [dbo].[FormDetails](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ForeignExchangeDetailAssoc]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[ForeignExchangeDetailAssoc]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4048,7 +4024,7 @@ CREATE TABLE [dbo].[ForeignExchangeDetailAssoc](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[LoanModificationStatus]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[LoanModificationStatus]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4071,7 +4047,7 @@ CREATE TABLE [dbo].[LoanModificationStatus](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[LoanModificationPrevItems]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[LoanModificationPrevItems]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4086,7 +4062,7 @@ CREATE TABLE [dbo].[LoanModificationPrevItems](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Machine]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[Machine]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4107,7 +4083,7 @@ CREATE TABLE [dbo].[Machine](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[LoanPayment]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[LoanPayment]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4124,7 +4100,7 @@ CREATE TABLE [dbo].[LoanPayment](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PostalAddress]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[PostalAddress]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4166,7 +4142,7 @@ INSERT [dbo].[PostalAddress] ([AddressId], [CountryId], [PostalAddressTypeId], [
 INSERT [dbo].[PostalAddress] ([AddressId], [CountryId], [PostalAddressTypeId], [StreetAddress], [Barangay], [Municipality], [City], [Province], [State], [PostalCode], [IsPrimary]) VALUES (39, 1, 2, N'RCBC Building, Rizal Avenue', N'San Francisco', NULL, N'Pagadian City', N'Zamboanga del Sur', NULL, N'7016', 1)
 INSERT [dbo].[PostalAddress] ([AddressId], [CountryId], [PostalAddressTypeId], [StreetAddress], [Barangay], [Municipality], [City], [Province], [State], [PostalCode], [IsPrimary]) VALUES (42, 1, 2, N'Rizal Avenue', N'Balangasan', NULL, N'Pagadian City', N'Zamboanga del Sur', NULL, N'7016', 1)
 INSERT [dbo].[PostalAddress] ([AddressId], [CountryId], [PostalAddressTypeId], [StreetAddress], [Barangay], [Municipality], [City], [Province], [State], [PostalCode], [IsPrimary]) VALUES (45, 1, 2, N'Jamisola Corner Bonifacio Streets', N'Santiago', NULL, N'Pagadian City', N'Zamboanga del Sur', NULL, N'7016', 1)
-/****** Object:  View [dbo].[OtherDisbursementDetails]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[OtherDisbursementDetails]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4355,7 +4331,7 @@ End
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPaneCount', @value=2 , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'OtherDisbursementDetails'
 GO
-/****** Object:  Table [dbo].[LoanStatement]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[LoanStatement]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4373,7 +4349,7 @@ CREATE TABLE [dbo].[LoanStatement](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[LoanReAvailment]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[LoanReAvailment]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4390,7 +4366,7 @@ CREATE TABLE [dbo].[LoanReAvailment](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  View [dbo].[PaymentHistoryViewList]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[PaymentHistoryViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4415,7 +4391,7 @@ WHERE
 	FinAcctTrans.FinancialAcctTransTypeId = (select Id from FinlAcctTransType where Name = 'Account Payment')
 	;
 GO
-/****** Object:  Table [dbo].[LoanAdjustment]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[LoanAdjustment]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4437,7 +4413,7 @@ CREATE TABLE [dbo].[LoanAdjustment](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  View [dbo].[LoanDisbursementVoucherViewList]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[LoanDisbursementVoucherViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4470,7 +4446,7 @@ FROM         loandisbursementvcr JOIN
                       organization ON organization.partyid = party.id
 WHERE     roletype.name = 'Borrower' and disbursementvcrstatus.IsActive = 1;
 GO
-/****** Object:  Table [dbo].[LoanModificationNewItems]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[LoanModificationNewItems]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4485,7 +4461,7 @@ CREATE TABLE [dbo].[LoanModificationNewItems](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[LoanDisbursement]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[LoanDisbursement]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4502,7 +4478,7 @@ CREATE TABLE [dbo].[LoanDisbursement](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  View [dbo].[LoanApplicationViewList]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[LoanApplicationViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4553,7 +4529,7 @@ FROM         loanapplication JOIN
 
 WHERE ProductFeatureCategory.Name = 'Collateral Requirement' AND LoanApplicationStatus.IsActive = 1 AND roletype.name = 'Borrower';
 GO
-/****** Object:  View [dbo].[LoanAgreementViewList]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[LoanAgreementViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4580,7 +4556,7 @@ FROM agreement	JOIN agreementrole ON agreementrole.agreementid = agreement.id
 		JOIN partyrole ON partyrole.id = agreementrole.partyroleid
 		JOIN organization ON organization.partyid = partyrole.partyid;
 GO
-/****** Object:  Table [dbo].[InterestItems]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[InterestItems]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4596,7 +4572,7 @@ CREATE TABLE [dbo].[InterestItems](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[LoanAccountStatus]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[LoanAccountStatus]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4618,7 +4594,7 @@ CREATE TABLE [dbo].[LoanAccountStatus](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[AmortizationScheduleItem]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[AmortizationScheduleItem]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4638,7 +4614,7 @@ CREATE TABLE [dbo].[AmortizationScheduleItem](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  View [dbo].[AllowedEmployeeViewList]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[AllowedEmployeeViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4678,7 +4654,7 @@ WHERE
 												   WHERE RoleType.Name = 'Lending Institution'))
 	AND PartyRole.EndDate IS NULL;
 GO
-/****** Object:  Table [dbo].[ChequeStatus]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[ChequeStatus]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4700,7 +4676,7 @@ CREATE TABLE [dbo].[ChequeStatus](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ChequeLoanAssoc]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[ChequeLoanAssoc]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4715,7 +4691,7 @@ CREATE TABLE [dbo].[ChequeLoanAssoc](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ChequeApplicationAssoc]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[ChequeApplicationAssoc]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4730,7 +4706,7 @@ CREATE TABLE [dbo].[ChequeApplicationAssoc](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  View [dbo].[AgreementViewList]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[AgreementViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4770,7 +4746,7 @@ FROM         loandisbursementvcr JOIN
                       disbursementvcrstatustype ON disbursementvcrstatus.DisbursementVoucherStatTypId = disbursementvcrstatustype.Id
 WHERE	  disbursementvcrstatustype.Name = 'Pending' and disbursementvcrstatus.IsActive = 1;
 GO
-/****** Object:  View [dbo].[CollectionViewList]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[CollectionViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4793,7 +4769,7 @@ FROM         dbo.Payment LEFT OUTER JOIN
 WHERE     (dbo.Payment.TotalAmount > 0) AND (dbo.LoanPayment.PaymentId IS NOT NULL) OR
                       (dbo.Payment.TotalAmount > 0) AND (dbo.FeePayment.PaymentId IS NOT NULL);
 GO
-/****** Object:  Table [dbo].[DisbursementItem]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[DisbursementItem]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4813,7 +4789,7 @@ CREATE TABLE [dbo].[DisbursementItem](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  View [dbo].[DisbursementDetailsView]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[DisbursementDetailsView]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4860,7 +4836,7 @@ FROM Payment JOIN Disbursement ON Payment.Id = Disbursement.PaymentId
 
 WHERE     PartyType.Name = 'Organization';
 GO
-/****** Object:  Table [dbo].[DemandLetter]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[DemandLetter]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4876,7 +4852,7 @@ CREATE TABLE [dbo].[DemandLetter](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[FinlAcctTransnStatus]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[FinlAcctTransnStatus]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4893,7 +4869,7 @@ CREATE TABLE [dbo].[FinlAcctTransnStatus](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[FinancialAcctNotification]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[FinancialAcctNotification]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4914,7 +4890,7 @@ CREATE TABLE [dbo].[FinancialAcctNotification](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[FinAcctTransTask]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[FinAcctTransTask]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4937,7 +4913,7 @@ CREATE TABLE [dbo].[FinAcctTransTask](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ElectronicAddress]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[ElectronicAddress]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4960,7 +4936,7 @@ GO
 INSERT [dbo].[ElectronicAddress] ([AddressId], [ElectronicAddressTypeId], [ElectronicAddressString], [IsPrimary]) VALUES (6, 2, N'mnpamaran@gmail.com', 1)
 INSERT [dbo].[ElectronicAddress] ([AddressId], [ElectronicAddressTypeId], [ElectronicAddressString], [IsPrimary]) VALUES (10, 2, N'pamaranlending@yahoo.com', 1)
 INSERT [dbo].[ElectronicAddress] ([AddressId], [ElectronicAddressTypeId], [ElectronicAddressString], [IsPrimary]) VALUES (14, 2, N'', 1)
-/****** Object:  View [dbo].[DisbursementViewList]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[DisbursementViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5119,7 +5095,7 @@ End
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPaneCount', @value=1 , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'DisbursementViewList'
 GO
-/****** Object:  Table [dbo].[Encashment]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[Encashment]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5133,7 +5109,7 @@ CREATE TABLE [dbo].[Encashment](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[FinAcctTransRel]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[FinAcctTransRel]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5151,7 +5127,7 @@ CREATE TABLE [dbo].[FinAcctTransRel](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  View [dbo].[PettyCashLoanApplicationViewList]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[PettyCashLoanApplicationViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5189,7 +5165,24 @@ FROM application JOIN pettycashloanapplication ON pettycashloanapplication.appli
 		JOIN party ON party.id = partyrole.partyid
 		JOIN organization ON organization.partyid = party.id;
 GO
-/****** Object:  Table [dbo].[TelecommunicationsNumber]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[UserAccountsViewList]    Script Date: 02/22/2012 17:45:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE view [dbo].[UserAccountsViewList] as
+SELECT 	useraccount.id as "UserAccountId", 
+		UserAccount.Username as "UserName",
+		useraccount.partyid as "HiddenPartyId",
+		dbo.concatname(partyid, 'Last Name' , 'First Name','Middle Name','Name Suffix') as "NameOfUser",
+		useraccountstatustype.name as "UserAccountStatus"
+
+FROM useraccount JOIN useraccountstatus ON useraccount.id = useraccountstatus.useraccountid
+					AND useraccount.EndDate is null 
+                    AND useraccountstatus.EndDate is null
+				JOIN useraccountstatustype ON  useraccountstatustype.id = useraccountstatus.statustypeid
+GO
+/****** Object:  Table [dbo].[TelecommunicationsNumber]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5261,7 +5254,7 @@ INSERT [dbo].[TelecommunicationsNumber] ([AddressId], [TypeId], [AreaCode], [Pho
 INSERT [dbo].[TelecommunicationsNumber] ([AddressId], [TypeId], [AreaCode], [PhoneNumber], [IsPrimary]) VALUES (67, 3, N'62', NULL, 1)
 INSERT [dbo].[TelecommunicationsNumber] ([AddressId], [TypeId], [AreaCode], [PhoneNumber], [IsPrimary]) VALUES (68, 5, N'62', NULL, 1)
 INSERT [dbo].[TelecommunicationsNumber] ([AddressId], [TypeId], [AreaCode], [PhoneNumber], [IsPrimary]) VALUES (69, 3, N'62', NULL, 1)
-/****** Object:  View [dbo].[SubmittedDocumentView]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[SubmittedDocumentView]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5281,7 +5274,7 @@ SELECT RequiredDocumentType.Name		as	"DocumentName",
 		JOIN LoanApplication ON SubmittedDocument.ApplicationId = LoanApplication.ApplicationId
 ;
 GO
-/****** Object:  Table [dbo].[Receivable]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[Receivable]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5302,7 +5295,7 @@ CREATE TABLE [dbo].[Receivable](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  View [dbo].[VoucherViewList]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[VoucherViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5544,24 +5537,7 @@ End
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPaneCount', @value=2 , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'VoucherViewList'
 GO
-/****** Object:  View [dbo].[UserAccountsViewList]    Script Date: 03/12/2012 21:04:19 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE view [dbo].[UserAccountsViewList] as
-SELECT 	useraccount.id as "UserAccountId", 
-		UserAccount.Username as "UserName",
-		useraccount.partyid as "HiddenPartyId",
-		dbo.concatname(partyid, 'Last Name' , 'First Name','Middle Name','Name Suffix') as "NameOfUser",
-		useraccountstatustype.name as "UserAccountStatus"
-
-FROM useraccount JOIN useraccountstatus ON useraccount.id = useraccountstatus.useraccountid
-					AND useraccount.EndDate is null 
-                    AND useraccountstatus.EndDate is null
-				JOIN useraccountstatustype ON  useraccountstatustype.id = useraccountstatus.statustypeid
-GO
-/****** Object:  View [dbo].[UsersViewList]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[UsersViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5609,7 +5585,7 @@ FROM party JOIN address ON address.partyid = party.id
 			OR NOT EXISTS (select ID from UserAccount where Party.Id = UserAccount.PartyId))
 ;
 GO
-/****** Object:  Table [dbo].[ReceivableStatus]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[ReceivableStatus]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5626,7 +5602,7 @@ CREATE TABLE [dbo].[ReceivableStatus](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ReceivableAdjustment]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[ReceivableAdjustment]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5649,7 +5625,7 @@ CREATE TABLE [dbo].[ReceivableAdjustment](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ReleaseStatement]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[ReleaseStatement]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5665,7 +5641,7 @@ CREATE TABLE [dbo].[ReleaseStatement](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  View [dbo].[RediscountingViewList]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[RediscountingViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5698,7 +5674,7 @@ FROM         dbo.Payment AS Payment_1 INNER JOIN
                       dbo.RoleType ON PartyRole_1.RoleTypeId = dbo.RoleType.Id
 WHERE     (dbo.DisbursementType.Name = 'Rediscounting')
 GO
-/****** Object:  Table [dbo].[PaymentApplication]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[PaymentApplication]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5716,7 +5692,7 @@ CREATE TABLE [dbo].[PaymentApplication](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  View [dbo].[EncashmentViewList]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[EncashmentViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5943,7 +5919,7 @@ End
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPaneCount', @value=2 , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'EncashmentViewList'
 GO
-/****** Object:  View [dbo].[EmployersViewList]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[EmployersViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6005,7 +5981,7 @@ FROM	PartyRole JOIN Address ON PartyRole.PartyId = Address.PartyId
 		JOIN Organization ON PartyRole.PartyId = Organization.PartyId
 ;
 GO
-/****** Object:  View [dbo].[EmployeeViewList]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[EmployeeViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6046,7 +6022,7 @@ FROM	PartyRole JOIN Address ON PartyRole.PartyId = Address.PartyId AND partyrole
 	JOIN Country ON PostalAddress.CountryId = Country.Id
 ;
 GO
-/****** Object:  Table [dbo].[DemandLetterStatus]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  Table [dbo].[DemandLetterStatus]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6064,7 +6040,7 @@ CREATE TABLE [dbo].[DemandLetterStatus](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  View [dbo].[CustomerWithLoanViewList]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[CustomerWithLoanViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6155,7 +6131,7 @@ FROM partyrole 	JOIN organization ON partyrole.partyid = organization.partyid
             AND LoanApplicationStatusType.Name = 'Approved'
 ;
 GO
-/****** Object:  View [dbo].[CustomerViewList]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[CustomerViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6238,7 +6214,7 @@ FROM partyrole 	JOIN organization ON partyrole.partyid = organization.partyid
 		JOIN roletype ON roletype.id = partyrole.roletypeid
 WHERE customerstatus.isactive = 1	;
 GO
-/****** Object:  View [dbo].[CustomerAndCoBorrowerListView]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[CustomerAndCoBorrowerListView]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6278,7 +6254,7 @@ FROM         dbo.Party INNER JOIN
                       dbo.PartyRole ON dbo.PartyRole.PartyId = dbo.Party.Id AND (dbo.PartyRole.EndDate IS NULL) INNER JOIN
                       dbo.RoleType ON dbo.RoleType.Id = dbo.PartyRole.RoleTypeId AND (dbo.RoleType.Name = 'Co-borrower')
 GO
-/****** Object:  View [dbo].[ContactViewList]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[ContactViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6342,7 +6318,7 @@ FROM         PartyRole JOIN
                                                          FROM          roletype
                                                          WHERE      name = 'Lending Institution')) AND partyrelationship.enddate IS NULL;
 GO
-/****** Object:  View [dbo].[CoBorrowersViewList]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[CoBorrowersViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6371,7 +6347,7 @@ SELECT DISTINCT dbo.Party.Id AS PartyId,
 	INNER JOIN dbo.RoleType ON dbo.RoleType.Id = dbo.PartyRole.RoleTypeId
 		AND (dbo.RoleType.Name = 'Co-Borrower') ;
 GO
-/****** Object:  View [dbo].[ChequeViewList]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[ChequeViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6399,7 +6375,7 @@ FROM payment JOIN cheque ON payment.id = cheque.paymentid
 WHERE ChequeStatus.IsActive = 1
 ;
 GO
-/****** Object:  View [dbo].[CoOwnerGuarantorViewList]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[CoOwnerGuarantorViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6455,7 +6431,7 @@ group by RoleType.Name, FinancialAccount.Id,
 				+ cast(postaladdress.postalcode as nvarchar(max))
 ;
 GO
-/****** Object:  View [dbo].[BankViewList]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  View [dbo].[BankViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6489,7 +6465,7 @@ FROM         dbo.PartyRole INNER JOIN
                       dbo.RoleType ON dbo.PartyRoleType.RoleTypeId = dbo.RoleType.Id
 WHERE     (dbo.PartyRole.EndDate IS NULL) AND (dbo.BankStatus.EndDate IS NULL) AND (dbo.Address.EndDate IS NULL)
 GO
-/****** Object:  View [dbo].[AllowedCustomersView]    Script Date: 03/12/2012 21:04:20 ******/
+/****** Object:  View [dbo].[AllowedCustomersView]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6526,7 +6502,7 @@ WHERE	PostalAddressType.Name = 'Home Address'
 		AND PartyRelationship.EndDate is NULL
 		AND Address.EndDate is NULL;
 GO
-/****** Object:  View [dbo].[AllowedMortgageeViewList]    Script Date: 03/12/2012 21:04:20 ******/
+/****** Object:  View [dbo].[AllowedMortgageeViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6580,7 +6556,7 @@ FROM party 	JOIN organization ON party.id = organization.partyid
 
 WHERE postaladdresstype.name = 'Business Address';
 GO
-/****** Object:  View [dbo].[AllowedGuarantorsViewList]    Script Date: 03/12/2012 21:04:20 ******/
+/****** Object:  View [dbo].[AllowedGuarantorsViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6614,7 +6590,7 @@ AND postaladdresstype.name = 'Home Address'
 AND RoleType.Name in ('Contact', 'Employee', 'Employer', 'Spouse')
 ;
 GO
-/****** Object:  View [dbo].[ItemsDetailsView]    Script Date: 03/12/2012 21:04:20 ******/
+/****** Object:  View [dbo].[ItemsDetailsView]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6633,7 +6609,7 @@ SELECT DisbursementItem.Particular		as	"Particular",
 FROM DisbursementItem
 ;
 GO
-/****** Object:  View [dbo].[GuarantorViewList]    Script Date: 03/12/2012 21:04:20 ******/
+/****** Object:  View [dbo].[GuarantorViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6659,7 +6635,7 @@ dbo.concatname(dbo.PartyRole.PartyId, 'Last Name', 'First Name', 'Middle Name', 
 	INNER JOIN dbo.RoleType ON dbo.RoleType.Id = dbo.PartyRole.RoleTypeId
 		 AND (dbo.RoleType.Name = 'Guarantor')
 GO
-/****** Object:  View [dbo].[LoanViewList]    Script Date: 03/12/2012 21:04:20 ******/
+/****** Object:  View [dbo].[LoanViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6734,7 +6710,7 @@ WHERE     RoleType.Name = 'Owner' AND FinancialAccountType.Name = 'Loan Account'
 		  AND PostalAddress.IsPrimary = 1 AND Agreement.EndDate IS NULL
 		  AND LoanAccountStatus.IsActive = 1 AND AgreementItem.IsActive = 1;
 GO
-/****** Object:  View [dbo].[LoanDisbursementViewList]    Script Date: 03/12/2012 21:04:20 ******/
+/****** Object:  View [dbo].[LoanDisbursementViewList]    Script Date: 02/22/2012 17:45:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6937,1519 +6913,1513 @@ End
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPaneCount', @value=2 , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'LoanDisbursementViewList'
 GO
-/****** Object:  ForeignKey [FK_UNIT_OF__REFERENCE_UNIT_OF_2]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_UNIT_OF__REFERENCE_UNIT_OF_2]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[UnitOfMeasureType]  WITH CHECK ADD  CONSTRAINT [FK_UNIT_OF__REFERENCE_UNIT_OF_2] FOREIGN KEY([ParentUomTypeId])
 REFERENCES [dbo].[UnitOfMeasureType] ([Id])
 GO
 ALTER TABLE [dbo].[UnitOfMeasureType] CHECK CONSTRAINT [FK_UNIT_OF__REFERENCE_UNIT_OF_2]
 GO
-/****** Object:  ForeignKey [FK_ROLETYPE_REFERENCE_ROLETYPE]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_ROLETYPE_REFERENCE_ROLETYPE]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[RoleType]  WITH CHECK ADD  CONSTRAINT [FK_ROLETYPE_REFERENCE_ROLETYPE] FOREIGN KEY([ParentRoleTypeId])
 REFERENCES [dbo].[RoleType] ([Id])
 GO
 ALTER TABLE [dbo].[RoleType] CHECK CONSTRAINT [FK_ROLETYPE_REFERENCE_ROLETYPE]
 GO
-/****** Object:  ForeignKey [FK_FINLACCT_REFERENCE_FINLACCT]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_FINLACCT_REFERENCE_FINLACCT]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[FinlAcctTransType]  WITH CHECK ADD  CONSTRAINT [FK_FINLACCT_REFERENCE_FINLACCT] FOREIGN KEY([ParentFinancialAcctTransTypeId])
 REFERENCES [dbo].[FinlAcctTransType] ([Id])
 GO
 ALTER TABLE [dbo].[FinlAcctTransType] CHECK CONSTRAINT [FK_FINLACCT_REFERENCE_FINLACCT]
 GO
-/****** Object:  ForeignKey [FK_PARTYROL_REFERENCE_ROLETYPE]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_PARTYROL_REFERENCE_ROLETYPE]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[PartyRoleType]  WITH CHECK ADD  CONSTRAINT [FK_PARTYROL_REFERENCE_ROLETYPE] FOREIGN KEY([RoleTypeId])
 REFERENCES [dbo].[RoleType] ([Id])
 GO
 ALTER TABLE [dbo].[PartyRoleType] CHECK CONSTRAINT [FK_PARTYROL_REFERENCE_ROLETYPE]
 GO
-/****** Object:  ForeignKey [FK_PARTY_REFERENCE_PARTYTYP]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_PARTY_REFERENCE_PARTYTYP]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[Party]  WITH CHECK ADD  CONSTRAINT [FK_PARTY_REFERENCE_PARTYTYP] FOREIGN KEY([PartyTypeId])
 REFERENCES [dbo].[PartyType] ([Id])
 GO
 ALTER TABLE [dbo].[Party] CHECK CONSTRAINT [FK_PARTY_REFERENCE_PARTYTYP]
 GO
-/****** Object:  ForeignKey [FK_ForeignExchangeAmount_Currency]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_ForeignExchangeAmount_Currency]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[ForExDetail]  WITH CHECK ADD  CONSTRAINT [FK_ForeignExchangeAmount_Currency] FOREIGN KEY([CurrencyId])
 REFERENCES [dbo].[Currency] ([Id])
 GO
 ALTER TABLE [dbo].[ForExDetail] CHECK CONSTRAINT [FK_ForeignExchangeAmount_Currency]
 GO
-/****** Object:  ForeignKey [FK_ForeignExchangeAmount_PaymentMethodType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_ForeignExchangeAmount_PaymentMethodType]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[ForExDetail]  WITH CHECK ADD  CONSTRAINT [FK_ForeignExchangeAmount_PaymentMethodType] FOREIGN KEY([PaymentMethodTypeId])
 REFERENCES [dbo].[PaymentMethodType] ([Id])
 GO
 ALTER TABLE [dbo].[ForExDetail] CHECK CONSTRAINT [FK_ForeignExchangeAmount_PaymentMethodType]
 GO
-/****** Object:  ForeignKey [FK_ForExDetail_ForExDetail]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_ForExDetail_ForExDetail]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[ForExDetail]  WITH CHECK ADD  CONSTRAINT [FK_ForExDetail_ForExDetail] FOREIGN KEY([ParentForExDetailId])
 REFERENCES [dbo].[ForExDetail] ([Id])
 GO
 ALTER TABLE [dbo].[ForExDetail] CHECK CONSTRAINT [FK_ForExDetail_ForExDetail]
 GO
-/****** Object:  ForeignKey [FK_APPLICAT_REFERENCE_APPLICAT2]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_APPLICAT_REFERENCE_APPLICAT2]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[Application]  WITH CHECK ADD  CONSTRAINT [FK_APPLICAT_REFERENCE_APPLICAT2] FOREIGN KEY([ApplicationType])
 REFERENCES [dbo].[ApplicationType] ([Id])
 GO
 ALTER TABLE [dbo].[Application] CHECK CONSTRAINT [FK_APPLICAT_REFERENCE_APPLICAT2]
 GO
-/****** Object:  ForeignKey [FK_ClassificationType_DistrictType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_ClassificationType_DistrictType]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[ClassificationType]  WITH CHECK ADD  CONSTRAINT [FK_ClassificationType_DistrictType] FOREIGN KEY([DistrictTypeId])
 REFERENCES [dbo].[DistrictType] ([Id])
 GO
 ALTER TABLE [dbo].[ClassificationType] CHECK CONSTRAINT [FK_ClassificationType_DistrictType]
 GO
-/****** Object:  ForeignKey [FK_ExchangeRate_Currency]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_ExchangeRate_Currency]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[ExchangeRate]  WITH CHECK ADD  CONSTRAINT [FK_ExchangeRate_Currency] FOREIGN KEY([CurrencyFromId])
 REFERENCES [dbo].[Currency] ([Id])
 GO
 ALTER TABLE [dbo].[ExchangeRate] CHECK CONSTRAINT [FK_ExchangeRate_Currency]
 GO
-/****** Object:  ForeignKey [FK_ExchangeRate_Currency1]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_ExchangeRate_Currency1]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[ExchangeRate]  WITH CHECK ADD  CONSTRAINT [FK_ExchangeRate_Currency1] FOREIGN KEY([CurrencyToId])
 REFERENCES [dbo].[Currency] ([Id])
 GO
 ALTER TABLE [dbo].[ExchangeRate] CHECK CONSTRAINT [FK_ExchangeRate_Currency1]
 GO
-/****** Object:  ForeignKey [FK_ExchangeRate_ExchangeRateType]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_ExchangeRate_ExchangeRateType]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[ExchangeRate]  WITH CHECK ADD  CONSTRAINT [FK_ExchangeRate_ExchangeRateType] FOREIGN KEY([ExchangeRateTypeId])
 REFERENCES [dbo].[ExchangeRateType] ([Id])
 GO
 ALTER TABLE [dbo].[ExchangeRate] CHECK CONSTRAINT [FK_ExchangeRate_ExchangeRateType]
 GO
-/****** Object:  ForeignKey [FK_DISBURSE_REFERENCE_DISBURSE2]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_DISBURSE_REFERENCE_DISBURSE2]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[DisbursementVcrStatTypeAssoc]  WITH CHECK ADD  CONSTRAINT [FK_DISBURSE_REFERENCE_DISBURSE2] FOREIGN KEY([FromStatusTypeId])
 REFERENCES [dbo].[DisbursementVcrStatusType] ([Id])
 GO
 ALTER TABLE [dbo].[DisbursementVcrStatTypeAssoc] CHECK CONSTRAINT [FK_DISBURSE_REFERENCE_DISBURSE2]
 GO
-/****** Object:  ForeignKey [FK_DISBURSE_REFERENCE_DISBURSE3]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_DISBURSE_REFERENCE_DISBURSE3]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[DisbursementVcrStatTypeAssoc]  WITH CHECK ADD  CONSTRAINT [FK_DISBURSE_REFERENCE_DISBURSE3] FOREIGN KEY([ToStatusTypeId])
 REFERENCES [dbo].[DisbursementVcrStatusType] ([Id])
 GO
 ALTER TABLE [dbo].[DisbursementVcrStatTypeAssoc] CHECK CONSTRAINT [FK_DISBURSE_REFERENCE_DISBURSE3]
 GO
-/****** Object:  ForeignKey [FK_PETTY_CA_REFERENCE_PETTY_CA5]    Script Date: 03/12/2012 21:04:15 ******/
-ALTER TABLE [dbo].[PettyCashLoanAppStatusTypeAssoc]  WITH CHECK ADD  CONSTRAINT [FK_PETTY_CA_REFERENCE_PETTY_CA5] FOREIGN KEY([FromStatusTypeId])
-REFERENCES [dbo].[PettyCashLoanAppStatusType] ([Id])
-GO
-ALTER TABLE [dbo].[PettyCashLoanAppStatusTypeAssoc] CHECK CONSTRAINT [FK_PETTY_CA_REFERENCE_PETTY_CA5]
-GO
-/****** Object:  ForeignKey [FK_PETTYCAS_REFERENCE_PETTYCAS]    Script Date: 03/12/2012 21:04:15 ******/
-ALTER TABLE [dbo].[PettyCashLoanAppStatusTypeAssoc]  WITH CHECK ADD  CONSTRAINT [FK_PETTYCAS_REFERENCE_PETTYCAS] FOREIGN KEY([ToStatusTypeId])
-REFERENCES [dbo].[PettyCashLoanAppStatusType] ([Id])
-GO
-ALTER TABLE [dbo].[PettyCashLoanAppStatusTypeAssoc] CHECK CONSTRAINT [FK_PETTYCAS_REFERENCE_PETTYCAS]
-GO
-/****** Object:  ForeignKey [FK_LOAN_ACC_REFERENCE_LOAN_ACC4]    Script Date: 03/12/2012 21:04:15 ******/
-ALTER TABLE [dbo].[LoanAccountStatusTypeAssoc]  WITH CHECK ADD  CONSTRAINT [FK_LOAN_ACC_REFERENCE_LOAN_ACC4] FOREIGN KEY([FromStatusTypeId])
-REFERENCES [dbo].[LoanAccountStatusType] ([Id])
-GO
-ALTER TABLE [dbo].[LoanAccountStatusTypeAssoc] CHECK CONSTRAINT [FK_LOAN_ACC_REFERENCE_LOAN_ACC4]
-GO
-/****** Object:  ForeignKey [FK_LOANACCO_REFERENCE_LOANACCO]    Script Date: 03/12/2012 21:04:15 ******/
-ALTER TABLE [dbo].[LoanAccountStatusTypeAssoc]  WITH CHECK ADD  CONSTRAINT [FK_LOANACCO_REFERENCE_LOANACCO] FOREIGN KEY([ToStatusTypeId])
-REFERENCES [dbo].[LoanAccountStatusType] ([Id])
-GO
-ALTER TABLE [dbo].[LoanAccountStatusTypeAssoc] CHECK CONSTRAINT [FK_LOANACCO_REFERENCE_LOANACCO]
-GO
-/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_FINANCIA3]    Script Date: 03/12/2012 21:04:15 ******/
-ALTER TABLE [dbo].[ProductCategoryClassification]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCT__REFERENCE_FINANCIA3] FOREIGN KEY([FinancialProductId])
-REFERENCES [dbo].[FinancialProduct] ([Id])
-GO
-ALTER TABLE [dbo].[ProductCategoryClassification] CHECK CONSTRAINT [FK_PRODUCT__REFERENCE_FINANCIA3]
-GO
-/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_PRODUCT_6]    Script Date: 03/12/2012 21:04:15 ******/
-ALTER TABLE [dbo].[ProductCategoryClassification]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_6] FOREIGN KEY([ProductCategoryId])
-REFERENCES [dbo].[ProductCategory] ([Id])
-GO
-ALTER TABLE [dbo].[ProductCategoryClassification] CHECK CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_6]
-GO
-/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_FINANCIA4]    Script Date: 03/12/2012 21:04:15 ******/
-ALTER TABLE [dbo].[ProductStatus]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCT__REFERENCE_FINANCIA4] FOREIGN KEY([FinancialProductId])
-REFERENCES [dbo].[FinancialProduct] ([Id])
-GO
-ALTER TABLE [dbo].[ProductStatus] CHECK CONSTRAINT [FK_PRODUCT__REFERENCE_FINANCIA4]
-GO
-/****** Object:  ForeignKey [FK_PRODUCTS_REFERENCE_PRODUCTS]    Script Date: 03/12/2012 21:04:15 ******/
-ALTER TABLE [dbo].[ProductStatus]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCTS_REFERENCE_PRODUCTS] FOREIGN KEY([StatusTypeId])
-REFERENCES [dbo].[ProductStatusType] ([Id])
-GO
-ALTER TABLE [dbo].[ProductStatus] CHECK CONSTRAINT [FK_PRODUCTS_REFERENCE_PRODUCTS]
-GO
-/****** Object:  ForeignKey [FK_PRODUCTR_REFERENCE_FINANCIA]    Script Date: 03/12/2012 21:04:15 ******/
-ALTER TABLE [dbo].[ProductRequiredDocument]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCTR_REFERENCE_FINANCIA] FOREIGN KEY([FinancialProductId])
-REFERENCES [dbo].[FinancialProduct] ([Id])
-GO
-ALTER TABLE [dbo].[ProductRequiredDocument] CHECK CONSTRAINT [FK_PRODUCTR_REFERENCE_FINANCIA]
-GO
-/****** Object:  ForeignKey [FK_PRODUCTR_REFERENCE_REQUIRED]    Script Date: 03/12/2012 21:04:15 ******/
-ALTER TABLE [dbo].[ProductRequiredDocument]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCTR_REFERENCE_REQUIRED] FOREIGN KEY([RequiredDocumentTypeId])
-REFERENCES [dbo].[RequiredDocumentType] ([Id])
-GO
-ALTER TABLE [dbo].[ProductRequiredDocument] CHECK CONSTRAINT [FK_PRODUCTR_REFERENCE_REQUIRED]
-GO
-/****** Object:  ForeignKey [FK_RECEIPT__REFERENCE_RECEIPT_2]    Script Date: 03/12/2012 21:04:15 ******/
-ALTER TABLE [dbo].[ReceiptStatus]  WITH CHECK ADD  CONSTRAINT [FK_RECEIPT__REFERENCE_RECEIPT_2] FOREIGN KEY([ReceiptStatusTypeId])
-REFERENCES [dbo].[ReceiptStatusType] ([Id])
-GO
-ALTER TABLE [dbo].[ReceiptStatus] CHECK CONSTRAINT [FK_RECEIPT__REFERENCE_RECEIPT_2]
-GO
-/****** Object:  ForeignKey [FK_ReceiptStatus_Receipt]    Script Date: 03/12/2012 21:04:15 ******/
-ALTER TABLE [dbo].[ReceiptStatus]  WITH CHECK ADD  CONSTRAINT [FK_ReceiptStatus_Receipt] FOREIGN KEY([ReceiptId])
-REFERENCES [dbo].[Receipt] ([Id])
-GO
-ALTER TABLE [dbo].[ReceiptStatus] CHECK CONSTRAINT [FK_ReceiptStatus_Receipt]
-GO
-/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_PRODUCT_5]    Script Date: 03/12/2012 21:04:15 ******/
-ALTER TABLE [dbo].[ProductFeature]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_5] FOREIGN KEY([ProductFeatCatId])
-REFERENCES [dbo].[ProductFeatureCategory] ([Id])
-GO
-ALTER TABLE [dbo].[ProductFeature] CHECK CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_5]
-GO
-/****** Object:  ForeignKey [FK_SalaryReceipt_Receipt]    Script Date: 03/12/2012 21:04:15 ******/
-ALTER TABLE [dbo].[SalaryReceipt]  WITH CHECK ADD  CONSTRAINT [FK_SalaryReceipt_Receipt] FOREIGN KEY([ReceiptId])
-REFERENCES [dbo].[Receipt] ([Id])
-GO
-ALTER TABLE [dbo].[SalaryReceipt] CHECK CONSTRAINT [FK_SalaryReceipt_Receipt]
-GO
-/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_PRODUCT_2]    Script Date: 03/12/2012 21:04:15 ******/
-ALTER TABLE [dbo].[ProductCategoryRollup]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_2] FOREIGN KEY([ChildProductCategoryId])
-REFERENCES [dbo].[ProductCategory] ([Id])
-GO
-ALTER TABLE [dbo].[ProductCategoryRollup] CHECK CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_2]
-GO
-/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_PRODUCT_3]    Script Date: 03/12/2012 21:04:15 ******/
-ALTER TABLE [dbo].[ProductCategoryRollup]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_3] FOREIGN KEY([ParentProductCategoryId])
-REFERENCES [dbo].[ProductCategory] ([Id])
-GO
-ALTER TABLE [dbo].[ProductCategoryRollup] CHECK CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_3]
-GO
-/****** Object:  ForeignKey [FK_UNITOFME_REFERENCE_UNITOFME]    Script Date: 03/12/2012 21:04:15 ******/
-ALTER TABLE [dbo].[UnitOfMeasure]  WITH CHECK ADD  CONSTRAINT [FK_UNITOFME_REFERENCE_UNITOFME] FOREIGN KEY([UomTypeId])
-REFERENCES [dbo].[UnitOfMeasureType] ([Id])
-GO
-ALTER TABLE [dbo].[UnitOfMeasure] CHECK CONSTRAINT [FK_UNITOFME_REFERENCE_UNITOFME]
-GO
-/****** Object:  ForeignKey [FK_RECEIPT__REFERENCE_RECEIPT_3]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_RECEIPT__REFERENCE_RECEIPT_3]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[ReceiptStatusTypeAssoc]  WITH CHECK ADD  CONSTRAINT [FK_RECEIPT__REFERENCE_RECEIPT_3] FOREIGN KEY([FromStatusTypeId])
 REFERENCES [dbo].[ReceiptStatusType] ([Id])
 GO
 ALTER TABLE [dbo].[ReceiptStatusTypeAssoc] CHECK CONSTRAINT [FK_RECEIPT__REFERENCE_RECEIPT_3]
 GO
-/****** Object:  ForeignKey [FK_RECEIPTS_REFERENCE_RECEIPTS]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_RECEIPTS_REFERENCE_RECEIPTS]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[ReceiptStatusTypeAssoc]  WITH CHECK ADD  CONSTRAINT [FK_RECEIPTS_REFERENCE_RECEIPTS] FOREIGN KEY([ToStatusTypeId])
 REFERENCES [dbo].[ReceiptStatusType] ([Id])
 GO
 ALTER TABLE [dbo].[ReceiptStatusTypeAssoc] CHECK CONSTRAINT [FK_RECEIPTS_REFERENCE_RECEIPTS]
 GO
-/****** Object:  ForeignKey [FK_TIME_UNI_REFERENCE_UNIT_OF_2]    Script Date: 03/12/2012 21:04:15 ******/
-ALTER TABLE [dbo].[TimeUnitConversion]  WITH CHECK ADD  CONSTRAINT [FK_TIME_UNI_REFERENCE_UNIT_OF_2] FOREIGN KEY([SourceUomId])
-REFERENCES [dbo].[UnitOfMeasure] ([Id])
+/****** Object:  ForeignKey [FK_PETTY_CA_REFERENCE_PETTY_CA5]    Script Date: 02/22/2012 17:44:57 ******/
+ALTER TABLE [dbo].[PettyCashLoanAppStatusTypeAssoc]  WITH CHECK ADD  CONSTRAINT [FK_PETTY_CA_REFERENCE_PETTY_CA5] FOREIGN KEY([FromStatusTypeId])
+REFERENCES [dbo].[PettyCashLoanAppStatusType] ([Id])
 GO
-ALTER TABLE [dbo].[TimeUnitConversion] CHECK CONSTRAINT [FK_TIME_UNI_REFERENCE_UNIT_OF_2]
+ALTER TABLE [dbo].[PettyCashLoanAppStatusTypeAssoc] CHECK CONSTRAINT [FK_PETTY_CA_REFERENCE_PETTY_CA5]
 GO
-/****** Object:  ForeignKey [FK_TIMEUNIT_REFERENCE_UNITOFME]    Script Date: 03/12/2012 21:04:15 ******/
-ALTER TABLE [dbo].[TimeUnitConversion]  WITH CHECK ADD  CONSTRAINT [FK_TIMEUNIT_REFERENCE_UNITOFME] FOREIGN KEY([TargetUomId])
-REFERENCES [dbo].[UnitOfMeasure] ([Id])
+/****** Object:  ForeignKey [FK_PETTYCAS_REFERENCE_PETTYCAS]    Script Date: 02/22/2012 17:44:57 ******/
+ALTER TABLE [dbo].[PettyCashLoanAppStatusTypeAssoc]  WITH CHECK ADD  CONSTRAINT [FK_PETTYCAS_REFERENCE_PETTYCAS] FOREIGN KEY([ToStatusTypeId])
+REFERENCES [dbo].[PettyCashLoanAppStatusType] ([Id])
 GO
-ALTER TABLE [dbo].[TimeUnitConversion] CHECK CONSTRAINT [FK_TIMEUNIT_REFERENCE_UNITOFME]
+ALTER TABLE [dbo].[PettyCashLoanAppStatusTypeAssoc] CHECK CONSTRAINT [FK_PETTYCAS_REFERENCE_PETTYCAS]
 GO
-/****** Object:  ForeignKey [FK_SYSTEMSE_REFERENCE_SYSTEMSE]    Script Date: 03/12/2012 21:04:15 ******/
-ALTER TABLE [dbo].[SystemSetting]  WITH CHECK ADD  CONSTRAINT [FK_SYSTEMSE_REFERENCE_SYSTEMSE] FOREIGN KEY([SystemSettingTypeId])
-REFERENCES [dbo].[SystemSettingType] ([Id])
+/****** Object:  ForeignKey [FK_LOAN_ACC_REFERENCE_LOAN_ACC4]    Script Date: 02/22/2012 17:44:57 ******/
+ALTER TABLE [dbo].[LoanAccountStatusTypeAssoc]  WITH CHECK ADD  CONSTRAINT [FK_LOAN_ACC_REFERENCE_LOAN_ACC4] FOREIGN KEY([FromStatusTypeId])
+REFERENCES [dbo].[LoanAccountStatusType] ([Id])
 GO
-ALTER TABLE [dbo].[SystemSetting] CHECK CONSTRAINT [FK_SYSTEMSE_REFERENCE_SYSTEMSE]
+ALTER TABLE [dbo].[LoanAccountStatusTypeAssoc] CHECK CONSTRAINT [FK_LOAN_ACC_REFERENCE_LOAN_ACC4]
 GO
-/****** Object:  ForeignKey [FK_SYSTEMSE_REFERENCE_UNITOFME]    Script Date: 03/12/2012 21:04:15 ******/
-ALTER TABLE [dbo].[SystemSetting]  WITH CHECK ADD  CONSTRAINT [FK_SYSTEMSE_REFERENCE_UNITOFME] FOREIGN KEY([UomId])
-REFERENCES [dbo].[UnitOfMeasure] ([Id])
+/****** Object:  ForeignKey [FK_LOANACCO_REFERENCE_LOANACCO]    Script Date: 02/22/2012 17:44:57 ******/
+ALTER TABLE [dbo].[LoanAccountStatusTypeAssoc]  WITH CHECK ADD  CONSTRAINT [FK_LOANACCO_REFERENCE_LOANACCO] FOREIGN KEY([ToStatusTypeId])
+REFERENCES [dbo].[LoanAccountStatusType] ([Id])
 GO
-ALTER TABLE [dbo].[SystemSetting] CHECK CONSTRAINT [FK_SYSTEMSE_REFERENCE_UNITOFME]
+ALTER TABLE [dbo].[LoanAccountStatusTypeAssoc] CHECK CONSTRAINT [FK_LOANACCO_REFERENCE_LOANACCO]
 GO
-/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_PRODUCT_7]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_FINANCIA3]    Script Date: 02/22/2012 17:44:57 ******/
+ALTER TABLE [dbo].[ProductCategoryClassification]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCT__REFERENCE_FINANCIA3] FOREIGN KEY([FinancialProductId])
+REFERENCES [dbo].[FinancialProduct] ([Id])
+GO
+ALTER TABLE [dbo].[ProductCategoryClassification] CHECK CONSTRAINT [FK_PRODUCT__REFERENCE_FINANCIA3]
+GO
+/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_PRODUCT_6]    Script Date: 02/22/2012 17:44:57 ******/
+ALTER TABLE [dbo].[ProductCategoryClassification]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_6] FOREIGN KEY([ProductCategoryId])
+REFERENCES [dbo].[ProductCategory] ([Id])
+GO
+ALTER TABLE [dbo].[ProductCategoryClassification] CHECK CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_6]
+GO
+/****** Object:  ForeignKey [FK_UNITOFME_REFERENCE_UNITOFME]    Script Date: 02/22/2012 17:44:57 ******/
+ALTER TABLE [dbo].[UnitOfMeasure]  WITH CHECK ADD  CONSTRAINT [FK_UNITOFME_REFERENCE_UNITOFME] FOREIGN KEY([UomTypeId])
+REFERENCES [dbo].[UnitOfMeasureType] ([Id])
+GO
+ALTER TABLE [dbo].[UnitOfMeasure] CHECK CONSTRAINT [FK_UNITOFME_REFERENCE_UNITOFME]
+GO
+/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_PRODUCT_2]    Script Date: 02/22/2012 17:44:57 ******/
+ALTER TABLE [dbo].[ProductCategoryRollup]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_2] FOREIGN KEY([ChildProductCategoryId])
+REFERENCES [dbo].[ProductCategory] ([Id])
+GO
+ALTER TABLE [dbo].[ProductCategoryRollup] CHECK CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_2]
+GO
+/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_PRODUCT_3]    Script Date: 02/22/2012 17:44:57 ******/
+ALTER TABLE [dbo].[ProductCategoryRollup]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_3] FOREIGN KEY([ParentProductCategoryId])
+REFERENCES [dbo].[ProductCategory] ([Id])
+GO
+ALTER TABLE [dbo].[ProductCategoryRollup] CHECK CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_3]
+GO
+/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_FINANCIA4]    Script Date: 02/22/2012 17:44:57 ******/
+ALTER TABLE [dbo].[ProductStatus]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCT__REFERENCE_FINANCIA4] FOREIGN KEY([FinancialProductId])
+REFERENCES [dbo].[FinancialProduct] ([Id])
+GO
+ALTER TABLE [dbo].[ProductStatus] CHECK CONSTRAINT [FK_PRODUCT__REFERENCE_FINANCIA4]
+GO
+/****** Object:  ForeignKey [FK_PRODUCTS_REFERENCE_PRODUCTS]    Script Date: 02/22/2012 17:44:57 ******/
+ALTER TABLE [dbo].[ProductStatus]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCTS_REFERENCE_PRODUCTS] FOREIGN KEY([StatusTypeId])
+REFERENCES [dbo].[ProductStatusType] ([Id])
+GO
+ALTER TABLE [dbo].[ProductStatus] CHECK CONSTRAINT [FK_PRODUCTS_REFERENCE_PRODUCTS]
+GO
+/****** Object:  ForeignKey [FK_PRODUCTR_REFERENCE_FINANCIA]    Script Date: 02/22/2012 17:44:57 ******/
+ALTER TABLE [dbo].[ProductRequiredDocument]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCTR_REFERENCE_FINANCIA] FOREIGN KEY([FinancialProductId])
+REFERENCES [dbo].[FinancialProduct] ([Id])
+GO
+ALTER TABLE [dbo].[ProductRequiredDocument] CHECK CONSTRAINT [FK_PRODUCTR_REFERENCE_FINANCIA]
+GO
+/****** Object:  ForeignKey [FK_PRODUCTR_REFERENCE_REQUIRED]    Script Date: 02/22/2012 17:44:57 ******/
+ALTER TABLE [dbo].[ProductRequiredDocument]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCTR_REFERENCE_REQUIRED] FOREIGN KEY([RequiredDocumentTypeId])
+REFERENCES [dbo].[RequiredDocumentType] ([Id])
+GO
+ALTER TABLE [dbo].[ProductRequiredDocument] CHECK CONSTRAINT [FK_PRODUCTR_REFERENCE_REQUIRED]
+GO
+/****** Object:  ForeignKey [FK_RECEIPT__REFERENCE_RECEIPT_2]    Script Date: 02/22/2012 17:44:57 ******/
+ALTER TABLE [dbo].[ReceiptStatus]  WITH CHECK ADD  CONSTRAINT [FK_RECEIPT__REFERENCE_RECEIPT_2] FOREIGN KEY([ReceiptStatusTypeId])
+REFERENCES [dbo].[ReceiptStatusType] ([Id])
+GO
+ALTER TABLE [dbo].[ReceiptStatus] CHECK CONSTRAINT [FK_RECEIPT__REFERENCE_RECEIPT_2]
+GO
+/****** Object:  ForeignKey [FK_ReceiptStatus_Receipt]    Script Date: 02/22/2012 17:44:57 ******/
+ALTER TABLE [dbo].[ReceiptStatus]  WITH CHECK ADD  CONSTRAINT [FK_ReceiptStatus_Receipt] FOREIGN KEY([ReceiptId])
+REFERENCES [dbo].[Receipt] ([Id])
+GO
+ALTER TABLE [dbo].[ReceiptStatus] CHECK CONSTRAINT [FK_ReceiptStatus_Receipt]
+GO
+/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_PRODUCT_5]    Script Date: 02/22/2012 17:44:57 ******/
+ALTER TABLE [dbo].[ProductFeature]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_5] FOREIGN KEY([ProductFeatCatId])
+REFERENCES [dbo].[ProductFeatureCategory] ([Id])
+GO
+ALTER TABLE [dbo].[ProductFeature] CHECK CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_5]
+GO
+/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_PRODUCT_7]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[ProductCatFeatApplicability]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_7] FOREIGN KEY([ProductFeatureId])
 REFERENCES [dbo].[ProductFeature] ([Id])
 GO
 ALTER TABLE [dbo].[ProductCatFeatApplicability] CHECK CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_7]
 GO
-/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_PRODUCT_8]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_PRODUCT_8]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[ProductCatFeatApplicability]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_8] FOREIGN KEY([ProductCategoryId])
 REFERENCES [dbo].[ProductCategory] ([Id])
 GO
 ALTER TABLE [dbo].[ProductCatFeatApplicability] CHECK CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_8]
 GO
-/****** Object:  ForeignKey [FK_PETTYCAS_REFERENCE_APPLICAT]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_TIME_UNI_REFERENCE_UNIT_OF_2]    Script Date: 02/22/2012 17:44:57 ******/
+ALTER TABLE [dbo].[TimeUnitConversion]  WITH CHECK ADD  CONSTRAINT [FK_TIME_UNI_REFERENCE_UNIT_OF_2] FOREIGN KEY([SourceUomId])
+REFERENCES [dbo].[UnitOfMeasure] ([Id])
+GO
+ALTER TABLE [dbo].[TimeUnitConversion] CHECK CONSTRAINT [FK_TIME_UNI_REFERENCE_UNIT_OF_2]
+GO
+/****** Object:  ForeignKey [FK_TIMEUNIT_REFERENCE_UNITOFME]    Script Date: 02/22/2012 17:44:57 ******/
+ALTER TABLE [dbo].[TimeUnitConversion]  WITH CHECK ADD  CONSTRAINT [FK_TIMEUNIT_REFERENCE_UNITOFME] FOREIGN KEY([TargetUomId])
+REFERENCES [dbo].[UnitOfMeasure] ([Id])
+GO
+ALTER TABLE [dbo].[TimeUnitConversion] CHECK CONSTRAINT [FK_TIMEUNIT_REFERENCE_UNITOFME]
+GO
+/****** Object:  ForeignKey [FK_SYSTEMSE_REFERENCE_SYSTEMSE]    Script Date: 02/22/2012 17:44:57 ******/
+ALTER TABLE [dbo].[SystemSetting]  WITH CHECK ADD  CONSTRAINT [FK_SYSTEMSE_REFERENCE_SYSTEMSE] FOREIGN KEY([SystemSettingTypeId])
+REFERENCES [dbo].[SystemSettingType] ([Id])
+GO
+ALTER TABLE [dbo].[SystemSetting] CHECK CONSTRAINT [FK_SYSTEMSE_REFERENCE_SYSTEMSE]
+GO
+/****** Object:  ForeignKey [FK_SYSTEMSE_REFERENCE_UNITOFME]    Script Date: 02/22/2012 17:44:57 ******/
+ALTER TABLE [dbo].[SystemSetting]  WITH CHECK ADD  CONSTRAINT [FK_SYSTEMSE_REFERENCE_UNITOFME] FOREIGN KEY([UomId])
+REFERENCES [dbo].[UnitOfMeasure] ([Id])
+GO
+ALTER TABLE [dbo].[SystemSetting] CHECK CONSTRAINT [FK_SYSTEMSE_REFERENCE_UNITOFME]
+GO
+/****** Object:  ForeignKey [FK_PETTYCAS_REFERENCE_APPLICAT]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[PettyCashLoanApplication]  WITH CHECK ADD  CONSTRAINT [FK_PETTYCAS_REFERENCE_APPLICAT] FOREIGN KEY([ApplicationId])
 REFERENCES [dbo].[Application] ([Id])
 GO
 ALTER TABLE [dbo].[PettyCashLoanApplication] CHECK CONSTRAINT [FK_PETTYCAS_REFERENCE_APPLICAT]
 GO
-/****** Object:  ForeignKey [FK_PETTYCAS_REFERENCE_UNITOFME]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_PETTYCAS_REFERENCE_UNITOFME]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[PettyCashLoanApplication]  WITH CHECK ADD  CONSTRAINT [FK_PETTYCAS_REFERENCE_UNITOFME] FOREIGN KEY([UomId])
 REFERENCES [dbo].[UnitOfMeasure] ([Id])
 GO
 ALTER TABLE [dbo].[PettyCashLoanApplication] CHECK CONSTRAINT [FK_PETTYCAS_REFERENCE_UNITOFME]
 GO
-/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_FINANCIA2]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_FINANCIA2]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[ProductFeatureApplicability]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCT__REFERENCE_FINANCIA2] FOREIGN KEY([FinancialProductId])
 REFERENCES [dbo].[FinancialProduct] ([Id])
 GO
 ALTER TABLE [dbo].[ProductFeatureApplicability] CHECK CONSTRAINT [FK_PRODUCT__REFERENCE_FINANCIA2]
 GO
-/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_PRODUCT_4]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_PRODUCT_4]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[ProductFeatureApplicability]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_4] FOREIGN KEY([ProductFeatureId])
 REFERENCES [dbo].[ProductFeature] ([Id])
 GO
 ALTER TABLE [dbo].[ProductFeatureApplicability] CHECK CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_4]
 GO
-/****** Object:  ForeignKey [FK_Denomination_ForeignExchangeAmount]    Script Date: 03/12/2012 21:04:15 ******/
+/****** Object:  ForeignKey [FK_Denomination_ForeignExchangeAmount]    Script Date: 02/22/2012 17:44:57 ******/
 ALTER TABLE [dbo].[Denomination]  WITH CHECK ADD  CONSTRAINT [FK_Denomination_ForeignExchangeAmount] FOREIGN KEY([ForExDetailId])
 REFERENCES [dbo].[ForExDetail] ([Id])
 GO
 ALTER TABLE [dbo].[Denomination] CHECK CONSTRAINT [FK_Denomination_ForeignExchangeAmount]
 GO
-/****** Object:  ForeignKey [FK_AGREEMEN_REFERENCE_AGREEMEN3]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_AGREEMEN_REFERENCE_AGREEMEN3]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Agreement]  WITH CHECK ADD  CONSTRAINT [FK_AGREEMEN_REFERENCE_AGREEMEN3] FOREIGN KEY([ParentAgreementId])
 REFERENCES [dbo].[Agreement] ([Id])
 GO
 ALTER TABLE [dbo].[Agreement] CHECK CONSTRAINT [FK_AGREEMEN_REFERENCE_AGREEMEN3]
 GO
-/****** Object:  ForeignKey [FK_AGREEMEN_REFERENCE_AGREEMEN4]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_AGREEMEN_REFERENCE_AGREEMEN4]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Agreement]  WITH CHECK ADD  CONSTRAINT [FK_AGREEMEN_REFERENCE_AGREEMEN4] FOREIGN KEY([AgreementTypeId])
 REFERENCES [dbo].[AgreementType] ([Id])
 GO
 ALTER TABLE [dbo].[Agreement] CHECK CONSTRAINT [FK_AGREEMEN_REFERENCE_AGREEMEN4]
 GO
-/****** Object:  ForeignKey [FK_AGREEMEN_REFERENCE_APPLICAT]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_AGREEMEN_REFERENCE_APPLICAT]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Agreement]  WITH CHECK ADD  CONSTRAINT [FK_AGREEMEN_REFERENCE_APPLICAT] FOREIGN KEY([ApplicationId])
 REFERENCES [dbo].[Application] ([Id])
 GO
 ALTER TABLE [dbo].[Agreement] CHECK CONSTRAINT [FK_AGREEMEN_REFERENCE_APPLICAT]
 GO
-/****** Object:  ForeignKey [FK_LOAN_APP_REFERENCE_UNIT_OF_2]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_LOAN_APP_REFERENCE_UNIT_OF_2]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[LoanApplication]  WITH CHECK ADD  CONSTRAINT [FK_LOAN_APP_REFERENCE_UNIT_OF_2] FOREIGN KEY([PaymentModeUomId])
 REFERENCES [dbo].[UnitOfMeasure] ([Id])
 GO
 ALTER TABLE [dbo].[LoanApplication] CHECK CONSTRAINT [FK_LOAN_APP_REFERENCE_UNIT_OF_2]
 GO
-/****** Object:  ForeignKey [FK_LOANAPPL_REFERENCE_APPLICAT]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_LOANAPPL_REFERENCE_APPLICAT]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[LoanApplication]  WITH CHECK ADD  CONSTRAINT [FK_LOANAPPL_REFERENCE_APPLICAT] FOREIGN KEY([ApplicationId])
 REFERENCES [dbo].[Application] ([Id])
 GO
 ALTER TABLE [dbo].[LoanApplication] CHECK CONSTRAINT [FK_LOANAPPL_REFERENCE_APPLICAT]
 GO
-/****** Object:  ForeignKey [FK_LOANAPPL_REFERENCE_UNITOFME]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_LOANAPPL_REFERENCE_UNITOFME]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[LoanApplication]  WITH CHECK ADD  CONSTRAINT [FK_LOANAPPL_REFERENCE_UNITOFME] FOREIGN KEY([LoanTermUomId])
 REFERENCES [dbo].[UnitOfMeasure] ([Id])
 GO
 ALTER TABLE [dbo].[LoanApplication] CHECK CONSTRAINT [FK_LOANAPPL_REFERENCE_UNITOFME]
 GO
-/****** Object:  ForeignKey [FK_ORGANIZA_REFERENCE_ORGANIZA]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_ORGANIZA_REFERENCE_ORGANIZA]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Organization]  WITH CHECK ADD  CONSTRAINT [FK_ORGANIZA_REFERENCE_ORGANIZA] FOREIGN KEY([OrganizationTypeId])
 REFERENCES [dbo].[OrganizationType] ([Id])
 GO
 ALTER TABLE [dbo].[Organization] CHECK CONSTRAINT [FK_ORGANIZA_REFERENCE_ORGANIZA]
 GO
-/****** Object:  ForeignKey [FK_ORGANIZA_REFERENCE_PARTY]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_ORGANIZA_REFERENCE_PARTY]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Organization]  WITH CHECK ADD  CONSTRAINT [FK_ORGANIZA_REFERENCE_PARTY] FOREIGN KEY([PartyId])
 REFERENCES [dbo].[Party] ([Id])
 GO
 ALTER TABLE [dbo].[Organization] CHECK CONSTRAINT [FK_ORGANIZA_REFERENCE_PARTY]
 GO
-/****** Object:  ForeignKey [FK_PARTYROL_REFERENCE_PARTY]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PARTYROL_REFERENCE_PARTY]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[PartyRole]  WITH CHECK ADD  CONSTRAINT [FK_PARTYROL_REFERENCE_PARTY] FOREIGN KEY([PartyId])
 REFERENCES [dbo].[Party] ([Id])
 GO
 ALTER TABLE [dbo].[PartyRole] CHECK CONSTRAINT [FK_PARTYROL_REFERENCE_PARTY]
 GO
-/****** Object:  ForeignKey [FK_PARTYROL_REFERENCE_PARTYROL]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PARTYROL_REFERENCE_PARTYROL]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[PartyRole]  WITH CHECK ADD  CONSTRAINT [FK_PARTYROL_REFERENCE_PARTYROL] FOREIGN KEY([RoleTypeId])
 REFERENCES [dbo].[PartyRoleType] ([RoleTypeId])
 GO
 ALTER TABLE [dbo].[PartyRole] CHECK CONSTRAINT [FK_PARTYROL_REFERENCE_PARTYROL]
 GO
-/****** Object:  ForeignKey [FK_PERSON_REFERENCE_EDUCATTA]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PERSON_REFERENCE_EDUCATTA]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Person]  WITH CHECK ADD  CONSTRAINT [FK_PERSON_REFERENCE_EDUCATTA] FOREIGN KEY([EducAttainmentTypeId])
 REFERENCES [dbo].[EducAttainmentType] ([Id])
 GO
 ALTER TABLE [dbo].[Person] CHECK CONSTRAINT [FK_PERSON_REFERENCE_EDUCATTA]
 GO
-/****** Object:  ForeignKey [FK_PERSON_REFERENCE_GENDERTY]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PERSON_REFERENCE_GENDERTY]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Person]  WITH CHECK ADD  CONSTRAINT [FK_PERSON_REFERENCE_GENDERTY] FOREIGN KEY([GenderTypeId])
 REFERENCES [dbo].[GenderType] ([Id])
 GO
 ALTER TABLE [dbo].[Person] CHECK CONSTRAINT [FK_PERSON_REFERENCE_GENDERTY]
 GO
-/****** Object:  ForeignKey [FK_PERSON_REFERENCE_NATIONAL]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PERSON_REFERENCE_NATIONAL]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Person]  WITH CHECK ADD  CONSTRAINT [FK_PERSON_REFERENCE_NATIONAL] FOREIGN KEY([NationalityTypeId])
 REFERENCES [dbo].[NationalityType] ([Id])
 GO
 ALTER TABLE [dbo].[Person] CHECK CONSTRAINT [FK_PERSON_REFERENCE_NATIONAL]
 GO
-/****** Object:  ForeignKey [FK_PERSON_REFERENCE_PARTY]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PERSON_REFERENCE_PARTY]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Person]  WITH CHECK ADD  CONSTRAINT [FK_PERSON_REFERENCE_PARTY] FOREIGN KEY([PartyId])
 REFERENCES [dbo].[Party] ([Id])
 GO
 ALTER TABLE [dbo].[Person] CHECK CONSTRAINT [FK_PERSON_REFERENCE_PARTY]
 GO
-/****** Object:  ForeignKey [FK_PAYMENT_REFERENCE_PARTY_RO2]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PAYMENT_REFERENCE_PARTY_RO2]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Payment]  WITH CHECK ADD  CONSTRAINT [FK_PAYMENT_REFERENCE_PARTY_RO2] FOREIGN KEY([ProcessedByPartyRoleId])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[Payment] CHECK CONSTRAINT [FK_PAYMENT_REFERENCE_PARTY_RO2]
 GO
-/****** Object:  ForeignKey [FK_PAYMENT_REFERENCE_PARTYROL]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PAYMENT_REFERENCE_PARTYROL]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Payment]  WITH CHECK ADD  CONSTRAINT [FK_PAYMENT_REFERENCE_PARTYROL] FOREIGN KEY([ProcessedToPartyRoleId])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[Payment] CHECK CONSTRAINT [FK_PAYMENT_REFERENCE_PARTYROL]
 GO
-/****** Object:  ForeignKey [FK_PAYMENT_REFERENCE_PAYMENT]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PAYMENT_REFERENCE_PAYMENT]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Payment]  WITH CHECK ADD  CONSTRAINT [FK_PAYMENT_REFERENCE_PAYMENT] FOREIGN KEY([ParentPaymentId])
 REFERENCES [dbo].[Payment] ([Id])
 GO
 ALTER TABLE [dbo].[Payment] CHECK CONSTRAINT [FK_PAYMENT_REFERENCE_PAYMENT]
 GO
-/****** Object:  ForeignKey [FK_PAYMENT_REFERENCE_PAYMENTM]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PAYMENT_REFERENCE_PAYMENTM]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Payment]  WITH CHECK ADD  CONSTRAINT [FK_PAYMENT_REFERENCE_PAYMENTM] FOREIGN KEY([PaymentMethodTypeId])
 REFERENCES [dbo].[PaymentMethodType] ([Id])
 GO
 ALTER TABLE [dbo].[Payment] CHECK CONSTRAINT [FK_PAYMENT_REFERENCE_PAYMENTM]
 GO
-/****** Object:  ForeignKey [FK_PAYMENT_REFERENCE_PAYMENTT]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PAYMENT_REFERENCE_PAYMENTT]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Payment]  WITH CHECK ADD  CONSTRAINT [FK_PAYMENT_REFERENCE_PAYMENTT] FOREIGN KEY([PaymentTypeId])
 REFERENCES [dbo].[PaymentType] ([Id])
 GO
 ALTER TABLE [dbo].[Payment] CHECK CONSTRAINT [FK_PAYMENT_REFERENCE_PAYMENTT]
 GO
-/****** Object:  ForeignKey [FK_Payment_SpecificPaymentType]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_Payment_SpecificPaymentType]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Payment]  WITH CHECK ADD  CONSTRAINT [FK_Payment_SpecificPaymentType] FOREIGN KEY([SpecificPaymentTypeId])
 REFERENCES [dbo].[SpecificPaymentType] ([Id])
 GO
 ALTER TABLE [dbo].[Payment] CHECK CONSTRAINT [FK_Payment_SpecificPaymentType]
 GO
-/****** Object:  ForeignKey [FK_LOANTERM_REFERENCE_PRODUCTF]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_LOANTERM_REFERENCE_PRODUCTF]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[LoanTerm]  WITH CHECK ADD  CONSTRAINT [FK_LOANTERM_REFERENCE_PRODUCTF] FOREIGN KEY([ProductFeatApplicabilityId])
 REFERENCES [dbo].[ProductFeatureApplicability] ([Id])
 GO
 ALTER TABLE [dbo].[LoanTerm] CHECK CONSTRAINT [FK_LOANTERM_REFERENCE_PRODUCTF]
 GO
-/****** Object:  ForeignKey [FK_LOANTERM_REFERENCE_UNITOFME]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_LOANTERM_REFERENCE_UNITOFME]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[LoanTerm]  WITH CHECK ADD  CONSTRAINT [FK_LOANTERM_REFERENCE_UNITOFME] FOREIGN KEY([UomId])
 REFERENCES [dbo].[UnitOfMeasure] ([Id])
 GO
 ALTER TABLE [dbo].[LoanTerm] CHECK CONSTRAINT [FK_LOANTERM_REFERENCE_UNITOFME]
 GO
-/****** Object:  ForeignKey [FK_PARTY_RE_REFERENCE_PARTY_RO2]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PARTY_RE_REFERENCE_PARTY_RO2]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[PartyRelationship]  WITH CHECK ADD  CONSTRAINT [FK_PARTY_RE_REFERENCE_PARTY_RO2] FOREIGN KEY([FirstPartyRoleId])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[PartyRelationship] CHECK CONSTRAINT [FK_PARTY_RE_REFERENCE_PARTY_RO2]
 GO
-/****** Object:  ForeignKey [FK_PARTYREL_REFERENCE_PARTYREL]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PARTYREL_REFERENCE_PARTYREL]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[PartyRelationship]  WITH CHECK ADD  CONSTRAINT [FK_PARTYREL_REFERENCE_PARTYREL] FOREIGN KEY([PartyRelTypeId])
 REFERENCES [dbo].[PartyRelType] ([Id])
 GO
 ALTER TABLE [dbo].[PartyRelationship] CHECK CONSTRAINT [FK_PARTYREL_REFERENCE_PARTYREL]
 GO
-/****** Object:  ForeignKey [FK_PARTYREL_REFERENCE_PARTYROL]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PARTYREL_REFERENCE_PARTYROL]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[PartyRelationship]  WITH CHECK ADD  CONSTRAINT [FK_PARTYREL_REFERENCE_PARTYROL] FOREIGN KEY([SecondPartyRoleId])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[PartyRelationship] CHECK CONSTRAINT [FK_PARTYREL_REFERENCE_PARTYROL]
 GO
-/****** Object:  ForeignKey [FK_LOANMODI_REFERENCE_LOANMODI4]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_LOANMODI_REFERENCE_LOANMODI4]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[LoanModification]  WITH CHECK ADD  CONSTRAINT [FK_LOANMODI_REFERENCE_LOANMODI4] FOREIGN KEY([LoanModificationTypeId])
 REFERENCES [dbo].[LoanModificationType] ([Id])
 GO
 ALTER TABLE [dbo].[LoanModification] CHECK CONSTRAINT [FK_LOANMODI_REFERENCE_LOANMODI4]
 GO
-/****** Object:  ForeignKey [FK_LOANMODI_REFERENCE_PARTYROL2]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_LOANMODI_REFERENCE_PARTYROL2]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[LoanModification]  WITH CHECK ADD  CONSTRAINT [FK_LOANMODI_REFERENCE_PARTYROL2] FOREIGN KEY([PartyRoleId])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[LoanModification] CHECK CONSTRAINT [FK_LOANMODI_REFERENCE_PARTYROL2]
 GO
-/****** Object:  ForeignKey [FK_LOANAGRE_REFERENCE_AGREEMEN]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_LOANAGRE_REFERENCE_AGREEMEN]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[LoanAgreement]  WITH CHECK ADD  CONSTRAINT [FK_LOANAGRE_REFERENCE_AGREEMEN] FOREIGN KEY([AgreementId])
 REFERENCES [dbo].[Agreement] ([Id])
 GO
 ALTER TABLE [dbo].[LoanAgreement] CHECK CONSTRAINT [FK_LOANAGRE_REFERENCE_AGREEMEN]
 GO
-/****** Object:  ForeignKey [FK_MARITALS_REFERENCE_MARITALS]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_MARITALS_REFERENCE_MARITALS]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[MaritalStatus]  WITH CHECK ADD  CONSTRAINT [FK_MARITALS_REFERENCE_MARITALS] FOREIGN KEY([MaritalStatusTypeId])
 REFERENCES [dbo].[MaritalStatusType] ([Id])
 GO
 ALTER TABLE [dbo].[MaritalStatus] CHECK CONSTRAINT [FK_MARITALS_REFERENCE_MARITALS]
 GO
-/****** Object:  ForeignKey [FK_MARITALS_REFERENCE_PERSON]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_MARITALS_REFERENCE_PERSON]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[MaritalStatus]  WITH CHECK ADD  CONSTRAINT [FK_MARITALS_REFERENCE_PERSON] FOREIGN KEY([PartyId])
 REFERENCES [dbo].[Person] ([PartyId])
 GO
 ALTER TABLE [dbo].[MaritalStatus] CHECK CONSTRAINT [FK_MARITALS_REFERENCE_PERSON]
 GO
-/****** Object:  ForeignKey [FK_LOAN_APP_REFERENCE_LOAN_APP2]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_LOAN_APP_REFERENCE_LOAN_APP2]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[LoanApplicationStatus]  WITH CHECK ADD  CONSTRAINT [FK_LOAN_APP_REFERENCE_LOAN_APP2] FOREIGN KEY([ApplicationId])
 REFERENCES [dbo].[LoanApplication] ([ApplicationId])
 GO
 ALTER TABLE [dbo].[LoanApplicationStatus] CHECK CONSTRAINT [FK_LOAN_APP_REFERENCE_LOAN_APP2]
 GO
-/****** Object:  ForeignKey [FK_LOAN_APP_REFERENCE_LOAN_APP3]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_LOAN_APP_REFERENCE_LOAN_APP3]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[LoanApplicationStatus]  WITH CHECK ADD  CONSTRAINT [FK_LOAN_APP_REFERENCE_LOAN_APP3] FOREIGN KEY([StatusTypeId])
 REFERENCES [dbo].[LoanApplicationStatusType] ([Id])
 GO
 ALTER TABLE [dbo].[LoanApplicationStatus] CHECK CONSTRAINT [FK_LOAN_APP_REFERENCE_LOAN_APP3]
 GO
-/****** Object:  ForeignKey [FK_LOAN_APP_REFERENCE_LOAN_APP4]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_LOAN_APP_REFERENCE_LOAN_APP4]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[LoanApplicationRole]  WITH CHECK ADD  CONSTRAINT [FK_LOAN_APP_REFERENCE_LOAN_APP4] FOREIGN KEY([ApplicationId])
 REFERENCES [dbo].[LoanApplication] ([ApplicationId])
 GO
 ALTER TABLE [dbo].[LoanApplicationRole] CHECK CONSTRAINT [FK_LOAN_APP_REFERENCE_LOAN_APP4]
 GO
-/****** Object:  ForeignKey [FK_LOANAPPL_REFERENCE_PARTYROL]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_LOANAPPL_REFERENCE_PARTYROL]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[LoanApplicationRole]  WITH CHECK ADD  CONSTRAINT [FK_LOANAPPL_REFERENCE_PARTYROL] FOREIGN KEY([PartyRoleId])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[LoanApplicationRole] CHECK CONSTRAINT [FK_LOANAPPL_REFERENCE_PARTYROL]
 GO
-/****** Object:  ForeignKey [FK_LOANAPPL_REFERENCE_LOANAPPL]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_LOANAPPL_REFERENCE_LOANAPPL]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[LoanApplicationFee]  WITH CHECK ADD  CONSTRAINT [FK_LOANAPPL_REFERENCE_LOANAPPL] FOREIGN KEY([ApplicationId])
 REFERENCES [dbo].[LoanApplication] ([ApplicationId])
 GO
 ALTER TABLE [dbo].[LoanApplicationFee] CHECK CONSTRAINT [FK_LOANAPPL_REFERENCE_LOANAPPL]
 GO
-/****** Object:  ForeignKey [FK_LOANDISB_REFERENCE_AGREEMEN]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_LOANDISB_REFERENCE_AGREEMEN]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[LoanDisbursementVcr]  WITH CHECK ADD  CONSTRAINT [FK_LOANDISB_REFERENCE_AGREEMEN] FOREIGN KEY([AgreementId])
 REFERENCES [dbo].[Agreement] ([Id])
 GO
 ALTER TABLE [dbo].[LoanDisbursementVcr] CHECK CONSTRAINT [FK_LOANDISB_REFERENCE_AGREEMEN]
 GO
-/****** Object:  ForeignKey [FK_HOMEOWNE_REFERENCE_HOMEOWNE]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_HOMEOWNE_REFERENCE_HOMEOWNE]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[HomeOwnership]  WITH CHECK ADD  CONSTRAINT [FK_HOMEOWNE_REFERENCE_HOMEOWNE] FOREIGN KEY([HomeOwnershipTypeId])
 REFERENCES [dbo].[HomeOwnershipType] ([Id])
 GO
 ALTER TABLE [dbo].[HomeOwnership] CHECK CONSTRAINT [FK_HOMEOWNE_REFERENCE_HOMEOWNE]
 GO
-/****** Object:  ForeignKey [FK_HOMEOWNE_REFERENCE_PERSON]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_HOMEOWNE_REFERENCE_PERSON]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[HomeOwnership]  WITH CHECK ADD  CONSTRAINT [FK_HOMEOWNE_REFERENCE_PERSON] FOREIGN KEY([PartyId])
 REFERENCES [dbo].[Person] ([PartyId])
 GO
 ALTER TABLE [dbo].[HomeOwnership] CHECK CONSTRAINT [FK_HOMEOWNE_REFERENCE_PERSON]
 GO
-/****** Object:  ForeignKey [FK_ForExCheque_ForeignExchangeAmount]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_ForExCheque_ForeignExchangeAmount]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[ForExCheque]  WITH CHECK ADD  CONSTRAINT [FK_ForExCheque_ForeignExchangeAmount] FOREIGN KEY([ForExDetailId])
 REFERENCES [dbo].[ForExDetail] ([Id])
 GO
 ALTER TABLE [dbo].[ForExCheque] CHECK CONSTRAINT [FK_ForExCheque_ForeignExchangeAmount]
 GO
-/****** Object:  ForeignKey [FK_ForExCheque_PartyRole]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_ForExCheque_PartyRole]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[ForExCheque]  WITH CHECK ADD  CONSTRAINT [FK_ForExCheque_PartyRole] FOREIGN KEY([BankPartyRoleId])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[ForExCheque] CHECK CONSTRAINT [FK_ForExCheque_PartyRole]
 GO
-/****** Object:  ForeignKey [FK_APPLICAT_REFERENCE_APPLICAT]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_APPLICAT_REFERENCE_APPLICAT]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[ApplicationItem]  WITH CHECK ADD  CONSTRAINT [FK_APPLICAT_REFERENCE_APPLICAT] FOREIGN KEY([ApplicationId])
 REFERENCES [dbo].[Application] ([Id])
 GO
 ALTER TABLE [dbo].[ApplicationItem] CHECK CONSTRAINT [FK_APPLICAT_REFERENCE_APPLICAT]
 GO
-/****** Object:  ForeignKey [FK_APPLICAT_REFERENCE_PRODUCTF]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_APPLICAT_REFERENCE_PRODUCTF]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[ApplicationItem]  WITH CHECK ADD  CONSTRAINT [FK_APPLICAT_REFERENCE_PRODUCTF] FOREIGN KEY([ProdFeatApplicabilityId])
 REFERENCES [dbo].[ProductFeatureApplicability] ([Id])
 GO
 ALTER TABLE [dbo].[ApplicationItem] CHECK CONSTRAINT [FK_APPLICAT_REFERENCE_PRODUCTF]
 GO
-/****** Object:  ForeignKey [FK_ASSET_REFERENCE_ASSETTYP]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_ASSET_REFERENCE_ASSETTYP]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Asset]  WITH CHECK ADD  CONSTRAINT [FK_ASSET_REFERENCE_ASSETTYP] FOREIGN KEY([AssetTypeId])
 REFERENCES [dbo].[AssetType] ([Id])
 GO
 ALTER TABLE [dbo].[Asset] CHECK CONSTRAINT [FK_ASSET_REFERENCE_ASSETTYP]
 GO
-/****** Object:  ForeignKey [FK_ASSET_REFERENCE_LOANAPPL]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_ASSET_REFERENCE_LOANAPPL]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Asset]  WITH CHECK ADD  CONSTRAINT [FK_ASSET_REFERENCE_LOANAPPL] FOREIGN KEY([ApplicationId])
 REFERENCES [dbo].[LoanApplication] ([ApplicationId])
 GO
 ALTER TABLE [dbo].[Asset] CHECK CONSTRAINT [FK_ASSET_REFERENCE_LOANAPPL]
 GO
-/****** Object:  ForeignKey [FK_BANK_REFERENCE_PARTYROL]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_BANK_REFERENCE_PARTYROL]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Bank]  WITH CHECK ADD  CONSTRAINT [FK_BANK_REFERENCE_PARTYROL] FOREIGN KEY([PartyRoleId])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[Bank] CHECK CONSTRAINT [FK_BANK_REFERENCE_PARTYROL]
 GO
-/****** Object:  ForeignKey [FK_AGREEMEN_REFERENCE_AGREEMEN2]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_AGREEMEN_REFERENCE_AGREEMEN2]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[AgreementRole]  WITH CHECK ADD  CONSTRAINT [FK_AGREEMEN_REFERENCE_AGREEMEN2] FOREIGN KEY([AgreementId])
 REFERENCES [dbo].[Agreement] ([Id])
 GO
 ALTER TABLE [dbo].[AgreementRole] CHECK CONSTRAINT [FK_AGREEMEN_REFERENCE_AGREEMEN2]
 GO
-/****** Object:  ForeignKey [FK_AGREEMEN_REFERENCE_PARTYROL]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_AGREEMEN_REFERENCE_PARTYROL]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[AgreementRole]  WITH CHECK ADD  CONSTRAINT [FK_AGREEMEN_REFERENCE_PARTYROL] FOREIGN KEY([PartyRoleId])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[AgreementRole] CHECK CONSTRAINT [FK_AGREEMEN_REFERENCE_PARTYROL]
 GO
-/****** Object:  ForeignKey [FK_AGREEMEN_REFERENCE_AGREEMEN5]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_AGREEMEN_REFERENCE_AGREEMEN5]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[AgreementItem]  WITH CHECK ADD  CONSTRAINT [FK_AGREEMEN_REFERENCE_AGREEMEN5] FOREIGN KEY([AgreementId])
 REFERENCES [dbo].[Agreement] ([Id])
 GO
 ALTER TABLE [dbo].[AgreementItem] CHECK CONSTRAINT [FK_AGREEMEN_REFERENCE_AGREEMEN5]
 GO
-/****** Object:  ForeignKey [FK_CashOnVault_Currency]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_CashOnVault_Currency]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[CashOnVault]  WITH CHECK ADD  CONSTRAINT [FK_CashOnVault_Currency] FOREIGN KEY([CurrencyId])
 REFERENCES [dbo].[Currency] ([Id])
 GO
 ALTER TABLE [dbo].[CashOnVault] CHECK CONSTRAINT [FK_CashOnVault_Currency]
 GO
-/****** Object:  ForeignKey [FK_CashOnVault_PartyRole]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_CashOnVault_PartyRole]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[CashOnVault]  WITH CHECK ADD  CONSTRAINT [FK_CashOnVault_PartyRole] FOREIGN KEY([ClosedByPartyRoleId])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[CashOnVault] CHECK CONSTRAINT [FK_CashOnVault_PartyRole]
 GO
-/****** Object:  ForeignKey [FK_COMPROMI_REFERENCE_AGREEMEN]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_COMPROMI_REFERENCE_AGREEMEN]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[CompromiseAgreement]  WITH CHECK ADD  CONSTRAINT [FK_COMPROMI_REFERENCE_AGREEMEN] FOREIGN KEY([AgreementId])
 REFERENCES [dbo].[Agreement] ([Id])
 GO
 ALTER TABLE [dbo].[CompromiseAgreement] CHECK CONSTRAINT [FK_COMPROMI_REFERENCE_AGREEMEN]
 GO
-/****** Object:  ForeignKey [FK_CUSTOMER_REFERENCE_PARTYROL]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_CUSTOMER_REFERENCE_PARTYROL]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Customer]  WITH CHECK ADD  CONSTRAINT [FK_CUSTOMER_REFERENCE_PARTYROL] FOREIGN KEY([PartyRoleId])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[Customer] CHECK CONSTRAINT [FK_CUSTOMER_REFERENCE_PARTYROL]
 GO
-/****** Object:  ForeignKey [FK_COVDetails_COVTransactionType]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_COVDetails_COVTransactionType]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[COVTransaction]  WITH CHECK ADD  CONSTRAINT [FK_COVDetails_COVTransactionType] FOREIGN KEY([COVTransTypeId])
 REFERENCES [dbo].[COVTransactionType] ([Id])
 GO
 ALTER TABLE [dbo].[COVTransaction] CHECK CONSTRAINT [FK_COVDetails_COVTransactionType]
 GO
-/****** Object:  ForeignKey [FK_COVDetails_PartyRole]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_COVDetails_PartyRole]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[COVTransaction]  WITH CHECK ADD  CONSTRAINT [FK_COVDetails_PartyRole] FOREIGN KEY([ProcessedByPartyRoleId])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[COVTransaction] CHECK CONSTRAINT [FK_COVDetails_PartyRole]
 GO
-/****** Object:  ForeignKey [FK_COVTransaction_Currency]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_COVTransaction_Currency]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[COVTransaction]  WITH CHECK ADD  CONSTRAINT [FK_COVTransaction_Currency] FOREIGN KEY([CurrencyId])
 REFERENCES [dbo].[Currency] ([Id])
 GO
 ALTER TABLE [dbo].[COVTransaction] CHECK CONSTRAINT [FK_COVTransaction_Currency]
 GO
-/****** Object:  ForeignKey [FK_ForeignExchange_Currency]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_ForeignExchange_Currency]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[ForeignExchange]  WITH CHECK ADD  CONSTRAINT [FK_ForeignExchange_Currency] FOREIGN KEY([ReceivedCurrencyId])
 REFERENCES [dbo].[Currency] ([Id])
 GO
 ALTER TABLE [dbo].[ForeignExchange] CHECK CONSTRAINT [FK_ForeignExchange_Currency]
 GO
-/****** Object:  ForeignKey [FK_ForeignExchange_Currency1]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_ForeignExchange_Currency1]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[ForeignExchange]  WITH CHECK ADD  CONSTRAINT [FK_ForeignExchange_Currency1] FOREIGN KEY([ReleasedCurrencyId])
 REFERENCES [dbo].[Currency] ([Id])
 GO
 ALTER TABLE [dbo].[ForeignExchange] CHECK CONSTRAINT [FK_ForeignExchange_Currency1]
 GO
-/****** Object:  ForeignKey [FK_ForeignExchange_ExchangeRate]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_ForeignExchange_ExchangeRate]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[ForeignExchange]  WITH CHECK ADD  CONSTRAINT [FK_ForeignExchange_ExchangeRate] FOREIGN KEY([ExchangeRateId])
 REFERENCES [dbo].[ExchangeRate] ([Id])
 GO
 ALTER TABLE [dbo].[ForeignExchange] CHECK CONSTRAINT [FK_ForeignExchange_ExchangeRate]
 GO
-/****** Object:  ForeignKey [FK_ForeignExchange_PartyRole]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_ForeignExchange_PartyRole]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[ForeignExchange]  WITH CHECK ADD  CONSTRAINT [FK_ForeignExchange_PartyRole] FOREIGN KEY([ProcessedByPartyRoleId])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[ForeignExchange] CHECK CONSTRAINT [FK_ForeignExchange_PartyRole]
 GO
-/****** Object:  ForeignKey [FK_ForeignExchange_PartyRole1]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_ForeignExchange_PartyRole1]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[ForeignExchange]  WITH CHECK ADD  CONSTRAINT [FK_ForeignExchange_PartyRole1] FOREIGN KEY([ProcessedToPartyRoleId])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[ForeignExchange] CHECK CONSTRAINT [FK_ForeignExchange_PartyRole1]
 GO
-/****** Object:  ForeignKey [FK_FEE_REFERENCE_PRODUCTF]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_FEE_REFERENCE_PRODUCTF]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Fee]  WITH CHECK ADD  CONSTRAINT [FK_FEE_REFERENCE_PRODUCTF] FOREIGN KEY([ProductFeatApplicabilityId])
 REFERENCES [dbo].[ProductFeatureApplicability] ([Id])
 GO
 ALTER TABLE [dbo].[Fee] CHECK CONSTRAINT [FK_FEE_REFERENCE_PRODUCTF]
 GO
-/****** Object:  ForeignKey [FK_FINANCIA_REFERENCE_AGREEMEN]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_FINANCIA_REFERENCE_AGREEMEN]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[FinancialAccount]  WITH CHECK ADD  CONSTRAINT [FK_FINANCIA_REFERENCE_AGREEMEN] FOREIGN KEY([AgreementId])
 REFERENCES [dbo].[Agreement] ([Id])
 GO
 ALTER TABLE [dbo].[FinancialAccount] CHECK CONSTRAINT [FK_FINANCIA_REFERENCE_AGREEMEN]
 GO
-/****** Object:  ForeignKey [FK_FINANCIA_REFERENCE_FINANCIA5]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_FINANCIA_REFERENCE_FINANCIA5]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[FinancialAccount]  WITH CHECK ADD  CONSTRAINT [FK_FINANCIA_REFERENCE_FINANCIA5] FOREIGN KEY([FinancialAccountTypeId])
 REFERENCES [dbo].[FinancialAccountType] ([Id])
 GO
 ALTER TABLE [dbo].[FinancialAccount] CHECK CONSTRAINT [FK_FINANCIA_REFERENCE_FINANCIA5]
 GO
-/****** Object:  ForeignKey [FK_FINANCIA_REFERENCE_FINANCIA6]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_FINANCIA_REFERENCE_FINANCIA6]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[FinancialAccount]  WITH CHECK ADD  CONSTRAINT [FK_FINANCIA_REFERENCE_FINANCIA6] FOREIGN KEY([ParentFinancialAccountId])
 REFERENCES [dbo].[FinancialAccount] ([Id])
 GO
 ALTER TABLE [dbo].[FinancialAccount] CHECK CONSTRAINT [FK_FINANCIA_REFERENCE_FINANCIA6]
 GO
-/****** Object:  ForeignKey [FK_EMPLOYEE_REFERENCE_PARTYROL]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_EMPLOYEE_REFERENCE_PARTYROL]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Employee]  WITH CHECK ADD  CONSTRAINT [FK_EMPLOYEE_REFERENCE_PARTYROL] FOREIGN KEY([PartyRoleId])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[Employee] CHECK CONSTRAINT [FK_EMPLOYEE_REFERENCE_PARTYROL]
 GO
-/****** Object:  ForeignKey [FK_PETTY_CA_REFERENCE_PETTY_CA2]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PETTY_CA_REFERENCE_PETTY_CA2]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[PettyCashLoanItem]  WITH CHECK ADD  CONSTRAINT [FK_PETTY_CA_REFERENCE_PETTY_CA2] FOREIGN KEY([ApplicationId])
 REFERENCES [dbo].[PettyCashLoanApplication] ([ApplicationId])
 GO
 ALTER TABLE [dbo].[PettyCashLoanItem] CHECK CONSTRAINT [FK_PETTY_CA_REFERENCE_PETTY_CA2]
 GO
-/****** Object:  ForeignKey [FK_PERSONNA_REFERENCE_PERSON]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PERSONNA_REFERENCE_PERSON]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[PersonName]  WITH CHECK ADD  CONSTRAINT [FK_PERSONNA_REFERENCE_PERSON] FOREIGN KEY([PartyId])
 REFERENCES [dbo].[Person] ([PartyId])
 GO
 ALTER TABLE [dbo].[PersonName] CHECK CONSTRAINT [FK_PERSONNA_REFERENCE_PERSON]
 GO
-/****** Object:  ForeignKey [FK_PERSONNA_REFERENCE_PERSONNA]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PERSONNA_REFERENCE_PERSONNA]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[PersonName]  WITH CHECK ADD  CONSTRAINT [FK_PERSONNA_REFERENCE_PERSONNA] FOREIGN KEY([PersonNameTypeId])
 REFERENCES [dbo].[PersonNameType] ([Id])
 GO
 ALTER TABLE [dbo].[PersonName] CHECK CONSTRAINT [FK_PERSONNA_REFERENCE_PERSONNA]
 GO
-/****** Object:  ForeignKey [FK_PERSONID_REFERENCE_IDENTIFI]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PERSONID_REFERENCE_IDENTIFI]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[PersonIdentification]  WITH CHECK ADD  CONSTRAINT [FK_PERSONID_REFERENCE_IDENTIFI] FOREIGN KEY([IdentificationTypeId])
 REFERENCES [dbo].[IdentificationType] ([Id])
 GO
 ALTER TABLE [dbo].[PersonIdentification] CHECK CONSTRAINT [FK_PERSONID_REFERENCE_IDENTIFI]
 GO
-/****** Object:  ForeignKey [FK_PERSONID_REFERENCE_PERSON]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PERSONID_REFERENCE_PERSON]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[PersonIdentification]  WITH CHECK ADD  CONSTRAINT [FK_PERSONID_REFERENCE_PERSON] FOREIGN KEY([PartyId])
 REFERENCES [dbo].[Person] ([PartyId])
 GO
 ALTER TABLE [dbo].[PersonIdentification] CHECK CONSTRAINT [FK_PERSONID_REFERENCE_PERSON]
 GO
-/****** Object:  ForeignKey [FK_PETTY_CA_REFERENCE_PETTY_CA3]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PETTY_CA_REFERENCE_PETTY_CA3]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[PettyCashLoanApplicationStatus]  WITH CHECK ADD  CONSTRAINT [FK_PETTY_CA_REFERENCE_PETTY_CA3] FOREIGN KEY([StatusTypeId])
 REFERENCES [dbo].[PettyCashLoanAppStatusType] ([Id])
 GO
 ALTER TABLE [dbo].[PettyCashLoanApplicationStatus] CHECK CONSTRAINT [FK_PETTY_CA_REFERENCE_PETTY_CA3]
 GO
-/****** Object:  ForeignKey [FK_PETTY_CA_REFERENCE_PETTY_CA4]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PETTY_CA_REFERENCE_PETTY_CA4]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[PettyCashLoanApplicationStatus]  WITH CHECK ADD  CONSTRAINT [FK_PETTY_CA_REFERENCE_PETTY_CA4] FOREIGN KEY([ApplicationId])
 REFERENCES [dbo].[PettyCashLoanApplication] ([ApplicationId])
 GO
 ALTER TABLE [dbo].[PettyCashLoanApplicationStatus] CHECK CONSTRAINT [FK_PETTY_CA_REFERENCE_PETTY_CA4]
 GO
-/****** Object:  ForeignKey [FK_SUBMITTE_REFERENCE_LOANAPPL]    Script Date: 03/12/2012 21:04:17 ******/
-ALTER TABLE [dbo].[SubmittedDocument]  WITH CHECK ADD  CONSTRAINT [FK_SUBMITTE_REFERENCE_LOANAPPL] FOREIGN KEY([ApplicationId])
-REFERENCES [dbo].[LoanApplication] ([ApplicationId])
-GO
-ALTER TABLE [dbo].[SubmittedDocument] CHECK CONSTRAINT [FK_SUBMITTE_REFERENCE_LOANAPPL]
-GO
-/****** Object:  ForeignKey [FK_SUBMITTE_REFERENCE_PRODUCTR]    Script Date: 03/12/2012 21:04:17 ******/
-ALTER TABLE [dbo].[SubmittedDocument]  WITH CHECK ADD  CONSTRAINT [FK_SUBMITTE_REFERENCE_PRODUCTR] FOREIGN KEY([ProductRequiredDocumentId])
-REFERENCES [dbo].[ProductRequiredDocument] ([Id])
-GO
-ALTER TABLE [dbo].[SubmittedDocument] CHECK CONSTRAINT [FK_SUBMITTE_REFERENCE_PRODUCTR]
-GO
-/****** Object:  ForeignKey [FK_SPECIMEN_REFERENCE_PERSON]    Script Date: 03/12/2012 21:04:17 ******/
-ALTER TABLE [dbo].[SpecimenSignature]  WITH CHECK ADD  CONSTRAINT [FK_SPECIMEN_REFERENCE_PERSON] FOREIGN KEY([PartyId])
-REFERENCES [dbo].[Person] ([PartyId])
-GO
-ALTER TABLE [dbo].[SpecimenSignature] CHECK CONSTRAINT [FK_SPECIMEN_REFERENCE_PERSON]
-GO
-/****** Object:  ForeignKey [FK_TAXPAYER_REFERENCE_PARTYROL]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_TAXPAYER_REFERENCE_PARTYROL]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Taxpayer]  WITH CHECK ADD  CONSTRAINT [FK_TAXPAYER_REFERENCE_PARTYROL] FOREIGN KEY([PartyRoleId])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[Taxpayer] CHECK CONSTRAINT [FK_TAXPAYER_REFERENCE_PARTYROL]
 GO
-/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_PRODUCT_10]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_PRODUCT_10]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[ProductCategoryFeatureFunctionalApplicability]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_10] FOREIGN KEY([ProductCategoryId])
 REFERENCES [dbo].[ProductCategory] ([Id])
 GO
 ALTER TABLE [dbo].[ProductCategoryFeatureFunctionalApplicability] CHECK CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_10]
 GO
-/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_PRODUCT_9]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PRODUCT__REFERENCE_PRODUCT_9]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[ProductCategoryFeatureFunctionalApplicability]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_9] FOREIGN KEY([ProductCatFeatApplicabilityId])
 REFERENCES [dbo].[ProductCatFeatApplicability] ([Id])
 GO
 ALTER TABLE [dbo].[ProductCategoryFeatureFunctionalApplicability] CHECK CONSTRAINT [FK_PRODUCT__REFERENCE_PRODUCT_9]
 GO
-/****** Object:  ForeignKey [FK_USERACCO_REFERENCE_PERSON]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_USERACCO_REFERENCE_PERSON]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[UserAccount]  WITH CHECK ADD  CONSTRAINT [FK_USERACCO_REFERENCE_PERSON] FOREIGN KEY([PartyId])
 REFERENCES [dbo].[Person] ([PartyId])
 GO
 ALTER TABLE [dbo].[UserAccount] CHECK CONSTRAINT [FK_USERACCO_REFERENCE_PERSON]
 GO
-/****** Object:  ForeignKey [FK_UserAccount_UserAccountType]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_UserAccount_UserAccountType]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[UserAccount]  WITH CHECK ADD  CONSTRAINT [FK_UserAccount_UserAccountType] FOREIGN KEY([UserAccountTypeId])
 REFERENCES [dbo].[UserAccountType] ([Id])
 GO
 ALTER TABLE [dbo].[UserAccount] CHECK CONSTRAINT [FK_UserAccount_UserAccountType]
 GO
-/****** Object:  ForeignKey [FK_USER_ACC_REFERENCE_USER_ACC2]    Script Date: 03/12/2012 21:04:17 ******/
-ALTER TABLE [dbo].[UserAccountStatus]  WITH CHECK ADD  CONSTRAINT [FK_USER_ACC_REFERENCE_USER_ACC2] FOREIGN KEY([UserAccountId])
-REFERENCES [dbo].[UserAccount] ([Id])
+/****** Object:  ForeignKey [FK_SUBMITTE_REFERENCE_LOANAPPL]    Script Date: 02/22/2012 17:44:58 ******/
+ALTER TABLE [dbo].[SubmittedDocument]  WITH CHECK ADD  CONSTRAINT [FK_SUBMITTE_REFERENCE_LOANAPPL] FOREIGN KEY([ApplicationId])
+REFERENCES [dbo].[LoanApplication] ([ApplicationId])
 GO
-ALTER TABLE [dbo].[UserAccountStatus] CHECK CONSTRAINT [FK_USER_ACC_REFERENCE_USER_ACC2]
+ALTER TABLE [dbo].[SubmittedDocument] CHECK CONSTRAINT [FK_SUBMITTE_REFERENCE_LOANAPPL]
 GO
-/****** Object:  ForeignKey [FK_USERACCO_REFERENCE_USERACCO]    Script Date: 03/12/2012 21:04:17 ******/
-ALTER TABLE [dbo].[UserAccountStatus]  WITH CHECK ADD  CONSTRAINT [FK_USERACCO_REFERENCE_USERACCO] FOREIGN KEY([StatusTypeId])
-REFERENCES [dbo].[UserAccountStatusType] ([Id])
+/****** Object:  ForeignKey [FK_SUBMITTE_REFERENCE_PRODUCTR]    Script Date: 02/22/2012 17:44:58 ******/
+ALTER TABLE [dbo].[SubmittedDocument]  WITH CHECK ADD  CONSTRAINT [FK_SUBMITTE_REFERENCE_PRODUCTR] FOREIGN KEY([ProductRequiredDocumentId])
+REFERENCES [dbo].[ProductRequiredDocument] ([Id])
 GO
-ALTER TABLE [dbo].[UserAccountStatus] CHECK CONSTRAINT [FK_USERACCO_REFERENCE_USERACCO]
+ALTER TABLE [dbo].[SubmittedDocument] CHECK CONSTRAINT [FK_SUBMITTE_REFERENCE_PRODUCTR]
 GO
-/****** Object:  ForeignKey [FK_Vehicle_Asset1]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_SPECIMEN_REFERENCE_PERSON]    Script Date: 02/22/2012 17:44:58 ******/
+ALTER TABLE [dbo].[SpecimenSignature]  WITH CHECK ADD  CONSTRAINT [FK_SPECIMEN_REFERENCE_PERSON] FOREIGN KEY([PartyId])
+REFERENCES [dbo].[Person] ([PartyId])
+GO
+ALTER TABLE [dbo].[SpecimenSignature] CHECK CONSTRAINT [FK_SPECIMEN_REFERENCE_PERSON]
+GO
+/****** Object:  ForeignKey [FK_Vehicle_Asset1]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Vehicle]  WITH CHECK ADD  CONSTRAINT [FK_Vehicle_Asset1] FOREIGN KEY([AssetId])
 REFERENCES [dbo].[Asset] ([Id])
 GO
 ALTER TABLE [dbo].[Vehicle] CHECK CONSTRAINT [FK_Vehicle_Asset1]
 GO
-/****** Object:  ForeignKey [FK_Vehicle_VehicleType]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_Vehicle_VehicleType]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Vehicle]  WITH CHECK ADD  CONSTRAINT [FK_Vehicle_VehicleType] FOREIGN KEY([VehicleTypeId])
 REFERENCES [dbo].[VehicleType] ([Id])
 GO
 ALTER TABLE [dbo].[Vehicle] CHECK CONSTRAINT [FK_Vehicle_VehicleType]
 GO
-/****** Object:  ForeignKey [FK_SUBMITTE_REFERENCE_SUBMITTE]    Script Date: 03/12/2012 21:04:17 ******/
-ALTER TABLE [dbo].[SubmittedDocumentStatus]  WITH CHECK ADD  CONSTRAINT [FK_SUBMITTE_REFERENCE_SUBMITTE] FOREIGN KEY([SubmittedDocumentId])
-REFERENCES [dbo].[SubmittedDocument] ([Id])
-GO
-ALTER TABLE [dbo].[SubmittedDocumentStatus] CHECK CONSTRAINT [FK_SUBMITTE_REFERENCE_SUBMITTE]
-GO
-/****** Object:  ForeignKey [FK_SUBMITTE_REFERENCE_SUBMITTE2]    Script Date: 03/12/2012 21:04:17 ******/
-ALTER TABLE [dbo].[SubmittedDocumentStatus]  WITH CHECK ADD  CONSTRAINT [FK_SUBMITTE_REFERENCE_SUBMITTE2] FOREIGN KEY([StatusTypeId])
-REFERENCES [dbo].[SubmittedDocumentStatusType] ([Id])
-GO
-ALTER TABLE [dbo].[SubmittedDocumentStatus] CHECK CONSTRAINT [FK_SUBMITTE_REFERENCE_SUBMITTE2]
-GO
-/****** Object:  ForeignKey [FK_ReceiptPaymentAssoc_Payment]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_ReceiptPaymentAssoc_Payment]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[ReceiptPaymentAssoc]  WITH CHECK ADD  CONSTRAINT [FK_ReceiptPaymentAssoc_Payment] FOREIGN KEY([PaymentId])
 REFERENCES [dbo].[Payment] ([Id])
 GO
 ALTER TABLE [dbo].[ReceiptPaymentAssoc] CHECK CONSTRAINT [FK_ReceiptPaymentAssoc_Payment]
 GO
-/****** Object:  ForeignKey [FK_ReceiptPaymentAssoc_Receipt]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_ReceiptPaymentAssoc_Receipt]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[ReceiptPaymentAssoc]  WITH CHECK ADD  CONSTRAINT [FK_ReceiptPaymentAssoc_Receipt] FOREIGN KEY([ReceiptId])
 REFERENCES [dbo].[Receipt] ([Id])
 GO
 ALTER TABLE [dbo].[ReceiptPaymentAssoc] CHECK CONSTRAINT [FK_ReceiptPaymentAssoc_Receipt]
 GO
-/****** Object:  ForeignKey [FK_PaymentCurrencyAssoc_Currency]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_SUBMITTE_REFERENCE_SUBMITTE]    Script Date: 02/22/2012 17:44:58 ******/
+ALTER TABLE [dbo].[SubmittedDocumentStatus]  WITH CHECK ADD  CONSTRAINT [FK_SUBMITTE_REFERENCE_SUBMITTE] FOREIGN KEY([SubmittedDocumentId])
+REFERENCES [dbo].[SubmittedDocument] ([Id])
+GO
+ALTER TABLE [dbo].[SubmittedDocumentStatus] CHECK CONSTRAINT [FK_SUBMITTE_REFERENCE_SUBMITTE]
+GO
+/****** Object:  ForeignKey [FK_SUBMITTE_REFERENCE_SUBMITTE2]    Script Date: 02/22/2012 17:44:58 ******/
+ALTER TABLE [dbo].[SubmittedDocumentStatus]  WITH CHECK ADD  CONSTRAINT [FK_SUBMITTE_REFERENCE_SUBMITTE2] FOREIGN KEY([StatusTypeId])
+REFERENCES [dbo].[SubmittedDocumentStatusType] ([Id])
+GO
+ALTER TABLE [dbo].[SubmittedDocumentStatus] CHECK CONSTRAINT [FK_SUBMITTE_REFERENCE_SUBMITTE2]
+GO
+/****** Object:  ForeignKey [FK_USER_ACC_REFERENCE_USER_ACC2]    Script Date: 02/22/2012 17:44:58 ******/
+ALTER TABLE [dbo].[UserAccountStatus]  WITH CHECK ADD  CONSTRAINT [FK_USER_ACC_REFERENCE_USER_ACC2] FOREIGN KEY([UserAccountId])
+REFERENCES [dbo].[UserAccount] ([Id])
+GO
+ALTER TABLE [dbo].[UserAccountStatus] CHECK CONSTRAINT [FK_USER_ACC_REFERENCE_USER_ACC2]
+GO
+/****** Object:  ForeignKey [FK_USERACCO_REFERENCE_USERACCO]    Script Date: 02/22/2012 17:44:58 ******/
+ALTER TABLE [dbo].[UserAccountStatus]  WITH CHECK ADD  CONSTRAINT [FK_USERACCO_REFERENCE_USERACCO] FOREIGN KEY([StatusTypeId])
+REFERENCES [dbo].[UserAccountStatusType] ([Id])
+GO
+ALTER TABLE [dbo].[UserAccountStatus] CHECK CONSTRAINT [FK_USERACCO_REFERENCE_USERACCO]
+GO
+/****** Object:  ForeignKey [FK_PaymentCurrencyAssoc_Currency]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[PaymentCurrencyAssoc]  WITH CHECK ADD  CONSTRAINT [FK_PaymentCurrencyAssoc_Currency] FOREIGN KEY([CurrencyId])
 REFERENCES [dbo].[Currency] ([Id])
 GO
 ALTER TABLE [dbo].[PaymentCurrencyAssoc] CHECK CONSTRAINT [FK_PaymentCurrencyAssoc_Currency]
 GO
-/****** Object:  ForeignKey [FK_PaymentCurrencyAssoc_Payment]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_PaymentCurrencyAssoc_Payment]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[PaymentCurrencyAssoc]  WITH CHECK ADD  CONSTRAINT [FK_PaymentCurrencyAssoc_Payment] FOREIGN KEY([PaymentId])
 REFERENCES [dbo].[Payment] ([Id])
 GO
 ALTER TABLE [dbo].[PaymentCurrencyAssoc] CHECK CONSTRAINT [FK_PaymentCurrencyAssoc_Payment]
 GO
-/****** Object:  ForeignKey [FK_FINACCTT_REFERENCE_FINANCIA]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_FINACCTT_REFERENCE_FINANCIA]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[FinAcctTrans]  WITH CHECK ADD  CONSTRAINT [FK_FINACCTT_REFERENCE_FINANCIA] FOREIGN KEY([FinancialAccountId])
 REFERENCES [dbo].[FinancialAccount] ([Id])
 GO
 ALTER TABLE [dbo].[FinAcctTrans] CHECK CONSTRAINT [FK_FINACCTT_REFERENCE_FINANCIA]
 GO
-/****** Object:  ForeignKey [FK_FINACCTT_REFERENCE_FINLACCT]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_FINACCTT_REFERENCE_FINLACCT]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[FinAcctTrans]  WITH CHECK ADD  CONSTRAINT [FK_FINACCTT_REFERENCE_FINLACCT] FOREIGN KEY([FinancialAcctTransTypeId])
 REFERENCES [dbo].[FinlAcctTransType] ([Id])
 GO
 ALTER TABLE [dbo].[FinAcctTrans] CHECK CONSTRAINT [FK_FINACCTT_REFERENCE_FINLACCT]
 GO
-/****** Object:  ForeignKey [FK_FINACCTT_REFERENCE_PAYMENT]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_FINACCTT_REFERENCE_PAYMENT]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[FinAcctTrans]  WITH CHECK ADD  CONSTRAINT [FK_FINACCTT_REFERENCE_PAYMENT] FOREIGN KEY([PaymentId])
 REFERENCES [dbo].[Payment] ([Id])
 GO
 ALTER TABLE [dbo].[FinAcctTrans] CHECK CONSTRAINT [FK_FINACCTT_REFERENCE_PAYMENT]
 GO
-/****** Object:  ForeignKey [FK_FeePayment_Payment]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_FeePayment_Payment]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[FeePayment]  WITH CHECK ADD  CONSTRAINT [FK_FeePayment_Payment] FOREIGN KEY([PaymentId])
 REFERENCES [dbo].[Payment] ([Id])
 GO
 ALTER TABLE [dbo].[FeePayment] CHECK CONSTRAINT [FK_FeePayment_Payment]
 GO
-/****** Object:  ForeignKey [FK_EMPLOYME_REFERENCE_PARTYREL]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_EMPLOYME_REFERENCE_PARTYREL]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[Employment]  WITH CHECK ADD  CONSTRAINT [FK_EMPLOYME_REFERENCE_PARTYREL] FOREIGN KEY([PartyRelationshipId])
 REFERENCES [dbo].[PartyRelationship] ([Id])
 GO
 ALTER TABLE [dbo].[Employment] CHECK CONSTRAINT [FK_EMPLOYME_REFERENCE_PARTYREL]
 GO
-/****** Object:  ForeignKey [FK_DOCUMENT_REFERENCE_SUBMITTE]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_DOCUMENT_REFERENCE_SUBMITTE]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[DocumentPage]  WITH CHECK ADD  CONSTRAINT [FK_DOCUMENT_REFERENCE_SUBMITTE] FOREIGN KEY([SubmittedDocumentId])
 REFERENCES [dbo].[SubmittedDocument] ([Id])
 GO
 ALTER TABLE [dbo].[DocumentPage] CHECK CONSTRAINT [FK_DOCUMENT_REFERENCE_SUBMITTE]
 GO
-/****** Object:  ForeignKey [FK_FINANCIA_REFERENCE_FINANCIA2]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_FINANCIA_REFERENCE_FINANCIA2]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[FinancialAccountRole]  WITH CHECK ADD  CONSTRAINT [FK_FINANCIA_REFERENCE_FINANCIA2] FOREIGN KEY([FinancialAccountId])
 REFERENCES [dbo].[FinancialAccount] ([Id])
 GO
 ALTER TABLE [dbo].[FinancialAccountRole] CHECK CONSTRAINT [FK_FINANCIA_REFERENCE_FINANCIA2]
 GO
-/****** Object:  ForeignKey [FK_FINANCIA_REFERENCE_PARTYROL]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_FINANCIA_REFERENCE_PARTYROL]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[FinancialAccountRole]  WITH CHECK ADD  CONSTRAINT [FK_FINANCIA_REFERENCE_PARTYROL] FOREIGN KEY([PartyRoleId])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[FinancialAccountRole] CHECK CONSTRAINT [FK_FINANCIA_REFERENCE_PARTYROL]
 GO
-/****** Object:  ForeignKey [FK_FINANCIA_REFERENCE_FINANCIA3]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_FINANCIA_REFERENCE_FINANCIA3]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[FinancialAccountProduct]  WITH CHECK ADD  CONSTRAINT [FK_FINANCIA_REFERENCE_FINANCIA3] FOREIGN KEY([FinancialAccountId])
 REFERENCES [dbo].[FinancialAccount] ([Id])
 GO
 ALTER TABLE [dbo].[FinancialAccountProduct] CHECK CONSTRAINT [FK_FINANCIA_REFERENCE_FINANCIA3]
 GO
-/****** Object:  ForeignKey [FK_FINANCIA_REFERENCE_FINANCIA4]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_FINANCIA_REFERENCE_FINANCIA4]    Script Date: 02/22/2012 17:44:58 ******/
 ALTER TABLE [dbo].[FinancialAccountProduct]  WITH CHECK ADD  CONSTRAINT [FK_FINANCIA_REFERENCE_FINANCIA4] FOREIGN KEY([FinancialProductId])
 REFERENCES [dbo].[FinancialProduct] ([Id])
 GO
 ALTER TABLE [dbo].[FinancialAccountProduct] CHECK CONSTRAINT [FK_FINANCIA_REFERENCE_FINANCIA4]
 GO
-/****** Object:  ForeignKey [FK_DISBURSE_REFERENCE_DISBURSE5]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_DISBURSE_REFERENCE_DISBURSE5]    Script Date: 02/22/2012 17:44:59 ******/
 ALTER TABLE [dbo].[Disbursement]  WITH CHECK ADD  CONSTRAINT [FK_DISBURSE_REFERENCE_DISBURSE5] FOREIGN KEY([DisbursementTypeId])
 REFERENCES [dbo].[DisbursementType] ([Id])
 GO
 ALTER TABLE [dbo].[Disbursement] CHECK CONSTRAINT [FK_DISBURSE_REFERENCE_DISBURSE5]
 GO
-/****** Object:  ForeignKey [FK_DISBURSE_REFERENCE_PAYMENT]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_DISBURSE_REFERENCE_PAYMENT]    Script Date: 02/22/2012 17:44:59 ******/
 ALTER TABLE [dbo].[Disbursement]  WITH CHECK ADD  CONSTRAINT [FK_DISBURSE_REFERENCE_PAYMENT] FOREIGN KEY([PaymentId])
 REFERENCES [dbo].[Payment] ([Id])
 GO
 ALTER TABLE [dbo].[Disbursement] CHECK CONSTRAINT [FK_DISBURSE_REFERENCE_PAYMENT]
 GO
-/****** Object:  ForeignKey [FK_DISBURSE_REFERENCE_DISBURSE4]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_DISBURSE_REFERENCE_DISBURSE4]    Script Date: 02/22/2012 17:44:59 ******/
 ALTER TABLE [dbo].[DisbursementVcrStatus]  WITH CHECK ADD  CONSTRAINT [FK_DISBURSE_REFERENCE_DISBURSE4] FOREIGN KEY([DisbursementVoucherStatTypId])
 REFERENCES [dbo].[DisbursementVcrStatusType] ([Id])
 GO
 ALTER TABLE [dbo].[DisbursementVcrStatus] CHECK CONSTRAINT [FK_DISBURSE_REFERENCE_DISBURSE4]
 GO
-/****** Object:  ForeignKey [FK_DISBURSE_REFERENCE_LOANDISB]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_DISBURSE_REFERENCE_LOANDISB]    Script Date: 02/22/2012 17:44:59 ******/
 ALTER TABLE [dbo].[DisbursementVcrStatus]  WITH CHECK ADD  CONSTRAINT [FK_DISBURSE_REFERENCE_LOANDISB] FOREIGN KEY([LoanDisbursementVoucherId])
 REFERENCES [dbo].[LoanDisbursementVcr] ([Id])
 GO
 ALTER TABLE [dbo].[DisbursementVcrStatus] CHECK CONSTRAINT [FK_DISBURSE_REFERENCE_LOANDISB]
 GO
-/****** Object:  ForeignKey [FK_CUSTOMER]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_CUSTOMER]    Script Date: 02/22/2012 17:44:59 ******/
 ALTER TABLE [dbo].[CustomerStatus]  WITH CHECK ADD  CONSTRAINT [FK_CUSTOMER] FOREIGN KEY([CustomerStatusTypeId])
 REFERENCES [dbo].[CustomerStatusType] ([Id])
 GO
 ALTER TABLE [dbo].[CustomerStatus] CHECK CONSTRAINT [FK_CUSTOMER]
 GO
-/****** Object:  ForeignKey [FK_CUSTOMER_REFERENCE_CUSTOMER3]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_CUSTOMER_REFERENCE_CUSTOMER3]    Script Date: 02/22/2012 17:44:59 ******/
 ALTER TABLE [dbo].[CustomerStatus]  WITH CHECK ADD  CONSTRAINT [FK_CUSTOMER_REFERENCE_CUSTOMER3] FOREIGN KEY([PartyRoleId])
 REFERENCES [dbo].[Customer] ([PartyRoleId])
 GO
 ALTER TABLE [dbo].[CustomerStatus] CHECK CONSTRAINT [FK_CUSTOMER_REFERENCE_CUSTOMER3]
 GO
-/****** Object:  ForeignKey [FK_CUSTOMER_REFERENCE_CUSTOMER2]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_CUSTOMER_REFERENCE_CUSTOMER2]    Script Date: 02/22/2012 17:44:59 ******/
 ALTER TABLE [dbo].[CustomerSourceOfIncome]  WITH CHECK ADD  CONSTRAINT [FK_CUSTOMER_REFERENCE_CUSTOMER2] FOREIGN KEY([PartyRoleId])
 REFERENCES [dbo].[Customer] ([PartyRoleId])
 GO
 ALTER TABLE [dbo].[CustomerSourceOfIncome] CHECK CONSTRAINT [FK_CUSTOMER_REFERENCE_CUSTOMER2]
 GO
-/****** Object:  ForeignKey [FK_CUSTOMER_REFERENCE_SOURCEOF]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_CUSTOMER_REFERENCE_SOURCEOF]    Script Date: 02/22/2012 17:44:59 ******/
 ALTER TABLE [dbo].[CustomerSourceOfIncome]  WITH CHECK ADD  CONSTRAINT [FK_CUSTOMER_REFERENCE_SOURCEOF] FOREIGN KEY([SourceOfIncomeId])
 REFERENCES [dbo].[SourceOfIncome] ([Id])
 GO
 ALTER TABLE [dbo].[CustomerSourceOfIncome] CHECK CONSTRAINT [FK_CUSTOMER_REFERENCE_SOURCEOF]
 GO
-/****** Object:  ForeignKey [FK_CUSTOMER_REFERENCE_CLASSIFI]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_CUSTOMER_REFERENCE_CLASSIFI]    Script Date: 02/22/2012 17:44:59 ******/
 ALTER TABLE [dbo].[CustomerClassification]  WITH CHECK ADD  CONSTRAINT [FK_CUSTOMER_REFERENCE_CLASSIFI] FOREIGN KEY([ClassificationTypeId])
 REFERENCES [dbo].[ClassificationType] ([Id])
 GO
 ALTER TABLE [dbo].[CustomerClassification] CHECK CONSTRAINT [FK_CUSTOMER_REFERENCE_CLASSIFI]
 GO
-/****** Object:  ForeignKey [FK_CUSTOMER_REFERENCE_CUSTOMER]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_CUSTOMER_REFERENCE_CUSTOMER]    Script Date: 02/22/2012 17:44:59 ******/
 ALTER TABLE [dbo].[CustomerClassification]  WITH CHECK ADD  CONSTRAINT [FK_CUSTOMER_REFERENCE_CUSTOMER] FOREIGN KEY([PartyRoleId])
 REFERENCES [dbo].[Customer] ([PartyRoleId])
 GO
 ALTER TABLE [dbo].[CustomerClassification] CHECK CONSTRAINT [FK_CUSTOMER_REFERENCE_CUSTOMER]
 GO
-/****** Object:  ForeignKey [FK_CUSTOMER_REFERENCE_CUSTOME_]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_CUSTOMER_REFERENCE_CUSTOME_]    Script Date: 02/22/2012 17:44:59 ******/
 ALTER TABLE [dbo].[CustomerCategory]  WITH CHECK ADD  CONSTRAINT [FK_CUSTOMER_REFERENCE_CUSTOME_] FOREIGN KEY([PartyRoleId])
 REFERENCES [dbo].[Customer] ([PartyRoleId])
 GO
 ALTER TABLE [dbo].[CustomerCategory] CHECK CONSTRAINT [FK_CUSTOMER_REFERENCE_CUSTOME_]
 GO
-/****** Object:  ForeignKey [FK_CUSTOMER_REFERENCE_CUSTOMER1]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_CUSTOMER_REFERENCE_CUSTOMER1]    Script Date: 02/22/2012 17:44:59 ******/
 ALTER TABLE [dbo].[CustomerCategory]  WITH CHECK ADD  CONSTRAINT [FK_CUSTOMER_REFERENCE_CUSTOMER1] FOREIGN KEY([CustomerCategoryType])
 REFERENCES [dbo].[CustomerCategoryType] ([Id])
 GO
 ALTER TABLE [dbo].[CustomerCategory] CHECK CONSTRAINT [FK_CUSTOMER_REFERENCE_CUSTOMER1]
 GO
-/****** Object:  ForeignKey [FK_CTC_REFERENCE_TAXPAYER]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_CTC_REFERENCE_TAXPAYER]    Script Date: 02/22/2012 17:44:59 ******/
 ALTER TABLE [dbo].[Ctc]  WITH CHECK ADD  CONSTRAINT [FK_CTC_REFERENCE_TAXPAYER] FOREIGN KEY([PartyRoleId])
 REFERENCES [dbo].[Taxpayer] ([PartyRoleId])
 GO
 ALTER TABLE [dbo].[Ctc] CHECK CONSTRAINT [FK_CTC_REFERENCE_TAXPAYER]
 GO
-/****** Object:  ForeignKey [FK_ControlNumbers_FormType]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_ControlNumbers_FormType]    Script Date: 02/22/2012 17:44:59 ******/
 ALTER TABLE [dbo].[ControlNumbers]  WITH CHECK ADD  CONSTRAINT [FK_ControlNumbers_FormType] FOREIGN KEY([FormTypeId])
 REFERENCES [dbo].[FormType] ([Id])
 GO
 ALTER TABLE [dbo].[ControlNumbers] CHECK CONSTRAINT [FK_ControlNumbers_FormType]
 GO
-/****** Object:  ForeignKey [FK_ControlNumbers_LoanApplication]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_ControlNumbers_LoanApplication]    Script Date: 02/22/2012 17:44:59 ******/
 ALTER TABLE [dbo].[ControlNumbers]  WITH CHECK ADD  CONSTRAINT [FK_ControlNumbers_LoanApplication] FOREIGN KEY([ApplicationId])
 REFERENCES [dbo].[LoanApplication] ([ApplicationId])
 GO
 ALTER TABLE [dbo].[ControlNumbers] CHECK CONSTRAINT [FK_ControlNumbers_LoanApplication]
 GO
-/****** Object:  ForeignKey [FK_ControlNumbers_Payment]    Script Date: 03/12/2012 21:04:17 ******/
+/****** Object:  ForeignKey [FK_ControlNumbers_Payment]    Script Date: 02/22/2012 17:44:59 ******/
 ALTER TABLE [dbo].[ControlNumbers]  WITH CHECK ADD  CONSTRAINT [FK_ControlNumbers_Payment] FOREIGN KEY([PaymentId])
 REFERENCES [dbo].[Payment] ([Id])
 GO
 ALTER TABLE [dbo].[ControlNumbers] CHECK CONSTRAINT [FK_ControlNumbers_Payment]
 GO
-/****** Object:  ForeignKey [FK_BANKSTAT_REFERENCE_BANK]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_BANKSTAT_REFERENCE_BANK]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[BankStatus]  WITH CHECK ADD  CONSTRAINT [FK_BANKSTAT_REFERENCE_BANK] FOREIGN KEY([PartyRoleId])
 REFERENCES [dbo].[Bank] ([PartyRoleId])
 GO
 ALTER TABLE [dbo].[BankStatus] CHECK CONSTRAINT [FK_BANKSTAT_REFERENCE_BANK]
 GO
-/****** Object:  ForeignKey [FK_BANKSTAT_REFERENCE_BANKSTAT]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_BANKSTAT_REFERENCE_BANKSTAT]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[BankStatus]  WITH CHECK ADD  CONSTRAINT [FK_BANKSTAT_REFERENCE_BANKSTAT] FOREIGN KEY([BankStatusTypeId])
 REFERENCES [dbo].[BankStatusType] ([Id])
 GO
 ALTER TABLE [dbo].[BankStatus] CHECK CONSTRAINT [FK_BANKSTAT_REFERENCE_BANKSTAT]
 GO
-/****** Object:  ForeignKey [FK_BANKACCO_REFERENCE_ASSET]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_BANKACCO_REFERENCE_ASSET]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[BankAccount]  WITH CHECK ADD  CONSTRAINT [FK_BANKACCO_REFERENCE_ASSET] FOREIGN KEY([AssetId])
 REFERENCES [dbo].[Asset] ([Id])
 GO
 ALTER TABLE [dbo].[BankAccount] CHECK CONSTRAINT [FK_BANKACCO_REFERENCE_ASSET]
 GO
-/****** Object:  ForeignKey [FK_BANKACCO_REFERENCE_BANKACCO]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_BANKACCO_REFERENCE_BANKACCO]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[BankAccount]  WITH CHECK ADD  CONSTRAINT [FK_BANKACCO_REFERENCE_BANKACCO] FOREIGN KEY([BankAccountTypeId])
 REFERENCES [dbo].[BankAccountType] ([Id])
 GO
 ALTER TABLE [dbo].[BankAccount] CHECK CONSTRAINT [FK_BANKACCO_REFERENCE_BANKACCO]
 GO
-/****** Object:  ForeignKey [FK_BANKACCO_REFERENCE_LOANAPPL]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_BANKACCO_REFERENCE_LOANAPPL]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[BankAccount]  WITH CHECK ADD  CONSTRAINT [FK_BANKACCO_REFERENCE_LOANAPPL] FOREIGN KEY([ApplicationId])
 REFERENCES [dbo].[LoanApplication] ([ApplicationId])
 GO
 ALTER TABLE [dbo].[BankAccount] CHECK CONSTRAINT [FK_BANKACCO_REFERENCE_LOANAPPL]
 GO
-/****** Object:  ForeignKey [FK_BANKACCO_REFERENCE_PARTYROL]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_BANKACCO_REFERENCE_PARTYROL]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[BankAccount]  WITH CHECK ADD  CONSTRAINT [FK_BANKACCO_REFERENCE_PARTYROL] FOREIGN KEY([BankPartyRoleId])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[BankAccount] CHECK CONSTRAINT [FK_BANKACCO_REFERENCE_PARTYROL]
 GO
-/****** Object:  ForeignKey [FK_Cheque_Payment]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_Cheque_Payment]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[Cheque]  WITH CHECK ADD  CONSTRAINT [FK_Cheque_Payment] FOREIGN KEY([PaymentId])
 REFERENCES [dbo].[Payment] ([Id])
 GO
 ALTER TABLE [dbo].[Cheque] CHECK CONSTRAINT [FK_Cheque_Payment]
 GO
-/****** Object:  ForeignKey [FK_CHEQUE_REFERENCE_PARTYROL]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_CHEQUE_REFERENCE_PARTYROL]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[Cheque]  WITH CHECK ADD  CONSTRAINT [FK_CHEQUE_REFERENCE_PARTYROL] FOREIGN KEY([BankPartyRoleId])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[Cheque] CHECK CONSTRAINT [FK_CHEQUE_REFERENCE_PARTYROL]
 GO
-/****** Object:  ForeignKey [FK_ADDRESS_REFERENCE_ADDRESST]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_ADDRESS_REFERENCE_ADDRESST]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[Address]  WITH CHECK ADD  CONSTRAINT [FK_ADDRESS_REFERENCE_ADDRESST] FOREIGN KEY([AddressTypeId])
 REFERENCES [dbo].[AddressType] ([Id])
 GO
 ALTER TABLE [dbo].[Address] CHECK CONSTRAINT [FK_ADDRESS_REFERENCE_ADDRESST]
 GO
-/****** Object:  ForeignKey [FK_ADDRESS_REFERENCE_ASSET]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_ADDRESS_REFERENCE_ASSET]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[Address]  WITH CHECK ADD  CONSTRAINT [FK_ADDRESS_REFERENCE_ASSET] FOREIGN KEY([AssetId])
 REFERENCES [dbo].[Asset] ([Id])
 GO
 ALTER TABLE [dbo].[Address] CHECK CONSTRAINT [FK_ADDRESS_REFERENCE_ASSET]
 GO
-/****** Object:  ForeignKey [FK_ADDRESS_REFERENCE_PARTY]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_ADDRESS_REFERENCE_PARTY]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[Address]  WITH CHECK ADD  CONSTRAINT [FK_ADDRESS_REFERENCE_PARTY] FOREIGN KEY([PartyId])
 REFERENCES [dbo].[Party] ([Id])
 GO
 ALTER TABLE [dbo].[Address] CHECK CONSTRAINT [FK_ADDRESS_REFERENCE_PARTY]
 GO
-/****** Object:  ForeignKey [FK_ADDENDUM_REFERENCE_AGREEMEN]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_ADDENDUM_REFERENCE_AGREEMEN]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[Addendum]  WITH CHECK ADD  CONSTRAINT [FK_ADDENDUM_REFERENCE_AGREEMEN] FOREIGN KEY([AgreementId])
 REFERENCES [dbo].[Agreement] ([Id])
 GO
 ALTER TABLE [dbo].[Addendum] CHECK CONSTRAINT [FK_ADDENDUM_REFERENCE_AGREEMEN]
 GO
-/****** Object:  ForeignKey [FK_ADDENDUM_REFERENCE_AGREEMEN2]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_ADDENDUM_REFERENCE_AGREEMEN2]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[Addendum]  WITH CHECK ADD  CONSTRAINT [FK_ADDENDUM_REFERENCE_AGREEMEN2] FOREIGN KEY([AgreementItemId])
 REFERENCES [dbo].[AgreementItem] ([Id])
 GO
 ALTER TABLE [dbo].[Addendum] CHECK CONSTRAINT [FK_ADDENDUM_REFERENCE_AGREEMEN2]
 GO
-/****** Object:  ForeignKey [FK_ASSETROL_REFERENCE_ASSET]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_ASSETROL_REFERENCE_ASSET]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[AssetRole]  WITH CHECK ADD  CONSTRAINT [FK_ASSETROL_REFERENCE_ASSET] FOREIGN KEY([AssetId])
 REFERENCES [dbo].[Asset] ([Id])
 GO
 ALTER TABLE [dbo].[AssetRole] CHECK CONSTRAINT [FK_ASSETROL_REFERENCE_ASSET]
 GO
-/****** Object:  ForeignKey [FK_ASSETROL_REFERENCE_PARTYROL]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_ASSETROL_REFERENCE_PARTYROL]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[AssetRole]  WITH CHECK ADD  CONSTRAINT [FK_ASSETROL_REFERENCE_PARTYROL] FOREIGN KEY([PartyRoleId])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[AssetRole] CHECK CONSTRAINT [FK_ASSETROL_REFERENCE_PARTYROL]
 GO
-/****** Object:  ForeignKey [FK_ASSETAPP_REFERENCE_ASSET]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_ASSETAPP_REFERENCE_ASSET]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[AssetAppraisal]  WITH CHECK ADD  CONSTRAINT [FK_ASSETAPP_REFERENCE_ASSET] FOREIGN KEY([AssetId])
 REFERENCES [dbo].[Asset] ([Id])
 GO
 ALTER TABLE [dbo].[AssetAppraisal] CHECK CONSTRAINT [FK_ASSETAPP_REFERENCE_ASSET]
 GO
-/****** Object:  ForeignKey [FK_ASSETAPP_REFERENCE_PARTYROL]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_ASSETAPP_REFERENCE_PARTYROL]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[AssetAppraisal]  WITH CHECK ADD  CONSTRAINT [FK_ASSETAPP_REFERENCE_PARTYROL] FOREIGN KEY([PartyRoleId])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[AssetAppraisal] CHECK CONSTRAINT [FK_ASSETAPP_REFERENCE_PARTYROL]
 GO
-/****** Object:  ForeignKey [FK_AMORTIZA_REFERENCE_AMORTIZA2]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_AMORTIZA_REFERENCE_AMORTIZA2]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[AmortizationSchedule]  WITH CHECK ADD  CONSTRAINT [FK_AMORTIZA_REFERENCE_AMORTIZA2] FOREIGN KEY([ParentAmortizationScheduleId])
 REFERENCES [dbo].[AmortizationSchedule] ([Id])
 GO
 ALTER TABLE [dbo].[AmortizationSchedule] CHECK CONSTRAINT [FK_AMORTIZA_REFERENCE_AMORTIZA2]
 GO
-/****** Object:  ForeignKey [FK_AMORTIZA_REFERENCE_LOANAGRE]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_AMORTIZA_REFERENCE_LOANAGRE]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[AmortizationSchedule]  WITH CHECK ADD  CONSTRAINT [FK_AMORTIZA_REFERENCE_LOANAGRE] FOREIGN KEY([AgreementId])
 REFERENCES [dbo].[LoanAgreement] ([AgreementId])
 GO
 ALTER TABLE [dbo].[AmortizationSchedule] CHECK CONSTRAINT [FK_AMORTIZA_REFERENCE_LOANAGRE]
 GO
-/****** Object:  ForeignKey [FK_LOANACCO_REFERENCE_FINANCIA]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LOANACCO_REFERENCE_FINANCIA]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[LoanAccount]  WITH CHECK ADD  CONSTRAINT [FK_LOANACCO_REFERENCE_FINANCIA] FOREIGN KEY([FinancialAccountId])
 REFERENCES [dbo].[FinancialAccount] ([Id])
 GO
 ALTER TABLE [dbo].[LoanAccount] CHECK CONSTRAINT [FK_LOANACCO_REFERENCE_FINANCIA]
 GO
-/****** Object:  ForeignKey [FK_LoanAccount_InterestType]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LoanAccount_InterestType]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[LoanAccount]  WITH CHECK ADD  CONSTRAINT [FK_LoanAccount_InterestType] FOREIGN KEY([InterestTypeId])
 REFERENCES [dbo].[InterestType] ([Id])
 GO
 ALTER TABLE [dbo].[LoanAccount] CHECK CONSTRAINT [FK_LoanAccount_InterestType]
 GO
-/****** Object:  ForeignKey [FK_LAND_REFERENCE_ASSET]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LAND_REFERENCE_ASSET]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[Land]  WITH CHECK ADD  CONSTRAINT [FK_LAND_REFERENCE_ASSET] FOREIGN KEY([AssetId])
 REFERENCES [dbo].[Asset] ([Id])
 GO
 ALTER TABLE [dbo].[Land] CHECK CONSTRAINT [FK_LAND_REFERENCE_ASSET]
 GO
-/****** Object:  ForeignKey [FK_LAND_REFERENCE_LANDTYPE]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LAND_REFERENCE_LANDTYPE]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[Land]  WITH CHECK ADD  CONSTRAINT [FK_LAND_REFERENCE_LANDTYPE] FOREIGN KEY([LandTypeId])
 REFERENCES [dbo].[LandType] ([Id])
 GO
 ALTER TABLE [dbo].[Land] CHECK CONSTRAINT [FK_LAND_REFERENCE_LANDTYPE]
 GO
-/****** Object:  ForeignKey [FK_LAND_REFERENCE_UNITOFME]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LAND_REFERENCE_UNITOFME]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[Land]  WITH CHECK ADD  CONSTRAINT [FK_LAND_REFERENCE_UNITOFME] FOREIGN KEY([UomId])
 REFERENCES [dbo].[UnitOfMeasure] ([Id])
 GO
 ALTER TABLE [dbo].[Land] CHECK CONSTRAINT [FK_LAND_REFERENCE_UNITOFME]
 GO
-/****** Object:  ForeignKey [FK_FormDetails_FormType]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_FormDetails_FormType]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[FormDetails]  WITH CHECK ADD  CONSTRAINT [FK_FormDetails_FormType] FOREIGN KEY([FormTypeId])
 REFERENCES [dbo].[FormType] ([Id])
 GO
 ALTER TABLE [dbo].[FormDetails] CHECK CONSTRAINT [FK_FormDetails_FormType]
 GO
-/****** Object:  ForeignKey [FK_FormDetails_LoanApplication]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_FormDetails_LoanApplication]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[FormDetails]  WITH CHECK ADD  CONSTRAINT [FK_FormDetails_LoanApplication] FOREIGN KEY([LoanAppId])
 REFERENCES [dbo].[LoanApplication] ([ApplicationId])
 GO
 ALTER TABLE [dbo].[FormDetails] CHECK CONSTRAINT [FK_FormDetails_LoanApplication]
 GO
-/****** Object:  ForeignKey [FK_FormDetails_Payment]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_FormDetails_Payment]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[FormDetails]  WITH CHECK ADD  CONSTRAINT [FK_FormDetails_Payment] FOREIGN KEY([PaymentId])
 REFERENCES [dbo].[Payment] ([Id])
 GO
 ALTER TABLE [dbo].[FormDetails] CHECK CONSTRAINT [FK_FormDetails_Payment]
 GO
-/****** Object:  ForeignKey [FK_ForeignExchangeDetailAssoc_ForeignExchange]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_ForeignExchangeDetailAssoc_ForeignExchange]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[ForeignExchangeDetailAssoc]  WITH CHECK ADD  CONSTRAINT [FK_ForeignExchangeDetailAssoc_ForeignExchange] FOREIGN KEY([ForExId])
 REFERENCES [dbo].[ForeignExchange] ([Id])
 GO
 ALTER TABLE [dbo].[ForeignExchangeDetailAssoc] CHECK CONSTRAINT [FK_ForeignExchangeDetailAssoc_ForeignExchange]
 GO
-/****** Object:  ForeignKey [FK_ForeignExchangeDetailAssoc_ForExDetail]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_ForeignExchangeDetailAssoc_ForExDetail]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[ForeignExchangeDetailAssoc]  WITH CHECK ADD  CONSTRAINT [FK_ForeignExchangeDetailAssoc_ForExDetail] FOREIGN KEY([ForExDetailId])
 REFERENCES [dbo].[ForExDetail] ([Id])
 GO
 ALTER TABLE [dbo].[ForeignExchangeDetailAssoc] CHECK CONSTRAINT [FK_ForeignExchangeDetailAssoc_ForExDetail]
 GO
-/****** Object:  ForeignKey [FK_LOANMODI_LOANMODIF_LOANMODI]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LOANMODI_LOANMODIF_LOANMODI]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[LoanModificationStatus]  WITH CHECK ADD  CONSTRAINT [FK_LOANMODI_LOANMODIF_LOANMODI] FOREIGN KEY([LoanModificationId])
 REFERENCES [dbo].[LoanModification] ([Id])
 GO
 ALTER TABLE [dbo].[LoanModificationStatus] CHECK CONSTRAINT [FK_LOANMODI_LOANMODIF_LOANMODI]
 GO
-/****** Object:  ForeignKey [FK_LOANMODI_REFERENCE_LOANMODI2]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LOANMODI_REFERENCE_LOANMODI2]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[LoanModificationStatus]  WITH CHECK ADD  CONSTRAINT [FK_LOANMODI_REFERENCE_LOANMODI2] FOREIGN KEY([LoanModificationStatusTypeId])
 REFERENCES [dbo].[LoanModificationStatusType] ([Id])
 GO
 ALTER TABLE [dbo].[LoanModificationStatus] CHECK CONSTRAINT [FK_LOANMODI_REFERENCE_LOANMODI2]
 GO
-/****** Object:  ForeignKey [FK_LOANMODI_REFERENCE_PARTYROL]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LOANMODI_REFERENCE_PARTYROL]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[LoanModificationStatus]  WITH CHECK ADD  CONSTRAINT [FK_LOANMODI_REFERENCE_PARTYROL] FOREIGN KEY([ModifiedBy])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[LoanModificationStatus] CHECK CONSTRAINT [FK_LOANMODI_REFERENCE_PARTYROL]
 GO
-/****** Object:  ForeignKey [FK_LOANMODI_REFERENCE_FINANCIA2]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LOANMODI_REFERENCE_FINANCIA2]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[LoanModificationPrevItems]  WITH CHECK ADD  CONSTRAINT [FK_LOANMODI_REFERENCE_FINANCIA2] FOREIGN KEY([OldFinancialAccountId])
 REFERENCES [dbo].[FinancialAccount] ([Id])
 GO
 ALTER TABLE [dbo].[LoanModificationPrevItems] CHECK CONSTRAINT [FK_LOANMODI_REFERENCE_FINANCIA2]
 GO
-/****** Object:  ForeignKey [FK_LOANMODI_REFERENCE_LOANMODI3]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LOANMODI_REFERENCE_LOANMODI3]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[LoanModificationPrevItems]  WITH CHECK ADD  CONSTRAINT [FK_LOANMODI_REFERENCE_LOANMODI3] FOREIGN KEY([LoanModificationId])
 REFERENCES [dbo].[LoanModification] ([Id])
 GO
 ALTER TABLE [dbo].[LoanModificationPrevItems] CHECK CONSTRAINT [FK_LOANMODI_REFERENCE_LOANMODI3]
 GO
-/****** Object:  ForeignKey [FK_Machine_Asset]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_Machine_Asset]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[Machine]  WITH CHECK ADD  CONSTRAINT [FK_Machine_Asset] FOREIGN KEY([AssetId])
 REFERENCES [dbo].[Asset] ([Id])
 GO
 ALTER TABLE [dbo].[Machine] CHECK CONSTRAINT [FK_Machine_Asset]
 GO
-/****** Object:  ForeignKey [FK_LoanPayment_Payment]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LoanPayment_Payment]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[LoanPayment]  WITH CHECK ADD  CONSTRAINT [FK_LoanPayment_Payment] FOREIGN KEY([PaymentId])
 REFERENCES [dbo].[Payment] ([Id])
 GO
 ALTER TABLE [dbo].[LoanPayment] CHECK CONSTRAINT [FK_LoanPayment_Payment]
 GO
-/****** Object:  ForeignKey [FK_POSTALAD_REFERENCE_ADDRESS]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_POSTALAD_REFERENCE_ADDRESS]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[PostalAddress]  WITH CHECK ADD  CONSTRAINT [FK_POSTALAD_REFERENCE_ADDRESS] FOREIGN KEY([AddressId])
 REFERENCES [dbo].[Address] ([AddressId])
 GO
 ALTER TABLE [dbo].[PostalAddress] CHECK CONSTRAINT [FK_POSTALAD_REFERENCE_ADDRESS]
 GO
-/****** Object:  ForeignKey [FK_POSTALAD_REFERENCE_COUNTRY]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_POSTALAD_REFERENCE_COUNTRY]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[PostalAddress]  WITH CHECK ADD  CONSTRAINT [FK_POSTALAD_REFERENCE_COUNTRY] FOREIGN KEY([CountryId])
 REFERENCES [dbo].[Country] ([Id])
 GO
 ALTER TABLE [dbo].[PostalAddress] CHECK CONSTRAINT [FK_POSTALAD_REFERENCE_COUNTRY]
 GO
-/****** Object:  ForeignKey [FK_POSTALAD_REFERENCE_POSTALAD]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_POSTALAD_REFERENCE_POSTALAD]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[PostalAddress]  WITH CHECK ADD  CONSTRAINT [FK_POSTALAD_REFERENCE_POSTALAD] FOREIGN KEY([PostalAddressTypeId])
 REFERENCES [dbo].[PostalAddressType] ([Id])
 GO
 ALTER TABLE [dbo].[PostalAddress] CHECK CONSTRAINT [FK_POSTALAD_REFERENCE_POSTALAD]
 GO
-/****** Object:  ForeignKey [FK_LOANSTAT_REFERENCE_LOANACCO]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LOANSTAT_REFERENCE_LOANACCO]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[LoanStatement]  WITH CHECK ADD  CONSTRAINT [FK_LOANSTAT_REFERENCE_LOANACCO] FOREIGN KEY([FinancialAccountId])
 REFERENCES [dbo].[LoanAccount] ([FinancialAccountId])
 GO
 ALTER TABLE [dbo].[LoanStatement] CHECK CONSTRAINT [FK_LOANSTAT_REFERENCE_LOANACCO]
 GO
-/****** Object:  ForeignKey [FK_LOANSTAT_REFERENCE_LOANPAYM]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LOANSTAT_REFERENCE_LOANPAYM]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[LoanStatement]  WITH CHECK ADD  CONSTRAINT [FK_LOANSTAT_REFERENCE_LOANPAYM] FOREIGN KEY([PaymentId])
 REFERENCES [dbo].[LoanPayment] ([PaymentId])
 GO
 ALTER TABLE [dbo].[LoanStatement] CHECK CONSTRAINT [FK_LOANSTAT_REFERENCE_LOANPAYM]
 GO
-/****** Object:  ForeignKey [FK_LOANREAV_REFERENCE_LOANACCO]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LOANREAV_REFERENCE_LOANACCO]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[LoanReAvailment]  WITH CHECK ADD  CONSTRAINT [FK_LOANREAV_REFERENCE_LOANACCO] FOREIGN KEY([FinancialAccountId])
 REFERENCES [dbo].[LoanAccount] ([FinancialAccountId])
 GO
 ALTER TABLE [dbo].[LoanReAvailment] CHECK CONSTRAINT [FK_LOANREAV_REFERENCE_LOANACCO]
 GO
-/****** Object:  ForeignKey [FK_LOANREAV_REFERENCE_LOANAPPL]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LOANREAV_REFERENCE_LOANAPPL]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[LoanReAvailment]  WITH CHECK ADD  CONSTRAINT [FK_LOANREAV_REFERENCE_LOANAPPL] FOREIGN KEY([ApplicationId])
 REFERENCES [dbo].[LoanApplication] ([ApplicationId])
 GO
 ALTER TABLE [dbo].[LoanReAvailment] CHECK CONSTRAINT [FK_LOANREAV_REFERENCE_LOANAPPL]
 GO
-/****** Object:  ForeignKey [FK_LOANADJU_REFERENCE_ADJUSTME]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LOANADJU_REFERENCE_ADJUSTME]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[LoanAdjustment]  WITH CHECK ADD  CONSTRAINT [FK_LOANADJU_REFERENCE_ADJUSTME] FOREIGN KEY([AdjustmentTypeId])
 REFERENCES [dbo].[AdjustmentType] ([Id])
 GO
 ALTER TABLE [dbo].[LoanAdjustment] CHECK CONSTRAINT [FK_LOANADJU_REFERENCE_ADJUSTME]
 GO
-/****** Object:  ForeignKey [FK_LOANADJU_REFERENCE_LOANACCO]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LOANADJU_REFERENCE_LOANACCO]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[LoanAdjustment]  WITH CHECK ADD  CONSTRAINT [FK_LOANADJU_REFERENCE_LOANACCO] FOREIGN KEY([FinancialAccountId])
 REFERENCES [dbo].[LoanAccount] ([FinancialAccountId])
 GO
 ALTER TABLE [dbo].[LoanAdjustment] CHECK CONSTRAINT [FK_LOANADJU_REFERENCE_LOANACCO]
 GO
-/****** Object:  ForeignKey [FK_LOANMODI_REFERENCE_FINANCIA]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LOANMODI_REFERENCE_FINANCIA]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[LoanModificationNewItems]  WITH CHECK ADD  CONSTRAINT [FK_LOANMODI_REFERENCE_FINANCIA] FOREIGN KEY([NewFinancialAccountId])
 REFERENCES [dbo].[FinancialAccount] ([Id])
 GO
 ALTER TABLE [dbo].[LoanModificationNewItems] CHECK CONSTRAINT [FK_LOANMODI_REFERENCE_FINANCIA]
 GO
-/****** Object:  ForeignKey [FK_LOANMODI_REFERENCE_LOANMODI]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LOANMODI_REFERENCE_LOANMODI]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[LoanModificationNewItems]  WITH CHECK ADD  CONSTRAINT [FK_LOANMODI_REFERENCE_LOANMODI] FOREIGN KEY([LoanModificationPrevId])
 REFERENCES [dbo].[LoanModificationPrevItems] ([Id])
 GO
 ALTER TABLE [dbo].[LoanModificationNewItems] CHECK CONSTRAINT [FK_LOANMODI_REFERENCE_LOANMODI]
 GO
-/****** Object:  ForeignKey [FK_LOANDISB_REFERENCE_DISBURSE2]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LOANDISB_REFERENCE_DISBURSE2]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[LoanDisbursement]  WITH CHECK ADD  CONSTRAINT [FK_LOANDISB_REFERENCE_DISBURSE2] FOREIGN KEY([PaymentId])
 REFERENCES [dbo].[Disbursement] ([PaymentId])
 GO
 ALTER TABLE [dbo].[LoanDisbursement] CHECK CONSTRAINT [FK_LOANDISB_REFERENCE_DISBURSE2]
 GO
-/****** Object:  ForeignKey [FK_LoanDisbursement_LoanDisbursementType]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LoanDisbursement_LoanDisbursementType]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[LoanDisbursement]  WITH CHECK ADD  CONSTRAINT [FK_LoanDisbursement_LoanDisbursementType] FOREIGN KEY([LoanDisbursementTypeId])
 REFERENCES [dbo].[LoanDisbursementType] ([Id])
 GO
 ALTER TABLE [dbo].[LoanDisbursement] CHECK CONSTRAINT [FK_LoanDisbursement_LoanDisbursementType]
 GO
-/****** Object:  ForeignKey [FK_InterestItems_LoanAccount]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_InterestItems_LoanAccount]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[InterestItems]  WITH CHECK ADD  CONSTRAINT [FK_InterestItems_LoanAccount] FOREIGN KEY([LoanId])
 REFERENCES [dbo].[LoanAccount] ([FinancialAccountId])
 GO
 ALTER TABLE [dbo].[InterestItems] CHECK CONSTRAINT [FK_InterestItems_LoanAccount]
 GO
-/****** Object:  ForeignKey [FK_LOAN_ACC_REFERENCE_LOAN_ACC2]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LOAN_ACC_REFERENCE_LOAN_ACC2]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[LoanAccountStatus]  WITH CHECK ADD  CONSTRAINT [FK_LOAN_ACC_REFERENCE_LOAN_ACC2] FOREIGN KEY([FinancialAccountId])
 REFERENCES [dbo].[LoanAccount] ([FinancialAccountId])
 GO
 ALTER TABLE [dbo].[LoanAccountStatus] CHECK CONSTRAINT [FK_LOAN_ACC_REFERENCE_LOAN_ACC2]
 GO
-/****** Object:  ForeignKey [FK_LOAN_ACC_REFERENCE_LOAN_ACC3]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_LOAN_ACC_REFERENCE_LOAN_ACC3]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[LoanAccountStatus]  WITH CHECK ADD  CONSTRAINT [FK_LOAN_ACC_REFERENCE_LOAN_ACC3] FOREIGN KEY([StatusTypeId])
 REFERENCES [dbo].[LoanAccountStatusType] ([Id])
 GO
 ALTER TABLE [dbo].[LoanAccountStatus] CHECK CONSTRAINT [FK_LOAN_ACC_REFERENCE_LOAN_ACC3]
 GO
-/****** Object:  ForeignKey [FK_AMORTIZA_REFERENCE_AMORTIZA]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_AMORTIZA_REFERENCE_AMORTIZA]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[AmortizationScheduleItem]  WITH CHECK ADD  CONSTRAINT [FK_AMORTIZA_REFERENCE_AMORTIZA] FOREIGN KEY([AmortizationScheduleId])
 REFERENCES [dbo].[AmortizationSchedule] ([Id])
 GO
 ALTER TABLE [dbo].[AmortizationScheduleItem] CHECK CONSTRAINT [FK_AMORTIZA_REFERENCE_AMORTIZA]
 GO
-/****** Object:  ForeignKey [FK_CHEQUEST_REFERENCE_CHEQUE]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_CHEQUEST_REFERENCE_CHEQUE]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[ChequeStatus]  WITH CHECK ADD  CONSTRAINT [FK_CHEQUEST_REFERENCE_CHEQUE] FOREIGN KEY([CheckId])
 REFERENCES [dbo].[Cheque] ([Id])
 GO
 ALTER TABLE [dbo].[ChequeStatus] CHECK CONSTRAINT [FK_CHEQUEST_REFERENCE_CHEQUE]
 GO
-/****** Object:  ForeignKey [FK_CHEQUEST_REFERENCE_CHEQUEST]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_CHEQUEST_REFERENCE_CHEQUEST]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[ChequeStatus]  WITH CHECK ADD  CONSTRAINT [FK_CHEQUEST_REFERENCE_CHEQUEST] FOREIGN KEY([CheckStatusTypeId])
 REFERENCES [dbo].[ChequeStatusType] ([Id])
 GO
 ALTER TABLE [dbo].[ChequeStatus] CHECK CONSTRAINT [FK_CHEQUEST_REFERENCE_CHEQUEST]
 GO
-/****** Object:  ForeignKey [FK_ChequeLoanAssoc_Cheque]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_ChequeLoanAssoc_Cheque]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[ChequeLoanAssoc]  WITH CHECK ADD  CONSTRAINT [FK_ChequeLoanAssoc_Cheque] FOREIGN KEY([ChequeId])
 REFERENCES [dbo].[Cheque] ([Id])
 GO
 ALTER TABLE [dbo].[ChequeLoanAssoc] CHECK CONSTRAINT [FK_ChequeLoanAssoc_Cheque]
 GO
-/****** Object:  ForeignKey [FK_ChequeLoanAssoc_LoanAccount]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_ChequeLoanAssoc_LoanAccount]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[ChequeLoanAssoc]  WITH CHECK ADD  CONSTRAINT [FK_ChequeLoanAssoc_LoanAccount] FOREIGN KEY([FinancialAccountId])
 REFERENCES [dbo].[LoanAccount] ([FinancialAccountId])
 GO
 ALTER TABLE [dbo].[ChequeLoanAssoc] CHECK CONSTRAINT [FK_ChequeLoanAssoc_LoanAccount]
 GO
-/****** Object:  ForeignKey [FK_ChequeApplicationAssoc_Application]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_ChequeApplicationAssoc_Application]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[ChequeApplicationAssoc]  WITH CHECK ADD  CONSTRAINT [FK_ChequeApplicationAssoc_Application] FOREIGN KEY([ApplicationId])
 REFERENCES [dbo].[Application] ([Id])
 GO
 ALTER TABLE [dbo].[ChequeApplicationAssoc] CHECK CONSTRAINT [FK_ChequeApplicationAssoc_Application]
 GO
-/****** Object:  ForeignKey [FK_ChequeApplicationAssoc_Cheque]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_ChequeApplicationAssoc_Cheque]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[ChequeApplicationAssoc]  WITH CHECK ADD  CONSTRAINT [FK_ChequeApplicationAssoc_Cheque] FOREIGN KEY([ChequeId])
 REFERENCES [dbo].[Cheque] ([Id])
 GO
 ALTER TABLE [dbo].[ChequeApplicationAssoc] CHECK CONSTRAINT [FK_ChequeApplicationAssoc_Cheque]
 GO
-/****** Object:  ForeignKey [FK_DISBURSE_REFERENCE_DISBURSE]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_DISBURSE_REFERENCE_DISBURSE]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[DisbursementItem]  WITH CHECK ADD  CONSTRAINT [FK_DISBURSE_REFERENCE_DISBURSE] FOREIGN KEY([PaymentId])
 REFERENCES [dbo].[Disbursement] ([PaymentId])
 GO
 ALTER TABLE [dbo].[DisbursementItem] CHECK CONSTRAINT [FK_DISBURSE_REFERENCE_DISBURSE]
 GO
-/****** Object:  ForeignKey [FK_DEMANDLE_REFERENCE_LOANACCO]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_DEMANDLE_REFERENCE_LOANACCO]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[DemandLetter]  WITH CHECK ADD  CONSTRAINT [FK_DEMANDLE_REFERENCE_LOANACCO] FOREIGN KEY([FinancialAccountId])
 REFERENCES [dbo].[LoanAccount] ([FinancialAccountId])
 GO
 ALTER TABLE [dbo].[DemandLetter] CHECK CONSTRAINT [FK_DEMANDLE_REFERENCE_LOANACCO]
 GO
-/****** Object:  ForeignKey [FK_FINL_ACC_REFERENCE_FIN_ACCT2]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_FINL_ACC_REFERENCE_FIN_ACCT2]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[FinlAcctTransnStatus]  WITH CHECK ADD  CONSTRAINT [FK_FINL_ACC_REFERENCE_FIN_ACCT2] FOREIGN KEY([StatusTypeId])
 REFERENCES [dbo].[FinAcctTransStatusType] ([Id])
 GO
 ALTER TABLE [dbo].[FinlAcctTransnStatus] CHECK CONSTRAINT [FK_FINL_ACC_REFERENCE_FIN_ACCT2]
 GO
-/****** Object:  ForeignKey [FK_FINLACCT_REFERENCE_FINACCTT]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_FINLACCT_REFERENCE_FINACCTT]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[FinlAcctTransnStatus]  WITH CHECK ADD  CONSTRAINT [FK_FINLACCT_REFERENCE_FINACCTT] FOREIGN KEY([FinancialAcctTransactionId])
 REFERENCES [dbo].[FinAcctTrans] ([Id])
 GO
 ALTER TABLE [dbo].[FinlAcctTransnStatus] CHECK CONSTRAINT [FK_FINLACCT_REFERENCE_FINACCTT]
 GO
-/****** Object:  ForeignKey [FK_FINANCIA_REFERENCE_FINACCTT]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_FINANCIA_REFERENCE_FINACCTT]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[FinancialAcctNotification]  WITH CHECK ADD  CONSTRAINT [FK_FINANCIA_REFERENCE_FINACCTT] FOREIGN KEY([FinancialAcctTransactionId])
 REFERENCES [dbo].[FinAcctTrans] ([Id])
 GO
 ALTER TABLE [dbo].[FinancialAcctNotification] CHECK CONSTRAINT [FK_FINANCIA_REFERENCE_FINACCTT]
 GO
-/****** Object:  ForeignKey [FK_FINANCIA_REFERENCE_FINANCIA]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_FINANCIA_REFERENCE_FINANCIA]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[FinancialAcctNotification]  WITH CHECK ADD  CONSTRAINT [FK_FINANCIA_REFERENCE_FINANCIA] FOREIGN KEY([FinancialAcctNotificationId])
 REFERENCES [dbo].[FinancialAcctNotificationTyp] ([Id])
 GO
 ALTER TABLE [dbo].[FinancialAcctNotification] CHECK CONSTRAINT [FK_FINANCIA_REFERENCE_FINANCIA]
 GO
-/****** Object:  ForeignKey [FK_FINACCTT_REFERENCE_FINACCTT]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_FINACCTT_REFERENCE_FINACCTT]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[FinAcctTransTask]  WITH CHECK ADD  CONSTRAINT [FK_FINACCTT_REFERENCE_FINACCTT] FOREIGN KEY([FinancialAcctTransactionId])
 REFERENCES [dbo].[FinAcctTrans] ([Id])
 GO
 ALTER TABLE [dbo].[FinAcctTransTask] CHECK CONSTRAINT [FK_FINACCTT_REFERENCE_FINACCTT]
 GO
-/****** Object:  ForeignKey [FK_FINACCTT_REFERENCE_TRANSACT]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_FINACCTT_REFERENCE_TRANSACT]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[FinAcctTransTask]  WITH CHECK ADD  CONSTRAINT [FK_FINACCTT_REFERENCE_TRANSACT] FOREIGN KEY([TransactionTaskTypeId])
 REFERENCES [dbo].[TransactionTaskType] ([Id])
 GO
 ALTER TABLE [dbo].[FinAcctTransTask] CHECK CONSTRAINT [FK_FINACCTT_REFERENCE_TRANSACT]
 GO
-/****** Object:  ForeignKey [FK_FINACCTT_REFERENCE_UNITOFME]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_FINACCTT_REFERENCE_UNITOFME]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[FinAcctTransTask]  WITH CHECK ADD  CONSTRAINT [FK_FINACCTT_REFERENCE_UNITOFME] FOREIGN KEY([UomId])
 REFERENCES [dbo].[UnitOfMeasure] ([Id])
 GO
 ALTER TABLE [dbo].[FinAcctTransTask] CHECK CONSTRAINT [FK_FINACCTT_REFERENCE_UNITOFME]
 GO
-/****** Object:  ForeignKey [FK_ELECTRON_REFERENCE_ADDRESS]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_ELECTRON_REFERENCE_ADDRESS]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[ElectronicAddress]  WITH CHECK ADD  CONSTRAINT [FK_ELECTRON_REFERENCE_ADDRESS] FOREIGN KEY([AddressId])
 REFERENCES [dbo].[Address] ([AddressId])
 GO
 ALTER TABLE [dbo].[ElectronicAddress] CHECK CONSTRAINT [FK_ELECTRON_REFERENCE_ADDRESS]
 GO
-/****** Object:  ForeignKey [FK_ELECTRON_REFERENCE_ELECTRON]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_ELECTRON_REFERENCE_ELECTRON]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[ElectronicAddress]  WITH CHECK ADD  CONSTRAINT [FK_ELECTRON_REFERENCE_ELECTRON] FOREIGN KEY([ElectronicAddressTypeId])
 REFERENCES [dbo].[ElectronicAddressType] ([Id])
 GO
 ALTER TABLE [dbo].[ElectronicAddress] CHECK CONSTRAINT [FK_ELECTRON_REFERENCE_ELECTRON]
 GO
-/****** Object:  ForeignKey [FK_ENCASHME_REFERENCE_DISBURSE]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_ENCASHME_REFERENCE_DISBURSE]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[Encashment]  WITH CHECK ADD  CONSTRAINT [FK_ENCASHME_REFERENCE_DISBURSE] FOREIGN KEY([PaymentId])
 REFERENCES [dbo].[Disbursement] ([PaymentId])
 GO
 ALTER TABLE [dbo].[Encashment] CHECK CONSTRAINT [FK_ENCASHME_REFERENCE_DISBURSE]
 GO
-/****** Object:  ForeignKey [FK_FIN_ACCT_REFERENCE_FIN_ACCT2]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_FIN_ACCT_REFERENCE_FIN_ACCT2]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[FinAcctTransRel]  WITH CHECK ADD  CONSTRAINT [FK_FIN_ACCT_REFERENCE_FIN_ACCT2] FOREIGN KEY([FinancialAcctTransRelTypeId])
 REFERENCES [dbo].[FinAcctTransRelType] ([Id])
 GO
 ALTER TABLE [dbo].[FinAcctTransRel] CHECK CONSTRAINT [FK_FIN_ACCT_REFERENCE_FIN_ACCT2]
 GO
-/****** Object:  ForeignKey [FK_FIN_ACCT_REFERENCE_FIN_ACCT3]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_FIN_ACCT_REFERENCE_FIN_ACCT3]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[FinAcctTransRel]  WITH CHECK ADD  CONSTRAINT [FK_FIN_ACCT_REFERENCE_FIN_ACCT3] FOREIGN KEY([FromFinancialAcctTransactionId])
 REFERENCES [dbo].[FinAcctTrans] ([Id])
 GO
 ALTER TABLE [dbo].[FinAcctTransRel] CHECK CONSTRAINT [FK_FIN_ACCT_REFERENCE_FIN_ACCT3]
 GO
-/****** Object:  ForeignKey [FK_FIN_ACCT_REFERENCE_FIN_ACCT4]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_FIN_ACCT_REFERENCE_FIN_ACCT4]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[FinAcctTransRel]  WITH CHECK ADD  CONSTRAINT [FK_FIN_ACCT_REFERENCE_FIN_ACCT4] FOREIGN KEY([ToFinancialAcctTransactionId])
 REFERENCES [dbo].[FinAcctTrans] ([Id])
 GO
 ALTER TABLE [dbo].[FinAcctTransRel] CHECK CONSTRAINT [FK_FIN_ACCT_REFERENCE_FIN_ACCT4]
 GO
-/****** Object:  ForeignKey [FK_TELECOMM_REFERENCE_ADDRESS]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_TELECOMM_REFERENCE_ADDRESS]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[TelecommunicationsNumber]  WITH CHECK ADD  CONSTRAINT [FK_TELECOMM_REFERENCE_ADDRESS] FOREIGN KEY([AddressId])
 REFERENCES [dbo].[Address] ([AddressId])
 GO
 ALTER TABLE [dbo].[TelecommunicationsNumber] CHECK CONSTRAINT [FK_TELECOMM_REFERENCE_ADDRESS]
 GO
-/****** Object:  ForeignKey [FK_TELECOMM_REFERENCE_TELECOMM]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_TELECOMM_REFERENCE_TELECOMM]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[TelecommunicationsNumber]  WITH CHECK ADD  CONSTRAINT [FK_TELECOMM_REFERENCE_TELECOMM] FOREIGN KEY([TypeId])
 REFERENCES [dbo].[TelecommunicationsNumberType] ([Id])
 GO
 ALTER TABLE [dbo].[TelecommunicationsNumber] CHECK CONSTRAINT [FK_TELECOMM_REFERENCE_TELECOMM]
 GO
-/****** Object:  ForeignKey [FK_RECEIVAB_REFERENCE_LOANACCO]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_RECEIVAB_REFERENCE_LOANACCO]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[Receivable]  WITH CHECK ADD  CONSTRAINT [FK_RECEIVAB_REFERENCE_LOANACCO] FOREIGN KEY([FinancialAccountId])
 REFERENCES [dbo].[LoanAccount] ([FinancialAccountId])
 GO
 ALTER TABLE [dbo].[Receivable] CHECK CONSTRAINT [FK_RECEIVAB_REFERENCE_LOANACCO]
 GO
-/****** Object:  ForeignKey [FK_RECEIVAB_REFERENCE_RECEIVAB2]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_RECEIVAB_REFERENCE_RECEIVAB2]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[Receivable]  WITH CHECK ADD  CONSTRAINT [FK_RECEIVAB_REFERENCE_RECEIVAB2] FOREIGN KEY([ReceivableTypeId])
 REFERENCES [dbo].[ReceivableType] ([Id])
 GO
 ALTER TABLE [dbo].[Receivable] CHECK CONSTRAINT [FK_RECEIVAB_REFERENCE_RECEIVAB2]
 GO
-/****** Object:  ForeignKey [FK_Receivable_Disbursement]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_Receivable_Disbursement]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[Receivable]  WITH CHECK ADD  CONSTRAINT [FK_Receivable_Disbursement] FOREIGN KEY([PaymentId])
 REFERENCES [dbo].[Disbursement] ([PaymentId])
 GO
 ALTER TABLE [dbo].[Receivable] CHECK CONSTRAINT [FK_Receivable_Disbursement]
 GO
-/****** Object:  ForeignKey [FK_RECEIVAB_REFERENCE_RECEIVAB]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_RECEIVAB_REFERENCE_RECEIVAB]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[ReceivableStatus]  WITH CHECK ADD  CONSTRAINT [FK_RECEIVAB_REFERENCE_RECEIVAB] FOREIGN KEY([StatusTypeId])
 REFERENCES [dbo].[ReceivableStatusType] ([Id])
 GO
 ALTER TABLE [dbo].[ReceivableStatus] CHECK CONSTRAINT [FK_RECEIVAB_REFERENCE_RECEIVAB]
 GO
-/****** Object:  ForeignKey [FK_RECEIVAB_REFERENCE_RECEIVAB4]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_RECEIVAB_REFERENCE_RECEIVAB4]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[ReceivableStatus]  WITH CHECK ADD  CONSTRAINT [FK_RECEIVAB_REFERENCE_RECEIVAB4] FOREIGN KEY([ReceivableId])
 REFERENCES [dbo].[Receivable] ([Id])
 GO
 ALTER TABLE [dbo].[ReceivableStatus] CHECK CONSTRAINT [FK_RECEIVAB_REFERENCE_RECEIVAB4]
 GO
-/****** Object:  ForeignKey [FK_RECEIVAB_REFERENCE_ADJUSTME]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_RECEIVAB_REFERENCE_ADJUSTME]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[ReceivableAdjustment]  WITH CHECK ADD  CONSTRAINT [FK_RECEIVAB_REFERENCE_ADJUSTME] FOREIGN KEY([AdjustmentTypeId])
 REFERENCES [dbo].[AdjustmentType] ([Id])
 GO
 ALTER TABLE [dbo].[ReceivableAdjustment] CHECK CONSTRAINT [FK_RECEIVAB_REFERENCE_ADJUSTME]
 GO
-/****** Object:  ForeignKey [FK_RECEIVAB_REFERENCE_PARTYROL]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_RECEIVAB_REFERENCE_PARTYROL]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[ReceivableAdjustment]  WITH CHECK ADD  CONSTRAINT [FK_RECEIVAB_REFERENCE_PARTYROL] FOREIGN KEY([PartyRoleId])
 REFERENCES [dbo].[PartyRole] ([Id])
 GO
 ALTER TABLE [dbo].[ReceivableAdjustment] CHECK CONSTRAINT [FK_RECEIVAB_REFERENCE_PARTYROL]
 GO
-/****** Object:  ForeignKey [FK_RECEIVAB_REFERENCE_RECEIVAB3]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_RECEIVAB_REFERENCE_RECEIVAB3]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[ReceivableAdjustment]  WITH CHECK ADD  CONSTRAINT [FK_RECEIVAB_REFERENCE_RECEIVAB3] FOREIGN KEY([ReceivableId])
 REFERENCES [dbo].[Receivable] ([Id])
 GO
 ALTER TABLE [dbo].[ReceivableAdjustment] CHECK CONSTRAINT [FK_RECEIVAB_REFERENCE_RECEIVAB3]
 GO
-/****** Object:  ForeignKey [FK_RELEASES_REFERENCE_LOANACCO]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_RELEASES_REFERENCE_LOANACCO]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[ReleaseStatement]  WITH CHECK ADD  CONSTRAINT [FK_RELEASES_REFERENCE_LOANACCO] FOREIGN KEY([FinancialAccountId])
 REFERENCES [dbo].[LoanAccount] ([FinancialAccountId])
 GO
 ALTER TABLE [dbo].[ReleaseStatement] CHECK CONSTRAINT [FK_RELEASES_REFERENCE_LOANACCO]
 GO
-/****** Object:  ForeignKey [FK_RELEASES_REFERENCE_LOANDISB]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_RELEASES_REFERENCE_LOANDISB]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[ReleaseStatement]  WITH CHECK ADD  CONSTRAINT [FK_RELEASES_REFERENCE_LOANDISB] FOREIGN KEY([PaymentId])
 REFERENCES [dbo].[LoanDisbursement] ([PaymentId])
 GO
 ALTER TABLE [dbo].[ReleaseStatement] CHECK CONSTRAINT [FK_RELEASES_REFERENCE_LOANDISB]
 GO
-/****** Object:  ForeignKey [FK_PAYMENTA_REFERENCE_LOANDISB]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_PAYMENTA_REFERENCE_LOANDISB]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[PaymentApplication]  WITH CHECK ADD  CONSTRAINT [FK_PAYMENTA_REFERENCE_LOANDISB] FOREIGN KEY([LoanDisbursementVoucherId])
 REFERENCES [dbo].[LoanDisbursementVcr] ([Id])
 GO
 ALTER TABLE [dbo].[PaymentApplication] CHECK CONSTRAINT [FK_PAYMENTA_REFERENCE_LOANDISB]
 GO
-/****** Object:  ForeignKey [FK_PAYMENTA_REFERENCE_PAYMENT]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_PAYMENTA_REFERENCE_PAYMENT]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[PaymentApplication]  WITH CHECK ADD  CONSTRAINT [FK_PAYMENTA_REFERENCE_PAYMENT] FOREIGN KEY([PaymentId])
 REFERENCES [dbo].[Payment] ([Id])
 GO
 ALTER TABLE [dbo].[PaymentApplication] CHECK CONSTRAINT [FK_PAYMENTA_REFERENCE_PAYMENT]
 GO
-/****** Object:  ForeignKey [FK_PAYMENTA_REFERENCE_RECEIVAB]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_PAYMENTA_REFERENCE_RECEIVAB]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[PaymentApplication]  WITH CHECK ADD  CONSTRAINT [FK_PAYMENTA_REFERENCE_RECEIVAB] FOREIGN KEY([ReceivableId])
 REFERENCES [dbo].[Receivable] ([Id])
 GO
 ALTER TABLE [dbo].[PaymentApplication] CHECK CONSTRAINT [FK_PAYMENTA_REFERENCE_RECEIVAB]
 GO
-/****** Object:  ForeignKey [FK_PaymentApplication_LoanAccount]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_PaymentApplication_LoanAccount]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[PaymentApplication]  WITH CHECK ADD  CONSTRAINT [FK_PaymentApplication_LoanAccount] FOREIGN KEY([FinancialAccountId])
 REFERENCES [dbo].[LoanAccount] ([FinancialAccountId])
 GO
 ALTER TABLE [dbo].[PaymentApplication] CHECK CONSTRAINT [FK_PaymentApplication_LoanAccount]
 GO
-/****** Object:  ForeignKey [FK_DEMANDLE_REFERENCE_DEMANDLE]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_DEMANDLE_REFERENCE_DEMANDLE]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[DemandLetterStatus]  WITH CHECK ADD  CONSTRAINT [FK_DEMANDLE_REFERENCE_DEMANDLE] FOREIGN KEY([DemandLetterId])
 REFERENCES [dbo].[DemandLetter] ([Id])
 GO
 ALTER TABLE [dbo].[DemandLetterStatus] CHECK CONSTRAINT [FK_DEMANDLE_REFERENCE_DEMANDLE]
 GO
-/****** Object:  ForeignKey [FK_DEMANDLE_REFERENCE_DEMANDLES]    Script Date: 03/12/2012 21:04:19 ******/
+/****** Object:  ForeignKey [FK_DEMANDLE_REFERENCE_DEMANDLES]    Script Date: 02/22/2012 17:45:00 ******/
 ALTER TABLE [dbo].[DemandLetterStatus]  WITH CHECK ADD  CONSTRAINT [FK_DEMANDLE_REFERENCE_DEMANDLES] FOREIGN KEY([DemandLetterStatusTypeId])
 REFERENCES [dbo].[DemandLetterStatusType] ([Id])
 GO

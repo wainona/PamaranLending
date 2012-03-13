@@ -107,7 +107,6 @@ namespace BusinessLogic
             interest = Math.Floor(interest);
             return interest;
         }
-
         public static void GenerateReceivable(DateTime today)
         {
             var loanAccounts = from la in ObjectContext.LoanAccounts
@@ -148,11 +147,18 @@ namespace BusinessLogic
             {
                 var loanAccount = l.LoanAccount;
                 var agreementItem = l.ai;
+                var ammortitems = ObjectContext.AmortizationScheduleItems.Where(entity => entity.AmortizationSchedule.AgreementId == agreementItem.AgreementId);
+                bool pastDue = today > l.LoanAccount.MaturityDate;
                 if (agreementItem.MethodOfChargingInterest != ProductFeature.DiscountedInterestType.Name)
                 {
-                    if (today == lastDayOfTheMonth)
+                    if ((today == lastDayOfTheMonth && ammortitems.Count() == 0) || (pastDue == true && ammortitems.Count() > 0)) 
                     {
                         GenerateAndSaveInterest(loanAccount, agreementItem, GenerateBillSave, lastDayOfTheMonth, validDueDate,lastDayOfTheMonth);
+                    }
+                    else if (ammortitems.Count() > 0 && pastDue == false && loanAccount.InterestTypeId != InterestType.FixedInterestTYpe.Id
+                && loanAccount.InterestTypeId != InterestType.ZeroInterestTYpe.Id)
+                    {
+                        GenerateWithAmmort(loanAccount, agreementItem, lastDayOfTheMonth);
                     }
                     else
                     {
@@ -451,6 +457,25 @@ namespace BusinessLogic
             {
                     totalInterest = item.FirstOrDefault().Amount;
                     CreateReceivableWithStatus(loanAccount.FinancialAccountId, item.FirstOrDefault().Amount, -1, type, lastDayOfTheMonth, lastDayOfTheMonth, entryDate);
+            }
+            return totalInterest;
+        }
+        private static decimal GenerateWithAmmort(LoanAccount loanAccount, AgreementItem agreementItem, DateTime today)
+        {
+
+            decimal totalInterest = 0;
+
+            var ammortItems = ObjectContext.AmortizationScheduleItems.Where(entity => entity.AmortizationSchedule.AgreementId == agreementItem.AgreementId
+                && today >= entity.ScheduledPaymentDate && entity.IsBilledIndicator == false);
+
+            foreach (var item in ammortItems)
+            {
+                var ammortItem = ObjectContext.AmortizationScheduleItems.FirstOrDefault(entity => entity.Id == item.Id);
+                totalInterest = item.InterestPayment;
+                CreateReceivableWithStatus(loanAccount.FinancialAccountId,item.InterestPayment,-1,GenerateBillSave,item.ScheduledPaymentDate,item.ScheduledPaymentDate,item.ScheduledPaymentDate);
+                ammortItem.IsBilledIndicator = true;
+                ObjectContext.SaveChanges();
+               
             }
             return totalInterest;
         }

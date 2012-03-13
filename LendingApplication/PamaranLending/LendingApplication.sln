@@ -22,6 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		NewFinancialDBSchemaData.sql = NewFinancialDBSchemaData.sql
 		Dependency\Newtonsoft.Json.dll = Dependency\Newtonsoft.Json.dll
 		Dependency\Newtonsoft.Json.xml = Dependency\Newtonsoft.Json.xml
+		Readme.txt = Readme.txt
 		Research.txt = Research.txt
 		ToFix.txt = ToFix.txt
 		UserAccess.xls = UserAccess.xls
@@ -30,24 +31,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundTask", "GenerateBillTask\BackgroundTask.csproj", "{4976F99D-913E-4504-B417-CBDBE1148833}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://icarus:8080/tfs/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = BusinessLogic\\BusinessLogic.csproj
-		SccProjectName1 = BusinessLogic
-		SccLocalPath1 = BusinessLogic
-		SccProjectUniqueName2 = FirstPacific.UIFramework\\FirstPacific.UIFramework.csproj
-		SccProjectName2 = FirstPacific.UIFramework
-		SccLocalPath2 = FirstPacific.UIFramework
-		SccProjectUniqueName3 = GenerateBillTask\\BackgroundTask.csproj
-		SccProjectName3 = GenerateBillTask
-		SccLocalPath3 = GenerateBillTask
-		SccProjectUniqueName4 = LendingApplication\\LendingApplication.csproj
-		SccProjectName4 = LendingApplication
-		SccLocalPath4 = LendingApplication
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms

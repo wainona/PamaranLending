@@ -151,9 +151,13 @@ namespace BusinessLogic.FullfillmentForms
                 LoanAccount loanAccount = new LoanAccount();
                 loanAccount.FinancialAccount = newFinancialAccount;
 
+                var am = Context.AmortizationSchedules.FirstOrDefault(entity => entity.Id == LoanAgreementId);
+                var amitems = am.AmortizationScheduleItems;
                 loanAccount.LoanAmount = TotalAmountToDisburse;
                 loanAccount.LoanBalance = TotalAmountToDisburse;
                 loanAccount.LoanReleaseDate = payment.EntryDate;
+                if (amitems.Count() > 0)
+                    loanAccount.LoanReleaseDate = am.LoanReleaseDate;
 
                 var ammortizationSchedItems = from a in Context.AmortizationSchedules
                                               join asi in Context.AmortizationScheduleItems on a.Id equals asi.AmortizationScheduleId
